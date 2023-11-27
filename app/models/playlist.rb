@@ -1,3 +1,3 @@
 class Playlist < ApplicationRecord
-  belongs_to :responses
+  has_many :response_bookmarks
 end

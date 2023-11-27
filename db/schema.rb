@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_160543) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_163740) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "playlists", force: :cascade do |t|
-    t.bigint "response_id", null: false
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["response_id"], name: "index_playlists_on_response_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -28,6 +26,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_160543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sub_user_id"], name: "index_questions_on_sub_user_id"
+  end
+
+  create_table "response_bookmarks", force: :cascade do |t|
+    t.bigint "response_id", null: false
+    t.bigint "playlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_response_bookmarks_on_playlist_id"
+    t.index ["response_id"], name: "index_response_bookmarks_on_response_id"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -67,8 +74,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_160543) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "playlists", "responses"
   add_foreign_key "questions", "sub_users"
+  add_foreign_key "response_bookmarks", "playlists"
+  add_foreign_key "response_bookmarks", "responses"
   add_foreign_key "responses", "questions"
   add_foreign_key "sub_users", "users"
 end
