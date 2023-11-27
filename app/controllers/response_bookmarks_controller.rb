@@ -1,0 +1,2 @@
+class ResponseBookmarksController < ApplicationController
+end
