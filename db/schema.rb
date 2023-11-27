@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_150309) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_160543) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playlists", force: :cascade do |t|
+    t.bigint "response_id", null: false
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["response_id"], name: "index_playlists_on_response_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.bigint "sub_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sub_user_id"], name: "index_questions_on_sub_user_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_responses_on_question_id"
+  end
+
+  create_table "sub_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "relationship_to_user"
+    t.date "dob"
+    t.string "childhood_location"
+    t.string "post_education"
+    t.string "birthplace"
+    t.string "career"
+    t.string "adult_life_location"
+    t.string "hobbies"
+    t.string "life_after_retirement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sub_users_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +62,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_150309) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "playlists", "responses"
+  add_foreign_key "questions", "sub_users"
+  add_foreign_key "responses", "questions"
+  add_foreign_key "sub_users", "users"
 end
