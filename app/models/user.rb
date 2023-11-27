@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :sub_users
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :sub_users
 end
