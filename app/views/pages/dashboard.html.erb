@@ -1,4 +1,13 @@
-<% current_user.sub_users.each do |sub_user| %>
-<% sub_user.name %>
-<%= sub_user.relationship_to_user %>
-<% end %>
+<div class ="sub-users-card">
+  <% current_user.sub_users.each do |sub_user| %>
+    <div class = "sub-users">
+      <%= sub_user.name %>
+      <%= sub_user.relationship_to_user %>
+      <%= link_to "Go to #{sub_user.name}'s profile", sub_user %>
+    </div>
+  <% end %>
+  <div class= "sub-users">
+    <%= "Add a new sub-user" %>
+      <%= link_to "Add user", new_sub_user_path %>
+  </div>
+</div>
