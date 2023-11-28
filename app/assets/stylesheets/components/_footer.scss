@@ -1,0 +1,19 @@
+.footer {
+  background-color: #2B326F;
+  background-image: url('../../images/Lava.png');
+  margin-top: auto;
+  color: white;
+}
+
+.footer-logo-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0px;
+  padding-top:20px;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 16px 0px;
+}
