@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.top-section{
+   background-color: #2B326F;
+   padding: 32px 0;
+}
+
+.top-section-card-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-section-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  align-items: center;
+  padding: 48px 24px;
+  border-radius: 5px;
+}
+
+.number-icon{
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  padding: 14px;
+  background: #fff;
+  color: #2B326F;
+  text-align: center;
+  font-weight: 800;
+  font-size: 24px ;
+  margin-bottom: 40px;
+}
