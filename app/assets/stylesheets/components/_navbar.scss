@@ -10,4 +10,57 @@
 
 .navbar .navbar-brand img {
   width: 40px;
+  background-color: rgb(238, 238, 238);
+  &:link {
+    text-decoration: none;
+  }
+  position: relative;
+}
+
+.navbar p {
+  font-weight: 700;
+}
+.btn-brown {
+  background-color: #424B61;
+  text-decoration: none;
+  color:white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 0px;
+  margin-left: 16px;
+  p {
+    font-weight: 700;
+    color: black;
+    opacity: 1;
+  }
+  display: inline;
+}
+
+.area-btn {
+  color: rgb(0, 0, 0);
+  margin: 16px 32px;
+}
+
+.btn-grey {
+  display: inline;
+  padding: 9px 30px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  right: 50%;
+  top: 9px;
+  background-color: #424B61 ;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 24px;
+  right: calc(50% - 65.504px);
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
+}
+
+.avatar-icon {
+  font-size: 20px;
+  color: black;
 }
