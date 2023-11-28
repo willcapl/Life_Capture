@@ -1,4 +1,15 @@
 .navbar {
+  justify-content: space-between;
+  background: clear;
+  position: relative;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar .navbar-brand img {
+  width: 40px;
   background-color: rgb(238, 238, 238);
   &:link {
     text-decoration: none;
