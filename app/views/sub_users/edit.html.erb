@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Edit <%= @sub_user.name %></h1>
+  <%= simple_form_for(@sub_user) do |f|%>
+  <%= f.input :name, label: 'Please enter your name' %>
+  <%= f.input :relationship_to_user, label: 'What is your relationship to the user' %>
+  <%= f.input :dob, :as => :date,
+        :start_year => 1910, :end_year => 2010,
+        :order => [:day, :month, :year], label: 'What is your date of birth?' %>
+  <%= f.input :post_education, label: 'What did you do after education?' %>
+  <%= f.input :birthplace, label: 'Where were you born?' %>
+  <%= f.input :childhood_location, label: 'Where did you primarily grow up?' %>
+  <%= f.input :career, label: 'What was your career?' %>
+  <%= f.input :adult_life_location, label: 'Where did you spend your adult life?' %>
+  <%= f.input :hobbies, label: 'Which hobbies/ activities have played a major part of your life?' %>
+  <%= f.input :life_after_retirement, label: 'What did you do after retirement' %>
+  <%= f.submit %>
+  <% end %>
+</div>

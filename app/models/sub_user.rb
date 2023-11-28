@@ -1,5 +1,5 @@
 class SubUser < ApplicationRecord
-  has_many :responses, through: :questions, dependent: :destroy
+  # has_many :responses, through: :questions, dependent: :destroy
   belongs_to :user
   has_many :questions, dependent: :destroy
   validates :name, :relationship_to_user, :dob, :childhood_location,
