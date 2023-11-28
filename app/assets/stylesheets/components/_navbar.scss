@@ -34,7 +34,6 @@
   display: inline;
   padding: 9px 30px;
   text-align: center;
-  text-decoration: none;
   position: absolute;
   right: 50%;
   top: 9px;
@@ -44,12 +43,12 @@
   font-size: 24px;
   right: calc(50% - 65.504px);
   p {
-    font-size: 20px;
+    font-size: 24px;
     margin: 0;
   }
 }
 
 .avatar-icon {
-  font-size: 20px;
+  font-size: 30px;
   color: black;
 }
