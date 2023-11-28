@@ -32,7 +32,7 @@ Playlist.destroy_all
 puts "Generating some users"
 8.times do |i|
   user = User.new(
-    username: Faker::Name.first_name,
+    username: "user#{i + 1}",
     email: "user#{i + 1}@email.com",
     password: "123456"
   )
