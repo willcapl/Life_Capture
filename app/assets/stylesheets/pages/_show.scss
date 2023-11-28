@@ -1,0 +1,44 @@
+.show-container {
+  height: 100vh;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  margin: 24px 0;
+  padding: 24px;
+}
+
+.btn-charcol {
+  background-color: #2B326F;
+  border-radius: 20px;
+  padding: 23px 16px;
+  width: 30%;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus-icon-bg {
+  font-size: 47px;
+  margin: 0;
+  background: #DCDDE4;
+  height: 66px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+}
+
+.plus-icon {
+  align-self: center;
+  text-align: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.videos-container {
+  background-color: #DCDDE4;
+  border-radius: 20px;
+  width: 100%;
+  margin: 24px auto;
+  padding: 16px;
+  height: calc(100% - 136px)
+}
