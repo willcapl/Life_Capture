@@ -1,18 +1,130 @@
 <div class="container">
-  <h1>Add a new subuser</h1>
-  <%= simple_form_for(@sub_user) do |f|%>
-  <%= f.input :name, label: 'Please enter your name' %>
-  <%= f.input :relationship_to_user, label: 'What is your relationship to the user' %>
-  <%= f.input :dob, :as => :date,
-        :start_year => 1910, :end_year => 2010,
-        :order => [:day, :month, :year], label: 'What is your date of birth?' %>
-  <%= f.input :post_education, label: 'What did you do after education?' %>
-  <%= f.input :birthplace, label: 'Where were you born?' %>
-  <%= f.input :childhood_location, label: 'Where did you primarily grow up?' %>
-  <%= f.input :career, label: 'What was your career?' %>
-  <%= f.input :adult_life_location, label: 'Where did you spend your adult life?' %>
-  <%= f.input :hobbies, label: 'Which hobbies/ activities have played a major part of your life?' %>
-  <%= f.input :life_after_retirement, label: 'What did you do after retirement' %>
-  <%= f.submit %>
-  <% end %>
+  <h1>Add a new Sub-User</h1>
+  <div class="questions-page-card">
+    <%= form_with model: @sub_user do |f| %>
+      <div class = "question-card">
+        <%= f.label :Please_enter_your_name, class:"question-card-text" %>
+        <%= f.text_field :name, class:"answer-card-input"%>
+        <div class ="question-page-button">
+          <div class = "previous-button">
+            <%= "Previous Question" %>
+          </div>
+          <div class = "next-button">
+            <%= "Next Question" %>
+          </div>
+        </div>
+      </div>
+        <div class = "question-card">
+          <%= f.label :What_is_your_relationship_to_the_user, class:"question-card-text" %>
+          <%= f.text_field :relationship_to_user, class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :"What is your date of birth?", class:"question-card-text" %>
+          <%= f.text_field :dob, :as => :date,
+                :start_year => 1910, :end_year => 2010,
+                :order => [:day, :month, :year], class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :'What did you do after education?', class:"question-card-text" %>
+          <%= f.text_field :post_education, class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :birthplace, class:"question-card-text" %>
+          <%= f.text_field :'Where were you born?', class:"answer-card-input"%>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :'Where did you primarily grow up?', class:"question-card-text" %>
+          <%= f.text_field :childhood_location, class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :'What was your career?', class:"question-card-text"  %>
+          <%= f.text_field :career, class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :'Where did you spend your adult life?', class:"question-card-text"  %>
+          <%= f.text_field :adult_life_location, class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :hobbies, class:"question-card-text"  %>
+          <%= f.text_field :'Which hobbies/ activities have played a major part of your life?', class:"answer-card-input" %>
+          <div class ="question-page-button">
+            <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <div class = "question-card">
+          <%= f.label :'What did you do after retirement', class:"question-card-text"  %>
+          <%= f.text_field :life, class:"answer-card-input" %>
+          <div class ="question-page-button">
+          <div class = "previous-button">
+              <%= "Previous Question" %>
+            </div>
+            <div class = "next-button">
+              <%= "Next Question" %>
+            </div>
+          </div>
+        </div>
+        <%= f.submit %>
+    <% end %>
+  </div>
 </div>

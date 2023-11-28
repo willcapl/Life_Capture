@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy, :show] do
-    resources :questions, only: [:create] do
+    resources :questions, only: [:index] do
       resources :responses, only: [:create]
     end
   end
