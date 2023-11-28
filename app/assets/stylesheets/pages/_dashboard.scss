@@ -2,15 +2,26 @@
   display: flex;
   justify-content: space-between;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .sub-users{
   margin: 20px;
-  color: green;
+  color: black;
   display: flex;
   flex-direction: column;
-  background-color: antiquewhite;
-  width: 150px;
-  height: 150px;
+  background-color: #A3B18A;
   padding: 10px;
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 15px;
+}
+
+.sub-user-icon{
+  height: 140px;
+  width: 150px;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
 }
