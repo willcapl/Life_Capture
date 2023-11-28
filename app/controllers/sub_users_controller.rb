@@ -33,7 +33,7 @@ class SubUsersController < ApplicationController
   def destroy
     @sub_user = SubUser.find(params[:id])
     @sub_user.destroy
-    redirect_to sub_users_path
+    redirect_to dashboard_path
   end
 
   private
