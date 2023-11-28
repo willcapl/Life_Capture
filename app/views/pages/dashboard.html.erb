@@ -1,0 +1,4 @@
+<% current_user.sub_users.each do |sub_user| %>
+<% sub_user.name %>
+<%= sub_user.relationship_to_user %>
+<% end %>
