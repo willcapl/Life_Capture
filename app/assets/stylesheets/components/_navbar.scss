@@ -11,7 +11,6 @@
 }
 .btn-brown {
   background-color: #424B61;
-  text-decoration: none;
   color:white;
   padding: 10px 20px;
   border-radius: 20px;
@@ -47,9 +46,21 @@
     font-size: 20px;
     margin: 0;
   }
+
 }
 
 .avatar-icon {
   font-size: 20px;
   color: black;
+}
+
+.homepage-buttons{
+  margin-right: 100px;
+}
+
+.sign-container{
+  margin-right: 40px;
+  a {
+    text-decoration: none;
+  }
 }
