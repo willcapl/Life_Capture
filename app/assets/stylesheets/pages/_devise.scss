@@ -1,0 +1,40 @@
+.registration-form{
+  padding-top: 50px;
+  width: 720px;
+  margin: 0 auto;
+}
+
+.login-form{
+  padding-top: 50px;
+  width: 720px;
+  margin: 0 auto;
+}
+
+
+input {
+  border-radius: 40px !important;
+  border: 1px solid #000;
+  height: 40px;
+}
+
+input::placeholder {
+  opacity: 0.5 !important;
+}
+
+.min-height{
+  min-height: calc(100vh - 294px);
+}
+
+.registration-button{
+  font-family: gill sans;
+  font-weight: 700;
+  color:white;
+  background-color: #2B326F;
+}
+
+.login-button{
+  font-family: gill sans;
+  font-weight: 700;
+  color:white;
+  background-color: #2B326F;
+}
