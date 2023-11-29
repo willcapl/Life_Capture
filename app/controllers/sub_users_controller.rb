@@ -13,7 +13,7 @@ class SubUsersController < ApplicationController
     if @sub_user.save
       redirect_to @sub_user
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
