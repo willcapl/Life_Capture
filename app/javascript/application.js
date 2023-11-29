@@ -5,3 +5,10 @@ import "@popperjs/core"
 import "bootstrap"
 import QuestionButtonController from "./controllers/question_button_controller.js"
 Stimulus.register("next-button", QuestionButtonController)
+
+import { initRecordVideo } from './controllers/record_video.js';
+document.addEventListener('turbo:load', () => {
+  if(document.querySelector("#live")) {
+    initRecordVideo();
+  }
+});
