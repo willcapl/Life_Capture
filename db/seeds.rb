@@ -25,8 +25,7 @@ puts "Destroying all content in database"
 SubUser.destroy_all
 User.destroy_all
 Question.destroy_all
-Response.destroy_all
-# ResponseBookmarks.destroy_all
+ResponseBookmark.destroy_all
 Playlist.destroy_all
 
 puts "Generating some users"
@@ -57,10 +56,12 @@ puts "Generating some users"
     sub_user.save!
 
     puts "Created subusers for #{user.username}"
-    question = Question.new(
-      title: QUESTIONS,
-      sub_user_id: sub_user.id
-    )
-    question.save!
+    QUESTIONS.each do |question|
+      question = Question.new(
+        title: question,
+        sub_user_id: sub_user.id
+      )
+      question.save!
+    end
   end
 end
