@@ -1,9 +1,14 @@
 <div class="container">
   <%= link_to 'back to profile', sub_user_path(@sub_user) %>
-  <div class="question-title-card">
-    <h2><%= @question[0].title.first %></h2>
-  </div>
-  <div class="video-container">
+  <div>
+    <h2>All Q's</h2>
+    <ul>
+      <% @questions.each do |question| %>
+        <li>
+          <%= link_to question.title, sub_user_question_path(@sub_user, question) %>
+        </li>
+      <% end %>
+    </ul>
 
   </div>
 </div>
