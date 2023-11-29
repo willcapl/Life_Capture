@@ -3,5 +3,3 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-import QuestionButtonController from "./controllers/question_button_controller.js"
-Stimulus.register("next-button", QuestionButtonController)
