@@ -5,7 +5,7 @@
   /* background-color: bisque; */
   height: 200px;
   width: 650px;
-  margin: 200px auto;
+  margin: 100px auto;
 }
 
 
@@ -21,12 +21,14 @@
   font-weight: bold;
   font-size: 20px;
   margin-left: 11px;
+  margin-top: -45px;
 }
 
 .answer-card-input{
   border: 1px solid;
   border-radius: 36px;
   height: 52px;
+  padding: 6px;
 }
 
 .question-page-button{
@@ -42,8 +44,23 @@
   padding: 10px 38px;
   align-items: flex-start;
   gap: 10px;
-  margin-top: 5px;
   color: white;
+  cursor: pointer;
+  margin-bottom: 70px;
+  margin-top: 22px;
+
+}
+
+
+.next-button:hover{
+  background: #50596f;
+  // box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.35);
+  // border: 2px solid #686f7a;
+}
+.previous-button:hover{
+  background: #50596f;
+  // box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.35);
+  // border: 2px solid #686f7a;
 }
 
 .previous-button{
@@ -54,6 +71,66 @@
   padding: 10px 38px;
   align-items: flex-start;
   gap: 10px;
-  margin-top: 5px;
   color: white;
+  cursor: pointer;
+  margin-bottom: 70px;
+  margin-top: 22px;
+
+}
+
+.hide-question {
+  display: none;
+  /* Other styles... */
+}
+
+.question-card:first-child {
+  display: flex; /* Or block, depending on your layout */
+}
+
+
+.btn-sub-user-form{
+  background-color: #424B61;
+  color:white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 0px;
+  margin-left: 16px;
+  p {
+    font-weight: 700;
+    color: black;
+    opacity: 1;
+  }
+  display: inline;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color:#424B61 ;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+  border-radius: 10px;
+}
+
+.submit-button{
+
+  border-radius: 40px;
+  background: var(--charcoal, #424B61);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  padding: 0px 38px;
+  align-items: flex-start;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 70px;
+  margin-top: 22px;
 }

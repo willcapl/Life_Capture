@@ -1,5 +1,11 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @sub_user = SubUser.find(params[:sub_user_id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
+  end
+
+  def show
+    @sub_user = SubUser.find(params[:sub_user_id])
+    @question = Question.find(params[:id])
   end
 end
