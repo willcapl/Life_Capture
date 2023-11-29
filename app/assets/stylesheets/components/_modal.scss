@@ -1,0 +1,54 @@
+.modal {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: 147px;
+}
+
+.pill-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+    top: 54px;
+    left: 383px;
+
+  &:hover {
+    background-color: grey;
+  }
+}
+
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+    left: 88px;
+    top: 48px;
+}
+
+
+.custom-button i {
+  margin-right: 8px;
+}
+
+.custom-button:hover {
+  background-color: #2980b9;
+}
