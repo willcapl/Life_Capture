@@ -16,7 +16,9 @@ export default class extends Controller {
         card.classList.add("hide-question");
       }
     });
+    this.updateProgressBar(0); // Initialize progress bar
   }
+
   reveal(event) {
     let currentQuestion = event.target.closest(".question-card");
     if (currentQuestion) {
@@ -26,6 +28,9 @@ export default class extends Controller {
     let nextQuestion = currentQuestion.nextElementSibling;
     if (nextQuestion && nextQuestion.classList.contains("question-card")) {
       nextQuestion.classList.remove("hide-question");
+      let index = this.questionCardTargets.indexOf(nextQuestion);
+      console.log("Next Question Index:", index); // Debugging
+      this.updateProgressBar(index);
     }
   }
 
@@ -38,6 +43,19 @@ export default class extends Controller {
     let previousQuestion = currentQuestion.previousElementSibling;
     if (previousQuestion && previousQuestion.classList.contains("question-card")) {
       previousQuestion.classList.remove("hide-question");
+      let index = this.questionCardTargets.indexOf(previousQuestion);
+      console.log("Previous Question Index:", index); // Debugging
+      this.updateProgressBar(index);
     }
   }
+
+  // updateProgressBar(currentIndex) {
+  //   let totalQuestions = this.questionCardTargets.length;
+  //   let progress = (currentIndex + 1) / totalQuestions * 100;
+  //   const elem = document.getElementById("myBar");
+  //   console.log(elem)
+  //   document.getElementById("myBar").style.width = `${progress}%`;
+  //   // elem.innerHTML = Math.round(progress) + "%";
+  //   console.log("Progress:", progress); // Debugging
+  // }
 }

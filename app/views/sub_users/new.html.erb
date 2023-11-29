@@ -13,6 +13,9 @@
             <%= "Next Question"  %>
           </div>
         </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 0%;"></div>
+        </div>
       </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :What_is_your_relationship_to_the_user, class:"question-card-text" %>
@@ -24,6 +27,9 @@
             <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
               <%= "Next Question" %>
             </div>
+          </div>
+          <div id="myProgress">
+            <div id="myBar" style="width: 11.1%;"></div>
           </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
@@ -39,6 +45,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 22.2%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'What did you do after education?', class:"question-card-text" %>
@@ -51,6 +60,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 33.3%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :birthplace, class:"question-card-text" %>
@@ -63,6 +75,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 44.4%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'Where did you primarily grow up?', class:"question-card-text" %>
@@ -75,6 +90,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 55.5%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'What was your career?', class:"question-card-text"  %>
@@ -87,6 +105,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 66.6%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'Where did you spend your adult life?', class:"question-card-text"  %>
@@ -99,6 +120,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 77.7%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :hobbies, class:"question-card-text"  %>
@@ -111,6 +135,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 88.8%;"></div>
+      </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'What did you do after retirement', class:"question-card-text"  %>
@@ -123,6 +150,9 @@
               <%= "Next Question" %>
             </div>
           </div>
+            <div id="myProgress">
+        <div id="myBar" style="width: 100%;"></div>
+      </div>
         </div>
         <%= f.submit class:"btn-sub-user-form"%>
     <% end %>
