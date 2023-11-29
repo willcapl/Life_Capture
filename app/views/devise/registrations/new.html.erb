@@ -1,28 +1,36 @@
 <div class="container mt-3">
-  <h2>Sign up</h2>
+  <div class= "registration-form">
+    <h1 style= "font-family: EB Garamond; color: black;"> <i> Sign Up <i> </h1>
+    <hr>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+      <div class="form-inputs" style= "font-family: eb garamont">
+        <%= f.input :username,
+                    placeholder: "Username",
+                    label: false%>
+        <%= f.input :email,
+                    placeholder: "Email",
+                    label: false,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    placeholder: "Password",
+                    label: false,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    placeholder: "Confirm Password",
+                    label: false,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
 
-    <div class="form-inputs">
-      <%= f.input :username %>
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+      <div class= "form-actions">
+        <%= f.button :submit, "Sign up", class:"registration-button" %>
+      </div>
+    <% end %>
+  </div>
 </div>
