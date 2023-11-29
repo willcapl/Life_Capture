@@ -28,11 +28,10 @@ export default class extends Controller {
     let nextQuestion = currentQuestion.nextElementSibling;
     if (nextQuestion && nextQuestion.classList.contains("question-card")) {
       nextQuestion.classList.remove("hide-question");
-      let index = this.questionCardTargets.indexOf(nextQuestion);
-      console.log("Next Question Index:", index); // Debugging
-      this.updateProgressBar(index);
+      this.checkLastQuestion(nextQuestion);
     }
   }
+
 
   back(event) {
     let currentQuestion = event.target.closest(".question-card");
@@ -46,6 +45,14 @@ export default class extends Controller {
       let index = this.questionCardTargets.indexOf(previousQuestion);
       console.log("Previous Question Index:", index); // Debugging
       this.updateProgressBar(index);
+    }
+    this.checkLastQuestion(previousQuestion);
+  }
+
+  checkLastQuestion(question) {
+    let isLastQuestion = !question.nextElementSibling;
+    if (this.hasSubmitButtonTarget) { // Check if submitButton target exists
+      this.submitButtonTarget.style.display = isLastQuestion ? "block" : "none";
     }
   }
 
