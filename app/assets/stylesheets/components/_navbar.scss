@@ -27,12 +27,20 @@
   border-radius: 20px;
   border: 0px;
   margin-left: 16px;
+
   p {
     font-weight: 700;
     color: black;
     opacity: 1;
   }
   display: inline;
+
+  &:hover {
+  background-color: #363c72d7;
+    color: rgba(220, 221, 237, 0.816) ; /* Change the text color on hover */
+
+}
+
 }
 
 .area-btn {
