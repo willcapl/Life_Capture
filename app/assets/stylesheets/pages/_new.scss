@@ -5,7 +5,7 @@
   /* background-color: bisque; */
   height: 200px;
   width: 650px;
-  margin: 200px auto;
+  margin: 100px auto;
 }
 
 
@@ -56,4 +56,29 @@
   gap: 10px;
   margin-top: 5px;
   color: white;
+}
+
+.hide-question {
+  display: none;
+  /* Other styles... */
+}
+
+.question-card:first-child {
+  display: flex; /* Or block, depending on your layout */
+}
+
+
+.btn-sub-user-form{
+  background-color: #424B61;
+  color:white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 0px;
+  margin-left: 16px;
+  p {
+    font-weight: 700;
+    color: black;
+    opacity: 1;
+  }
+  display: inline;
 }

@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Add a new Sub-User</h1>
+  <h1>Add a new Profile</h1>
   <div class="questions-page-card" data-controller="question-button">
-    <%= form_with model: @sub_user do |f| %>
-      <div class = "question-card">
+    <%= form_with model: @sub_users do |f| %>
+      <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :Please_enter_your_name, class:"question-card-text" %>
         <%= f.text_field :name, class:"answer-card-input"%>
         <div class ="question-page-button">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :What_is_your_relationship_to_the_user, class:"question-card-text" %>
           <%= f.text_field :relationship_to_user, class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :"What is your date of birth?", class:"question-card-text" %>
           <%= f.text_field :dob, :as => :date,
                 :start_year => 1910, :end_year => 2010,
@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'What did you do after education?', class:"question-card-text" %>
           <%= f.text_field :post_education, class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :birthplace, class:"question-card-text" %>
           <%= f.text_field :'Where were you born?', class:"answer-card-input"%>
           <div class ="question-page-button">
@@ -64,7 +64,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'Where did you primarily grow up?', class:"question-card-text" %>
           <%= f.text_field :childhood_location, class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'What was your career?', class:"question-card-text"  %>
           <%= f.text_field :career, class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -88,7 +88,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'Where did you spend your adult life?', class:"question-card-text"  %>
           <%= f.text_field :adult_life_location, class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -100,7 +100,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :hobbies, class:"question-card-text"  %>
           <%= f.text_field :'Which hobbies/ activities have played a major part of your life?', class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -112,7 +112,7 @@
             </div>
           </div>
         </div>
-        <div class = "question-card">
+        <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'What did you do after retirement', class:"question-card-text"  %>
           <%= f.text_field :life, class:"answer-card-input" %>
           <div class ="question-page-button">
@@ -124,7 +124,7 @@
             </div>
           </div>
         </div>
-        <%= f.submit %>
+        <%= f.submit class:"btn-sub-user-form"%>
     <% end %>
   </div>
 </div>

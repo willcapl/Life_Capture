@@ -1,20 +1,43 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="question-button"
 export default class extends Controller {
-
-  static targets = ["next-question","previous-question"]
+  static targets = ["questionCard"]
 
   connect() {
-    console.log("Hello from our first Stimulus controller");
+    console.log("Question button controller connected");
+    this.initializeQuestionVisibility();
   }
 
-  reveal(){
-    console.log("button clicked");
+  initializeQuestionVisibility() {
+    this.questionCardTargets.forEach((card, index) => {
+      if (index === 0) {
+        card.classList.remove("hide-question");
+      } else {
+        card.classList.add("hide-question");
+      }
+    });
+  }
+  reveal(event) {
+    let currentQuestion = event.target.closest(".question-card");
+    if (currentQuestion) {
+      currentQuestion.classList.add("hide-question");
+    }
+
+    let nextQuestion = currentQuestion.nextElementSibling;
+    if (nextQuestion && nextQuestion.classList.contains("question-card")) {
+      nextQuestion.classList.remove("hide-question");
+    }
   }
 
-  back(){
-    console.log("button back clicked");
-  }
+  back(event) {
+    let currentQuestion = event.target.closest(".question-card");
+    if (currentQuestion) {
+      currentQuestion.classList.add("hide-question");
+    }
 
+    let previousQuestion = currentQuestion.previousElementSibling;
+    if (previousQuestion && previousQuestion.classList.contains("question-card")) {
+      previousQuestion.classList.remove("hide-question");
+    }
+  }
 }
