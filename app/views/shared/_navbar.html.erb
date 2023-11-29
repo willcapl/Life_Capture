@@ -3,13 +3,13 @@
     <div class="container d-flex jutify-content-between">
       <div>
         <%= link_to root_path do %>
-          <%= image_tag 'Big_Logo', width:"200vh", style:"margin-right:100px;" %>
+          <%= image_tag 'big_logo_blue.png', width:"200vh", style:"margin-right:100px;" %>
         <% end %>
       </div>
 
         <div>
           <div class="btn-group dropstart">
-            <button type="button" class="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style="border: 0;">
+            <button type="button" class="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style="border: 0; background: transparent;">
               <i class="fa-solid fa-user avatar-icon"></i>
             </button>
             <ul class="dropdown-menu">
@@ -22,10 +22,10 @@
     </div>
   <% elsif %>
     <div class="navbar">
-      <%# <div class="container d-flex jutify-content-between"> %>
+      <div class="container d-flex jutify-content-between">
         <div>
           <%= link_to root_path do %>
-          <%= image_tag 'Big_Logo', width:"200vh", style:"margin-right:100px;" %>
+          <%= image_tag 'big_logo_blue.png', width:"200vh", style:"margin-right:100px;" %>
             <%# <h1 style="color: black; font-size: 20px ">Life Capture</h1> %>
           <% end %>
         </div>
@@ -35,6 +35,9 @@
           <div class="d-flex">
           <%= link_to new_user_session_path do %>
             <p class='btn-brown'>Sign in</p>
+          <% end %>
+          <%= link_to new_user_registration_path do %>
+            <p class='btn-brown'>Sign up</p>
           <% end %>
         </div>
         </div>
