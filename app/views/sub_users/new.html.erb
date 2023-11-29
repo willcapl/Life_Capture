@@ -29,7 +29,7 @@
             </div>
           </div>
           <div id="myProgress">
-            <div id="myBar" style="width: 11.1%;"></div>
+            <div id="myBar" style="width: 11.1%; transition: 2s;"></div>
           </div>
         </div>
         <div class = "question-card" data-question-button-target="questionCard">
@@ -146,15 +146,15 @@
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
               <%= "Previous Question" %>
             </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
+        <div class="submit-button" data-question-button-target="submitButton">
+          <%= f.submit "Submit", class:"btn-sub-user-form" %>
+        </div>
+
           </div>
             <div id="myProgress">
         <div id="myBar" style="width: 100%;"></div>
       </div>
         </div>
-        <%= f.submit class:"btn-sub-user-form"%>
     <% end %>
   </div>
 </div>
