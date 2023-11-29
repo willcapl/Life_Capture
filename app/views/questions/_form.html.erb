@@ -1,0 +1,25 @@
+<div class="d-none">
+  <%= simple_form_for [@sub_user, @question], data: { record_video_id: @question.id, sub_user_id: @sub_user.id } do |f| %>
+    <%= f.input :title %>
+    <%= f.input :video, as: :file %>
+    <%= f.submit %>
+  <% end  %>
+</div>
+<div class="container">
+  <%= link_to 'back to questions', sub_user_questions_path(@sub_user) %>
+  <div class="question-title-card">
+    <h2><%= @question.title %></h2>
+  </div>
+  <div class="video-container" data-controller="video">
+    <h2>Record your video</h2>
+    <button id="start" data-video-target="start">Start</button>
+    <button id="stop" data-video-target="stop">Stop and save</button>
+    <div class="flip-horizontal">
+      <video style="border: 1px solid black" id="live" data-video-target="live" width="300" height="200" autoplay muted></video>
+    </div>
+  </div>
+</div>
+
+<% if @question.video.attached? %>
+  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= @question.video.key %>.mp4" controls="controls" preload="none"></video>
+<% end %>

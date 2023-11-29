@@ -1,13 +1,15 @@
-.modal {
+.modal-content {
   text-align: center;
   margin-top: 50px;
+  padding: 50px;
 }
 
 .modal-title {
   font-size: 18px;
   font-weight: bold;
   position: absolute;
-  left: 147px;
+  left: 159px;
+  top: 25px;
 }
 
 .pill-button {
@@ -27,6 +29,13 @@
   }
 }
 
+
+.btn-close{
+  position: absolute;
+  top: 12px;
+  left: 463px;
+}
+
 .custom-button {
   display: inline-flex;
   align-items: center;
@@ -40,8 +49,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   position: absolute;
-    left: 88px;
-    top: 48px;
+  top: 81px;
+  left: 43px
 }
 
 

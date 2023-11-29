@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :sub_users, only: [:new, :edit, :update, :create, :destroy, :show] do
-    resources :questions, only: [:index, :show]
+  resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
+    resources :questions, only: [:index, :show, :update]
   end
+  get '/sub_users/:id', to: 'sub_users#show', as: 'sub_user_show'
   get 'dashboard', to: 'pages#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
