@@ -3,14 +3,14 @@
   background-image: url('../../images/Lava.png');
   margin-top: auto;
   color: white;
+  padding:20px 0;
 }
 
 .footer-logo-tagline {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin: auto 0px;
-  padding-top:20px;
 }
 
 .footer-list {
@@ -22,8 +22,8 @@
   i:hover { color: #424b61;
   }
 }
-// .footer-list {
-// i.hover {
 
-// }
-// }
+.footer-image {
+  height: 120px;
+  margin-left: 24px;
+}
