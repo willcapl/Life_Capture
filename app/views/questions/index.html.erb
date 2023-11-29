@@ -1,10 +1,14 @@
-<h1>All questions</h1>
-<ul>
-  <% @questions.each do |question| %>
-  <li>
-    <%= question %>
-  </li>
-  <% end %>
+<div class="container">
+  <%= link_to 'back to profile', sub_user_path(@sub_user) %>
+  <div>
+    <h2>All Q's</h2>
+    <ul>
+      <% @questions.each do |question| %>
+        <li>
+          <%= link_to question.title, sub_user_question_path(@sub_user, question) %>
+        </li>
+      <% end %>
+    </ul>
 
-
-</ul>
+  </div>
+</div>

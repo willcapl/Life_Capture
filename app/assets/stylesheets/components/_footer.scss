@@ -22,6 +22,7 @@
   text-align: left;
   // text-indent: 0px;
 
+<<<<<<< HEAD
   i:hover {
 
     color: #424b61;
@@ -33,8 +34,15 @@
   display: inline-flex;
 
 }
+=======
+.footer-list  {
+  i:hover { color: #424b61;
+  }
+}
+
+>>>>>>> 92428d8fde67710cd29c6a3078b0f3f88dced31c
 .footer-image {
-  height: 120px;
+  height: 100px;
   margin-left: 24px;
 }
 .about-us {

@@ -1,11 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(<%= image_path "banner_image.jpg" %>);">
-  <div class="container">
-    <h1 style="font-family: gill sans; font-weight: 700; color: white">Store Your Memories,</h1>
-    <h1 style="font-family: gill sans; font-weight: 700; color: white">Preserve Your Legacy.</h1>
-    <h3 style="font-family: EB Garamond; color: white">Remember people in their words and in their voice</h3>
+  <div class="container mb-5">
+    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Store Your Memories,</h1>
+    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Preserve Your Legacy.</h1>
+    <h3 style="font-family: EB Garamond; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Remember people in their words and in their voice</h3>
 <!-- fix link to
--->
-  <p class="btn-brown-nav">Get Started</p>
+--> <div class="Top button d-flex">
+        <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
+            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Get Started</p>
+          <% end %>
+     </div>
     <i class="arrow down"></i>
   </div>
 </div>
@@ -48,6 +51,10 @@
     <h4 class= "text-center" style="font-family: EB Garamond; color: black; font-size: 1.5vw" > <i>"Getting my grandma to record her stories from her childhood </i></h4>
     <h4 class= "text-center mb-5" style="font-family: EB Garamond; color: black; font-size: 1.5vw"> <i> and life was so valuable - I wish I could do it for all my relatives!"</i></h4>
     <h4 class= "text-center mb-3" style="font-family: EB Garamond; color: black; font-size: 1.5vw">- Sergio Ramos, Spain</h4>
-        <p class="btn-brown-nav" style="">Get Started</p>
+    <div class="Button bottom d-flex justify-content-center">
+       <%= link_to new_user_registration_path, class: "d-inline-block mb-5 mt-3" do %>
+            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white" >Get Started</p>
+          <% end %>
+      </div>
   </div>
 </div>
