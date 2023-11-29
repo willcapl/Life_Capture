@@ -1,20 +1,22 @@
-<div class="container">
-<%= "Account Holder:" %>
-<%=current_user.username.capitalize %>
-</div>
+<div class= "textstyling" style= "font-family: EB Garamond; color: black; font-size: 1.5vw">
 <div class ="sub-users-card">
   <% current_user.sub_users.each do |sub_user| %>
+  <%= link_to sub_user do %>
     <div class = "sub-users">
-      <%= sub_user.relationship_to_user.capitalize %>
-      <%= sub_user.name %>
-      <%= link_to "Go to #{sub_user.name}'s profile", sub_user %>
+      <%= image_tag "user_icon.png", class: "sub-user-icon" %>
     </div>
+    <div class="sub-user-name">
+    <%= sub_user.name %>
+    </div>
+     <%end%>
   <% end %>
-  <div class= "sub-users">
-    <%= "Add a new sub-user" %>
       <%= link_to new_sub_user_path do %>
-      <%= image_tag "plus.png", class: "sub-user-icon" %>
+        <div class= "sub-users">
+          <%= image_tag "add_icon.png", class: "sub-user-icon" %>
+        </div>
+        <div class = "new-user-name">
+          <%= "Add a new sub-user" %>
+        </div>
       <% end %>
-  </div>
 </div>
 </div>
