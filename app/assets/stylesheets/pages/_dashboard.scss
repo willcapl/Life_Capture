@@ -10,12 +10,17 @@
   color: black;
   display: flex;
   flex-direction: column;
-  background-color: #A3B18A;
+  background-color:  #7A80BA;
   padding: 10px;
   width: 220px;
   height: 220px;
   flex-shrink: 0;
   border-radius: 15px;
+}
+
+.sub-users:hover {
+  background-color: #2B326F;
+  transition: background-color 0.5s ease;
 }
 
 .sub-user-icon{
@@ -28,4 +33,30 @@
 
 a:link {
   text-decoration: none;
+}
+
+.sub-user-name {
+  display: flex;
+  justify-content: center;
+  font-family: gill sans;
+  font-weight: 700;
+  color: white;
+  background-color: #2B326F;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 0px;
+  margin: 10px 20px;
+}
+
+.new-user-name{
+  display: flex;
+  justify-content: center;
+  font-family: gill sans;
+  font-weight: 700;
+  color: white;
+  background-color: #2B326F;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 0px;
+  margin: 10px 20px;
 }
