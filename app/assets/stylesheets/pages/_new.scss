@@ -44,6 +44,20 @@
   gap: 10px;
   margin-top: 5px;
   color: white;
+  cursor: pointer;
+  margin-bottom: 70px;
+}
+
+
+.next-button:hover{
+  background: #50596f;
+  // box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.35);
+  // border: 2px solid #686f7a;
+}
+.previous-button:hover{
+  background: #50596f;
+  // box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.35);
+  // border: 2px solid #686f7a;
 }
 
 .previous-button{
@@ -56,6 +70,8 @@
   gap: 10px;
   margin-top: 5px;
   color: white;
+  cursor: pointer;
+  margin-bottom: 70px;
 }
 
 .hide-question {
@@ -81,4 +97,21 @@
     opacity: 1;
   }
   display: inline;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color:#424B61 ;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+  border-radius: 10px;
 }
