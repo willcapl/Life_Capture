@@ -3,6 +3,8 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+// import { Application,Controller } from "stimulus"
+// // import "faq_controller"from ".controllers/faq_controller.js"
 import QuestionButtonController from "./controllers/question_button_controller.js"
 Stimulus.register("next-button", QuestionButtonController)
 

@@ -1,22 +1,118 @@
-<div class="fAQ_Title">
+<head>
+ <link rel="stylesheet" href="styles.css">
+
+  <div class="fAQ_Title"></div>
+
+
+</head>
+
+<body>
    <h1>FAQ</h1>
-</div>
 
-<div class="faq_search_bar">
-  <form action="/search" method="get">
-    <input type="text" name="q" placeholder="Search...">
-    <button type="FAQsubmit">Search</button>
-  </form>
-</div>
-
-<div class="FAQ_questions">
-  <div class = "all-faqs">
-    <div class = "faq-card">
-      Why use life capture?
+<div class = "faq-background-image "data-controller="faq">
+    <div class="faq_search_bar">
+      <form action="/search" method="get">
+        <input type="text" name="search-button" placeholder="                Search">
+        <button type="FAQsubmit">Search</button>
+      </form>
     </div>
-    <li> Make the most of your life capture </li>
-    <li>Help with recording videos</li>
-    <li>Trouble shooting</li>
-    <li>Privacy </li>
-  </div>
+
+    <div class="FAQ_dropdow">
+      <div class = "select">
+        <span class="selected">FAQs</span>
+        <div class= "caret"></div>
+      </div>
+      <ul class="menu d-none">
+        <li class= "active"> Why use Life Capture? </li>
+        <li class="active">make the most of your life capture</li>
+        <li class="active">Help with recording videos</li>
+        <li class="active">Trouble shooting </li>
+        <li class="active">Privacy</li>
+      </ul>
+      </div>
+
+      <div class="dropdown">
+        <div class="select" >
+          <span class= "selected">Why use Life Capture?</span>
+        <div data-faq-target="oneCaret" data-action="click->faq#reveal"class= "caret"></div>
+        </div>
+        <ul data-faq-target="oneDropdown" class="menu d-none">
+          <li class="active">these are reasons </li>
+          <li>these are other reasons</li>
+          <li>this is the list of reasons</li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <div class="select" >
+          <span class= "selected"> Make the most of your Life Capture</span>
+          <div data-faq-target="twoCaret"  data-action="click->faq#reveal"class= "caret"></div>
+      </div>
+        <ul data-faq-target="twoDropdown" class="menu d-none">
+          <li class="active">these are reasons </li>
+          <li>these are other reasons</li>
+          <li>this is the list of reasons</li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+        <div class="select" >
+          <span class= "selected">Help with recording videos </span>
+          <div data-faq-target="threeCaret"  data-action="click->faq#reveal"class= "caret"></div>
+      </div>
+        <ul data-faq-target="threeDropdown" class="menu d-none">
+          <li class="active">these are reasons </li>
+          <li>these are other reasons</li>
+          <li>this is the list of reasons</li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+        <div class="select" >
+          <span class= "selected"> Trouble shooting </span>
+          <div data-faq-target="fourCaret" data-action="click->faq#reveal"class= "caret"></div>
+      </div>
+        <ul data-faq-target="fourDropdown" class="menu d-none">
+          <li class="active">these are reasons </li>
+          <li>these are other reasons</li>
+          <li>this is the list of reasons</li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+        <div class="select" >
+          <span class= "selected"> Privacy</span>
+          <div data-faq-target="fiveCaret"  data-action="click->faq#reveal"class= "caret"></div>
+      </div>
+        <ul data-faq-target="fiveDropdown" class="menu d-none">
+          <li class="active">these are reasons </li>
+          <li>these are other reasons</li>
+          <li>this is the list of reasons</li>
+      </ul>
+    </div>
+
 </div>
+
+</body>
+    <%# <div class = "faq-card">
+
+    </div>
+
+    <div>
+      <li> Make the most of your life capture </li>
+    <div>
+
+    <div>
+      <li>Help with recording videos</li>
+    </div>
+
+    <div>
+      <li>Trouble shooting</li>
+    <div>
+
+    <div>
+     <li>Privacy </li>
+    </div>
+
+  </div>
+</div> %>
