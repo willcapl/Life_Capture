@@ -19,18 +19,7 @@
 
 }
 
-.start-btn {
- border: none;
- width: 120px;
- aspect-ratio: 1;
- border-radius: 50%;
- position: absolute;
- bottom: 50px;
- z-index: 5;
- left: calc(50% - 60px);
-}
-
-.stop-btn {
+.video-btn {
   border: none;
   width: 120px;
   aspect-ratio: 1;
@@ -38,4 +27,28 @@
   position: absolute;
   bottom: 50px;
   left: calc(50% - 60px);
+}
+
+.save-btn {
+  border: none;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.rerec-btn {
+  border: none;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%
+}
+
+.video-btns {
+  position: relative;
+  bottom: 220px;
+  z-index: 3;
+  width: 300px;
+  display: flex;
+  left: calc(50% - 150px);
+  justify-content: space-between;
 }

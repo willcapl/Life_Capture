@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
       if @question.update(question_params)
         p @question.video
         p @question.video.attached?
+        redirect_to sub_user_show_path(@sub_user)
         format.html { redirect_to sub_user_show_path(@sub_user), notice: 'Video was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
