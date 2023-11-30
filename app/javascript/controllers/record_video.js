@@ -5,6 +5,7 @@ const initRecordVideo = () => {
   const stop = document.getElementById("stop");
   const live = document.getElementById("live");
   const form = document.querySelector("form");
+  const videoButtons = document.querySelector(".video-btns")
   const recordVideoID = form.dataset.recordVideoId
   const subUserID = form.dataset.subUserId
   const url = `/sub_users/${subUserID}/questions/${recordVideoID}`
@@ -25,6 +26,7 @@ const initRecordVideo = () => {
     live.srcObject.getTracks().forEach(track => track.stop());
   }
   // stop.addEventListener("click", stopVideo);
+
   const stopRecording = () => {
     return new Promise(resolve => stop.addEventListener("click", resolve));
   }
@@ -49,6 +51,10 @@ const initRecordVideo = () => {
     ])
     .then(() => data);
   }
+  stop.addEventListener("click", () => {
+    stop.classList.add('d-none')
+    videoButtons.classList.remove('d-none')
+  } )
   start.addEventListener("click", () => {
     start.classList.add('d-none')
     navigator.mediaDevices.getUserMedia({
