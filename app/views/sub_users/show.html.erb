@@ -12,6 +12,32 @@
         <i class="fas fa-plus plus-icon"></i>
       </div>
 
+    <div class="videos-container">
+      <% if @questions.find { |question| question.video.attached? } %>
+        <div class="video-card-container">
+          <% questions_attached = @questions.select { |question| question.video.attached?} %>
+          <% questions_attached.each do |attached_question| %>
+            <div class="video-card">
+              <div class="video-card-title">
+                <h4> <%= attached_question.title %></h4>
+              </div>
+              <div class="video-card-box">
+                <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+              </div>
+              <div>
+              <%= link_to 'rerecord video', sub_user_question_path(@sub_user, attached_question) %>
+              <%= link_to 'delete memory', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+
+      <% else %>
+        <h1>You have no memories yet...</h1>
+      <% end %>
+
+    </div>
+
 </div>
 
   <!--Centered Modal < Shakzz :) -->
@@ -45,10 +71,6 @@
   <!--Javascript -->
 
 
-
-    <div class="videos-container">
-      <h3>You have no memories yet...</h3>
-    </div>
 
   </div>
 </div>

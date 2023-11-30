@@ -1,5 +1,4 @@
 .show-container {
-  height: 100vh;
   border-radius: 20px;
   background-color: #f7f7f7;
   margin: 24px 0;
@@ -38,7 +37,39 @@
   background-color: #DCDDE4;
   border-radius: 20px;
   width: 100%;
-  margin: 24px auto;
+  margin-top: 16px;
   padding: 16px;
-  height: calc(100% - 136px)
+}
+
+
+.video-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.video-card {
+  width: 100%;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.2);
+  padding: 16px;
+}
+
+.video-card-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.video-card-box {
+  margin: 16px 0;
+}
+
+.video-card-title {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
 }

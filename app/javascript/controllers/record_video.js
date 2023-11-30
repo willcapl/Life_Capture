@@ -50,6 +50,7 @@ const initRecordVideo = () => {
     .then(() => data);
   }
   start.addEventListener("click", () => {
+    start.classList.add('d-none')
     navigator.mediaDevices.getUserMedia({
       video: true,
       audio: true
