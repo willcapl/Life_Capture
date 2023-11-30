@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" data-controller="question-button">
   <h1>Add a new Profile</h1>
-  <div class="questions-page-card" data-controller="question-button">
+  <div class="questions-page-card">
     <%= form_with model: @sub_user, url: sub_users_path do |f| %>
       <div class = "question-card" data-question-button-target="questionCard">
         <div>
@@ -28,6 +28,7 @@
         <div id="myProgress">
           <div id="myBar" style="width: 0%;"></div>
         </div>
+
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :What_is_your_relationship_to_the_user, class:"question-card-text" %>
@@ -151,21 +152,25 @@
         <div id="myBar" style="width: 88.8%;"></div>
       </div>
       </div>
-        <div class = "question-card" data-question-button-target="questionCard">
+        <div class = "question-card" data-question-button-target="questionCard last">
           <%= f.label :'What did you do after retirement', class:"question-card-text"  %>
           <%= f.text_field :life_after_retirement, class:"answer-card-input" %>
           <div class ="question-page-button">
-          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
+            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+                <%= "Previous Question" %>
+              </div>
+              <div class="submit-button">
+                <%= f.submit "Submit", class:"btn-sub-user-form", data: { question_button_target: "submitButton", action: "click->question-button#submit" } %>
+              </div>
             </div>
-        <div class="submit-button" data-question-button-target="submitButton">
-          <%= f.submit "Submit", class:"btn-sub-user-form" %>
-        </div>
-          </div>
             <div id="myProgress">
-        <div id="myBar" style="width: 100%;"></div>
-      </div>
+          <div id="myBar" style="width: 100%;"></div>
+        </div>
       </div>
     <% end %>
   </div>
+  <div class="loading-message" data-question-button-target="loadingMessage" style="display:none">
+    Loading, generating questions...
+  </div>
 </div>
+<div class="lds-hourglass"></div>

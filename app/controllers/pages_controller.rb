@@ -7,4 +7,5 @@ class PagesController < ApplicationController
   def dashboard
     current_user.sub_users
   end
+
 end

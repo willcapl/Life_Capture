@@ -16,7 +16,7 @@ class SubUsersController < ApplicationController
     @sub_user = SubUser.new(sub_user_params)
     @sub_user.user = current_user
     if @sub_user.save
-      redirect_to @sub_user
+      loading(@sub_user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,6 +39,11 @@ class SubUsersController < ApplicationController
     @sub_user = SubUser.find(params[:id])
     @sub_user.destroy
     redirect_to dashboard_path
+  end
+
+  def loading(user)
+    sleep(5)
+    redirect_to sub_user_path(user)
   end
 
   private
