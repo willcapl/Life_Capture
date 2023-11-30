@@ -1,7 +1,7 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["questionCard"]
+  static targets = ["questionCard", "submitButton", "loadingMessage", "last"];
 
   connect() {
     console.log("Question button controller connected");
@@ -32,7 +32,6 @@ export default class extends Controller {
     }
   }
 
-
   back(event) {
     let currentQuestion = event.target.closest(".question-card");
     if (currentQuestion) {
@@ -51,18 +50,20 @@ export default class extends Controller {
 
   checkLastQuestion(question) {
     let isLastQuestion = !question.nextElementSibling;
-    if (this.hasSubmitButtonTarget) { // Check if submitButton target exists
+    if (this.hasSubmitButtonTarget) {
       this.submitButtonTarget.style.display = isLastQuestion ? "block" : "none";
+      this.loadingMessageTarget.style.display = "none";
     }
   }
 
-  // updateProgressBar(currentIndex) {
-  //   let totalQuestions = this.questionCardTargets.length;
-  //   let progress = (currentIndex + 1) / totalQuestions * 100;
-  //   const elem = document.getElementById("myBar");
-  //   console.log(elem)
-  //   document.getElementById("myBar").style.width = `${progress}%`;
-  //   // elem.innerHTML = Math.round(progress) + "%";
-  //   console.log("Progress:", progress); // Debugging
-  // }
+  submit(event) {
+
+    // Show loading message
+    this.loadingMessageTarget.style.display = "block";
+    // Simulate an asynchronous action (replace with your actual submission logic)
+    setTimeout(() => {
+      // Assuming submission is successful, you can redirect or perform other actions
+      console.log("Form submitted successfully!");
+    }, 2000);
+  }
 }

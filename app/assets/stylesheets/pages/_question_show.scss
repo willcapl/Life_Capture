@@ -6,3 +6,49 @@
   -ms-filter: fliph; /*IE*/
   filter: fliph; /*IE*/
 }
+
+.record-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  aspect-ratio: 2/1;
+  background: black;
+}
+
+.live-video-record {
+
+}
+
+.video-btn {
+  border: none;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 60px);
+}
+
+.save-btn {
+  border: none;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.rerec-btn {
+  border: none;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%
+}
+
+.video-btns {
+  position: relative;
+  bottom: 220px;
+  z-index: 3;
+  width: 300px;
+  display: flex;
+  left: calc(50% - 150px);
+  justify-content: space-between;
+}

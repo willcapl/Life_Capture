@@ -1,9 +1,14 @@
 class SubUsersController < ApplicationController
   def show
     @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def new
+    @sub_user = SubUser.new
+  end
+
+  def other_new
     @sub_user = SubUser.new
   end
 
@@ -35,6 +40,11 @@ class SubUsersController < ApplicationController
     @sub_user = SubUser.find(params[:id])
     @sub_user.destroy
     redirect_to dashboard_path
+  end
+
+  def loading(user)
+    sleep(2)
+    redirect_to sub_user_path(user)
   end
 
   private
