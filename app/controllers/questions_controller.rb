@@ -33,7 +33,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :video)
   end
-
-  def show
-  end
 end

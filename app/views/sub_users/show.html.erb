@@ -6,6 +6,10 @@
   <%= link_to 'Delete Subuser', sub_user_path(@sub_user), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'} %>
   <div class="show-container">
 
+
+
+
+
     <!-- Button -->
       <div class="btn-charcol" data-controller="copy" data-target="copy.source" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <h3>Create new memory</h3>
@@ -13,6 +17,7 @@
       </div>
 
 </div>
+
 
   <!--Centered Modal < Shakzz :) -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="copy">
