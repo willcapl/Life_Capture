@@ -42,7 +42,7 @@ class SubUsersController < ApplicationController
   end
 
   def loading(user)
-    sleep(5)
+    sleep(2)
     redirect_to sub_user_path(user)
   end
 
