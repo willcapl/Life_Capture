@@ -19,13 +19,19 @@ class QuestionsController < ApplicationController
       if @question.update(question_params)
         p @question.video
         p @question.video.attached?
-        format.html { render :show, notice: 'Video was successfully updated.' }
+        format.html { redirect_to sub_user_show_path(@sub_user), notice: 'Video was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to sub_user_show_path(@question.sub_user), status: :see_other
   end
 
   private

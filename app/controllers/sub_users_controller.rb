@@ -1,6 +1,7 @@
 class SubUsersController < ApplicationController
   def show
     @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def new

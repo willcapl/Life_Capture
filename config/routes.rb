@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
     resources :questions, only: [:index, :show, :update]
   end
+  resources :questions, only: [:destroy]
   get '/sub_users/:id', to: 'sub_users#show', as: 'sub_user_show'
   get 'dashboard', to: 'pages#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
