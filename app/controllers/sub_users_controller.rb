@@ -11,6 +11,7 @@ class SubUsersController < ApplicationController
     @sub_user = SubUser.new(sub_user_params)
     @sub_user.user = current_user
     if @sub_user.save
+      @sub_user.content
       redirect_to @sub_user
     else
       render :new, status: :unprocessable_entity
