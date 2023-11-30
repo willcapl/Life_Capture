@@ -2,7 +2,18 @@
   <h1>Add a new Profile</h1>
   <div class="questions-page-card" data-controller="question-button">
     <%= form_with model: @sub_user, url: sub_users_path do |f| %>
-    <%#= simple_form_for @sub_users do |f| %>
+      <div class = "question-card" data-question-button-target="questionCard">
+        <div>
+        <h2>Welcome to Life Capture!</h2>
+        <h5>In order to ask you some interesting questions about your life, we first need to know a little about you and your past.</h5>
+        <h5>If you're happy to proceed click the button below</h5>
+        </div>
+        <div class ="question-page-button">
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Ok, let's proceed"  %>
+          </div>
+        </div>
+      </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :Please_enter_your_name, class:"question-card-text" %>
         <%= f.text_field :name, class:"answer-card-input", autofocus: true %>
