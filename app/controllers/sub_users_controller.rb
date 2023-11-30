@@ -7,6 +7,10 @@ class SubUsersController < ApplicationController
     @sub_user = SubUser.new
   end
 
+  def other_new
+    @sub_user = SubUser.new
+  end
+
   def create
     @sub_user = SubUser.new(sub_user_params)
     @sub_user.user = current_user
