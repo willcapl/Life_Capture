@@ -6,3 +6,36 @@
   -ms-filter: fliph; /*IE*/
   filter: fliph; /*IE*/
 }
+
+.record-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  aspect-ratio: 2/1;
+  background: black;
+}
+
+.live-video-record {
+
+}
+
+.start-btn {
+ border: none;
+ width: 120px;
+ aspect-ratio: 1;
+ border-radius: 50%;
+ position: absolute;
+ bottom: 50px;
+ z-index: 5;
+ left: calc(50% - 60px);
+}
+
+.stop-btn {
+  border: none;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 60px);
+}
