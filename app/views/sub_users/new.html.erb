@@ -3,6 +3,18 @@
   <div class="questions-page-card" data-controller="question-button">
     <%= form_with model: @sub_user, url: sub_users_path do |f| %>
     <%#= simple_form_for @sub_users do |f| %>
+    <div class = "question-card" data-question-button-target="questionCard">
+        <div>
+        <h2>Welcome to Life Capture!</h2>
+        <h5>In order to generate questions about your life, we first need to know a little about you.</h5>
+        <h5>If you're happy to proceed click the button below</h5>
+        </div>
+        <div class ="question-page-button">
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Ok, let's proceed"  %>
+          </div>
+        </div>
+      </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :Please_enter_your_name, class:"question-card-text" %>
         <%= f.text_field :name, class:"answer-card-input", autofocus: true %>
@@ -36,7 +48,7 @@
       <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :"What is your date of birth?", class:"question-card-text" %>
           <%= f.date_select :dob, :as => :date,
-                :start_year => 1910, :end_year => 2010,
+                :start_year => 1915, :end_year => 2000,
                 :order => [:day, :month, :year], class:"answer-card-input" %>
           <div class ="question-page-button">
             <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
