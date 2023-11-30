@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   get '/sub_users/:id', to: 'sub_users#show', as: 'sub_user_show'
   get 'dashboard', to: 'pages#dashboard'
+  get 'loading', to: 'pages#loading', as: 'loading'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
