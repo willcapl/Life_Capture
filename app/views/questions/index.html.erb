@@ -3,10 +3,15 @@
   <div>
     <h2>All Q's</h2>
     <ul>
-      <% @questions.each do |question| %>
-        <li>
-          <%= link_to question.title, sub_user_question_path(@sub_user, question) %>
-        </li>
+      <% questions_not_attached = @questions.reject { |question| question.video.attached?} %>
+      <% if questions_not_attached.empty? %>
+        <h3>You have answered all the questions.</h3>
+      <% else %>
+        <% questions_not_attached.each do |question| %>
+          <li>
+            <%= link_to question.title, sub_user_question_path(@sub_user, question) %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 

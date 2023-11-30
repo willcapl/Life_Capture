@@ -26,7 +26,7 @@
                 <h4> <%= attached_question.title %></h4>
               </div>
               <div class="video-card-box">
-                <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
               </div>
               <div>
               <%= link_to 'rerecord video', sub_user_question_path(@sub_user, attached_question) %>

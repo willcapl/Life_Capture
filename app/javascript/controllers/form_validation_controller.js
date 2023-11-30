@@ -21,7 +21,7 @@ export default class extends Controller {
   handleSuccess(response) {
     // Code to handle success (e.g., remove error message)
   }
-
+g
   handleError(error) {
     // Code to handle error (e.g., display error message)
   }
