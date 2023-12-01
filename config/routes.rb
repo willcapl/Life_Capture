@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
