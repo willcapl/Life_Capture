@@ -1,11 +1,14 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body"];
+  static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body", "loadingMessageOther", "bodyOther"];
 
   connect() {
     console.log("Question button controller connected");
+    console.log(this.bodyTarget);
+    console.log(this.loadingMessageOtherTarget);
     this.initializeQuestionVisibility();
+    console.log(this.loadingMessageOtherTarget.value);
   }
 
   initializeQuestionVisibility() {
@@ -60,6 +63,19 @@ export default class extends Controller {
     // Show loading message
     // this.loadingMessageTarget.class.display = "block";
     this.loadingMessageTarget.classList.remove('d-none');
+    this.bodyTarget.classList.add('d-none');
+    // Simulate an asynchronous action (replace with your actual submission logic)
+    setTimeout(() => {
+      // Assuming submission is successful, you can redirect or perform other actions
+      console.log("Form submitted successfully!");
+    }, 2000);
+  }
+
+  submitOther(event) {
+
+    // Show loading message
+    // this.loadingMessageTarget.class.display = "block";
+    this.loadingMessageOtherTarget.classList.remove('d-none');
     this.bodyTarget.classList.add('d-none');
     // Simulate an asynchronous action (replace with your actual submission logic)
     setTimeout(() => {
