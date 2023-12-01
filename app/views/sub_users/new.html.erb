@@ -1,12 +1,12 @@
 <div class="container" data-controller="question-button">
-  <div data-question-button-target="body">
-    <div class="header-new-subuser">
-      <h1>Add a new Profile</h1>
-    </div>
-    <div class="questions-page-card">
-      <%= form_with model: @sub_user, url: sub_users_path do |f| %>
-      <div class = "question-card" data-question-button-target="questionCard">
-        <div>
+  <div class="header-new-subuser">
+    <h1>Add a new Profile</h1>
+  </div>
+  <hr>
+  <div class="questions-page-card">
+    <%= form_with model: @sub_user, url: sub_users_path do |f| %>
+    <div class = "question-card" data-question-button-target="questionCard">
+        <div class="welcome-card">
           <h2>Welcome to Life Capture!</h2>
           <h5>In order to ask you some interesting questions about your life, we first need to know a little about you and your past.</h5>
           <h5>If you're happy to proceed click the button below</h5>
