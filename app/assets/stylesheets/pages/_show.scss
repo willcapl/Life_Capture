@@ -5,6 +5,22 @@
   padding: 24px;
 }
 
+.header-name h1{
+  font-family: EB Garamond;
+  color: #5D6986, 80%;
+}
+
+.btn.btn-secondary{
+  background-color: #2B326F;
+  border-radius: 20px;
+  height: 35px;
+}
+
+.top-section-show {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-charcol {
   background-color: #2B326F;
   border-radius: 20px;
@@ -15,6 +31,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-family: dm serif design;
 }
 
 .plus-icon-bg {
