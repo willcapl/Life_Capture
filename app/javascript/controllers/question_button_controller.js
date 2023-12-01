@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import Typed from 'typed.js';
 
 export default class extends Controller {
   static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body", "loadingMessageOther", "bodyOther"];
@@ -16,8 +17,7 @@ export default class extends Controller {
       } else {
         card.classList.add("hide-question");
       }
-    });
-    this.updateProgressBar(0); // Initialize progress bar
+    }); // Initialize progress bar
   }
 
   reveal(event) {
@@ -67,6 +67,11 @@ export default class extends Controller {
       // Assuming submission is successful, you can redirect or perform other actions
       console.log("Form submitted successfully!");
     }, 2000);
+
+    const typed = new Typed('#element', {
+      strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
+      typeSpeed: 50,
+    });
   }
 
   submitOther(event) {
@@ -74,11 +79,16 @@ export default class extends Controller {
     // Show loading message
     // this.loadingMessageTarget.class.display = "block";
     this.loadingMessageOtherTarget.classList.remove('d-none');
+    new Typed('#element', {
+      strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
+      typeSpeed: 50,
+    });
     this.bodyTarget.classList.add('d-none');
     // Simulate an asynchronous action (replace with your actual submission logic)
     setTimeout(() => {
       // Assuming submission is successful, you can redirect or perform other actions
       console.log("Form submitted successfully!");
     }, 2000);
+
   }
 }
