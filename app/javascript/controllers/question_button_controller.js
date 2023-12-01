@@ -57,13 +57,6 @@ export default class extends Controller {
   }
 
   submit(event) {
-
-    // Show loading message
-    this.loadingMessageTarget.style.display = "block";
-    // Simulate an asynchronous action (replace with your actual submission logic)
-    setTimeout(() => {
-      // Assuming submission is successful, you can redirect or perform other actions
-      console.log("Form submitted successfully!");
-    }, 2000);
+    console.log('submitted');
   }
 }
