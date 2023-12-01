@@ -1,9 +1,14 @@
 class SubUsersController < ApplicationController
   def show
     @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def new
+    @sub_user = SubUser.new
+  end
+
+  def other_new
     @sub_user = SubUser.new
   end
 
@@ -11,7 +16,8 @@ class SubUsersController < ApplicationController
     @sub_user = SubUser.new(sub_user_params)
     @sub_user.user = current_user
     if @sub_user.save
-      redirect_to @sub_user
+      @sub_user.content
+      redirect_to sub_user_questions_path(@sub_user)
     else
       render :new, status: :unprocessable_entity
     end

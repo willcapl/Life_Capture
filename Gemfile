@@ -55,6 +55,9 @@ gem "sassc-rails"
 gem "faker"
 gem "dotenv-rails"
 gem "cloudinary"
+gem "ruby-openai"
+gem "rails_admin", "3.0"
+
 
 group :development, :test do
   gem "dotenv-rails"
@@ -80,3 +83,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem "sassc-rails"
