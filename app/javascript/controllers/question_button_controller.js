@@ -4,11 +4,9 @@ export default class extends Controller {
   static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body", "loadingMessageOther", "bodyOther"];
 
   connect() {
+    this.initializeQuestionVisibility();
     console.log("Question button controller connected");
     console.log(this.bodyTarget);
-    console.log(this.loadingMessageOtherTarget);
-    this.initializeQuestionVisibility();
-    console.log(this.loadingMessageOtherTarget.value);
   }
 
   initializeQuestionVisibility() {

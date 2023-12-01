@@ -1,11 +1,11 @@
 <div class="container" data-controller="question-button">
-  <div class="header-new-subuser">
-    <h1>Add a new Profile</h1>
-  </div>
-  <hr>
-  <div class="questions-page-card">
-    <%= form_with model: @sub_user, url: sub_users_path do |f| %>
-    <div class = "question-card" data-question-button-target="questionCard">
+  <div data-question-button-target="body">
+    <div class="header-new-subuser">
+      <h1>Add a new Profile</h1>
+    </div>
+    <div class="questions-page-card">
+      <%= form_with model: @sub_user, url: sub_users_path do |f| %>
+      <div class = "question-card" data-question-button-target="questionCard">
         <div class="welcome-card">
           <h2>Welcome to Life Capture!</h2>
           <h5>In order to ask you some interesting questions about your life, we first need to know a little about you and your past.</h5>
@@ -169,7 +169,7 @@
       <% end %>
     </div>
     </div>
-    <div class="loading-card" data-question-button-target="loadingMessage">
+    <div class="loading-card d-none" data-question-button-target="loadingMessage">
         <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
         <h3>Creating your custom questions...</h3>
     </div>
