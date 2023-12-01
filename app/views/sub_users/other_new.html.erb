@@ -1,4 +1,5 @@
 <div class="container">
+  <div data-question-button-target="body">
   <h1>Add a new Profile</h1>
   <div class="questions-page-card" data-controller="question-button">
     <%= form_with model: @sub_user, url: sub_users_path do |f| %>
@@ -167,5 +168,10 @@
       </div>
       </div>
     <% end %>
+  </div>
+  </div>
+  <div class="loading-card d-none" data-question-button-target="loadingMessage">
+    <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
+    <h3>Creating your custom questions...</h3>
   </div>
 </div>

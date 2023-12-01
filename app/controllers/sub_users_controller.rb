@@ -42,11 +42,6 @@ class SubUsersController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def loading(user)
-    sleep(2)
-    redirect_to sub_user_path(user)
-  end
-
   private
 
   def sub_user_params
