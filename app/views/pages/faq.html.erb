@@ -1,167 +1,22 @@
-<%# <%#
-      <%# <div class = "faq-background-image "data-controller="faq"> %>
-    <%# <div class="faq_search_bar">
-      <form action="/search" method="get">
-        <input type="text" name="search-button" placeholder="                Search">
-        <button type="FAQsubmit">Search</button>
-      </form>
-    </div>
-
-    <div class= "caret"></div>
-
-<div class="accordian">
-  <div>
-  <input type="checkbox" name ="example_accordian" id="section1" class= "accordian__input">
-    <label for="section1" class="accordion__lable">Make the most of your Life Capture</label>
-      <p>
-      lots of reasons to use life capture
-      </p>
-  </div>
+<div class="fAQ_Title">
+   <h1>FAQ</h1>
 </div>
 
- <div class="accordian">
-    <div>
-    <input type="checkbox" name ="example_accordian" id="section2" class= "accordian__input">
-      <label for="section1" class="accordion__lable">Help with recording videos</label>
-        <p>
-        lots of reasons to use life capture
-        </p>
-    </div>
-  </div> %>
-<%#
- <div class="accordian">
-    <div>
-    <input type="checkbox" name ="example_accordian" id="section3" class= "accordian__input">
-      <label for="section1" class="accordion__lable">Trouble shooting</label>
-        <p>
-        lots of reasons to use life capture
-        </p>
-    </div>
-  </div> %>
+<div class="faq_search_bar">
+  <form action="/search" method="get">
+    <input type="text" name="q" placeholder="Search...">
+    <button type="FAQsubmit">Search</button>
+  </form>
+</div>
 
-<%# <div class="accordian">
-  <div>
-    <input type="checkbox" name ="example_accordian" id="section3" class= "accordian__input">
-    <label for="section1" class="accordion__lable">Privacy</label>
-    <p>
-    lots of reasons to use life capture
-    </p>
+<div class="FAQ_questions">
+  <div class = "all-faqs">
+    <div class = "faq-card">
+      Why use life capture?
+    </div>
+    <li> Make the most of your life capture </li>
+    <li>Help with recording videos</li>
+    <li>Trouble shooting</li>
+    <li>Privacy </li>
   </div>
-</div> %>
-
-
-
-<%#
-<head>
- <link rel="stylesheet" href="styles.css">
-
-  <div class="fAQ_Title"></div>
-</head> %>
-
-<%# <body> %>
-   <h1>FAQ</h1>
-
-  <div class = "faq-background-image ">
-    <div class="faq_search_bar">
-      <form action="/search" method="get">
-        <input type="text" name="search-button" placeholder="                Search">
-        <button type="FAQsubmit">Search</button>
-      </form>
-    </div>
-    </div>
-
-  <div class = "faq-background-image "data-controller="faq">
-    <div class="FAQ_dropdow" >
-   <div class= "caret"></div>
-
-
-       <div class="dropdown">
-        <div class="select" >
-          <span class= "selected">Why use Life Capture?</span>
-        <div data-faq-target="oneCaret" data-action="click->faq#reveal"class= "caret"></div>
-        </div>
-        <ul data-faq-target="oneDropdown" class="menu d-none">
-          <li class="active">Preserve Family Legacy: Create a timeless archive that captures the essence of your family's unique history. </li>
-          <li>Easy-to-Use Platform: Our user-friendly interface ensures that even those less familiar with technology can participate effortlessly.</li>
-          <li>Meaningful Connections: Strengthen the bonds between generations by sharing stories that resonate with the heart.</li>
-          <li>Accessible to All Ages: Life Capture is designed to be inclusive, allowing individuals of all ages to contribute their stories.</li>
-        </ul>
-      </div>
-
-
-       <div class="dropdown" >
-         <div class= "select">
-          <span class= "selected"> Make the most of your Life Capture</span>
-        <div data-faq-target="twoCaret"  data-action="click->faq#reveal"class= "caret"></div>
-         </div>
-       <ul data-faq-target="twoDropdown" class="menu d-none">
-          <li class="active">
-           recording, take a moment to reflect on each question. Consider the emotions, memories, and experiences you want to share. This thoughtful preparation will add depth and authenticity to your responses.
-         </li>
-
-          <li>
-          Be Yourself and Speak from the Heart:
-          Authenticity is key. Speak in your own voice, and don't worry about being perfect. The goal is to capture the real you and your genuine emotions.Share personal anecdotes, insights, and reflections. Don't be afraid to show vulnerability—it's often these genuine moments that create the most powerful and memorable videos.
-         </li>
-
-          <li>
-          Consider organizing your responses chronologically or thematically to create a cohesive and easy-to-follow narrative.Remember, the goal is to create a lasting and meaningful archive of memories. Enjoy the process, and don't hesitate to revisit and update your videos over time as new stories and reflections emerge. Life Capture is about preserving the essence of who you are for future generations, so let your unique personality and experiences shine through in each recording.
-         </li>
-
-       </ul>
-      </div>
-
-
-     <div class="dropdown">
-        <div class="select" >
-          <span class= "selected">Help with recording videos </span>
-        <div data-faq-target="threeCaret"  data-action="click->faq#reveal"class= "caret"></div>
-        </div>
-        <ul data-faq-target="threeDropdown" class="menu d-none">
-          <li class="active"> Choose a Quiet and Well-Lit Environment:
-          Opt for a quiet space with minimal background noise to ensure clear audio and a distraction-free recording. Natural light is ideal, so position yourself facing a window or use soft, diffused lighting to illuminate your face.
-          Good lighting enhances video quality and makes your expressions more visible.</li>
-
-          <li> can everyone can see you properly?
-          Make sure you are in focus.
-          not too close or too far away.
-          </li>
-
-          <li>
-          Audio Considerations:
-          External Microphone: If possible, use an external microphone for better audio quality. Good audio is equally important as video quality.
-          Minimize Background Noise: Choose a quiet location to minimize background noise. Avoid shooting in areas with heavy traffic, machinery, or other sources of disturbance.
-          </li>
-          <li>
-          Remember practice makes perfect, don't be afraid to experiment by doing a few test videos, Familiarize yourself with your equipment, and don't hesitate to try different techniques to find what works best for your specific situation.
-          </li>
-
-      </ul>
-    </div>
-
-    <div class="dropdown">
-        <div class="select" >
-          <span class= "selected"> Trouble shooting </span>
-          <div data-faq-target="fourCaret" data-action="click->faq#reveal"class= "caret"></div>
-      </div>
-        <ul data-faq-target="fourDropdown" class="menu d-none">
-          <li class="active">Have you tried turning it off and on again  ? </li>
-          <li>is the camera on? </li>
-          <li>Contact our helpful team, Digby always likes talking to the elderly </li>
-      </ul>
-    </div>
-
-    <div class="dropdown">
-        <div class="select" >
-          <span class= "selected"> Privacy</span>
-          <div data-faq-target="fiveCaret"  data-action="click->faq#reveal"class= "caret"></div>
-      </div>
-        <ul data-faq-target="fiveDropdown" class="menu d-none">
-          <li class="active">Life capture do not share you information with any third party companies </li>
-          <li>LIFE CAPTURE terms of service</li>
-          <li>(GDPR)</li>
-      </ul>
-    </div>
- </div>
-<%#
-</body> %>
+</div>
