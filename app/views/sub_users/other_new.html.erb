@@ -1,9 +1,9 @@
-<div class="container" data-controller="question-button">
+<div class="container">
   <div data-question-button-target="body">
   <h1>Add a new Profile</h1>
-  <div class="questions-page-card">
+  <div class="questions-page-card" data-controller="question-button">
     <%= form_with model: @sub_user, url: sub_users_path do |f| %>
-     <div class="question-card" data-question-button-target="questionCard">
+     <div class = "question-card" data-question-button-target="questionCard">
         <div>
           <h2>Welcome to Life Capture!</h2>
           <h5>In order to generate questions about your life, we first need to know a little about you.</h5>
@@ -29,21 +29,6 @@
         <div id="myProgress">
           <div id="myBar" style="width: 0%;"></div>
         </div>
-      </div>
-      <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :What_is_your_relationship_to_them, class:"question-card-text" %>
-          <%= f.text_field :relationship_to_user, class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-          <div id="myProgress">
-            <div id="myBar" style="width: 11.1%; transition: 2s;"></div>
-          </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :"What is their date of birth?", class:"question-card-text" %>
@@ -77,21 +62,7 @@
         <div id="myBar" style="width: 33.3%;"></div>
       </div>
       </div>
-      <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :'Where were they born' , class:"question-card-text" %>
-          <%= f.text_field :birthplace, class:"answer-card-input"%>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 44.4%;"></div>
-      </div>
-      </div>
+
         <div class = "question-card" data-question-button-target="questionCard">
           <%= f.label :'Where did they primarily grow up?', class:"question-card-text" %>
           <%= f.text_field :childhood_location, class:"answer-card-input" %>
@@ -159,7 +130,7 @@
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
               <%= "Previous Question" %>
             </div>
-        <div class="submit-button" data-question-button-target="submitButton" data-action="click->question-button#submitOther">
+        <div class="submit-button" data-question-button-target="submitButton">
           <%= f.submit "Submit", class:"btn-sub-user-form" %>
         </div>
           </div>
@@ -170,10 +141,8 @@
     <% end %>
   </div>
   </div>
-    <div class="loading-card d-none" data-question-button-target="loadingMessageOther">
-      <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
-      <div class="d-flex loading-text">
-        <h3 id="element"></h3>
-      </div>
-    </div>
+  <div class="loading-card d-none" data-question-button-target="loadingMessage">
+    <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
+    <h3>Creating your custom questions...</h3>
+  </div>
 </div>
