@@ -5,28 +5,28 @@
   </div>
   <div class="navbar-show">
     <li class="nav-item nav-active">
-        <a class="nav-link" href="#">Upcoming Stories</a>
+      <%= link_to 'Upcoming Stories', dashboard_path, class: 'nav-link' %>
+    </li>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Playlists</a>
+        <%= link_to 'Story Bank', dashboard_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Finished stories</a>
+        <%= link_to 'Stories', dashboard_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><%= @sub_user.name.capitalize%>'s Film </a>
+        <%= link_to 'Film', dashboard_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Book</a>
+        <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
       </li>
   </div>
   <div class="show-container">
-
 <div class="top-section-show">
 
   <!---- NavBar ------->
 
-  <!-- Default dropstart button -->
+<!-- Default dropstart button -->
 
 
     <!-- Button -->
