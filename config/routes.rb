@@ -23,4 +23,12 @@ Rails.application.routes.draw do
   get 'sub_user_selection', to: 'pages#sub_user_selection'
 
   get 'others_new', to: 'sub_users#other_new'
+
+  get 'playlists', to: 'sub_users#playlists'
+
+  get 'stories', to: 'sub_users#stories'
+
+  get 'film', to: 'sub_users#film'
+
+  get 'book', to: 'sub_useers#book'
 end
