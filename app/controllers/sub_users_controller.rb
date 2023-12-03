@@ -42,9 +42,22 @@ class SubUsersController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def playlists
+  end
+
+  def stories
+  end
+
+  def film
+  end
+
+  def book
+  end
+
   private
 
   def sub_user_params
     params.require(:sub_user).permit(:name, :relationship_to_user, :dob, :childhood_location, :post_education, :birthplace, :career, :adult_life_location, :hobbies, :life_after_retirement)
   end
+
 end
