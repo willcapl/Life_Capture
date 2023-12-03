@@ -50,21 +50,6 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :'What did you do after education?', class:"question-card-text" %>
-        <%= f.text_field :post_education, class:"answer-card-input" %>
-        <div class ="question-page-button">
-          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
-          </div>
-          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
-          </div>
-        </div>
-        <div id="myProgress">
-          <div id="myBar" style="width: 33.3%;"></div>
-        </div>
-      </div>
-      <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'Where did you primarily grow up?', class:"question-card-text" %>
         <%= f.text_field :childhood_location, class:"answer-card-input" %>
         <div class ="question-page-button">

@@ -1,22 +1,24 @@
-<div class="container">
+<div class="container" data-controller="question-button">
   <div data-question-button-target="body">
-  <h1>Add a new Profile</h1>
-  <div class="questions-page-card" data-controller="question-button">
-    <%= form_with model: @sub_user, url: sub_users_path do |f| %>
-     <div class = "question-card" data-question-button-target="questionCard">
-        <div>
+    <div class="header-new-subuser">
+      <h1>Add a new Profile</h1>
+    </div>
+    <div class="questions-page-card">
+      <%= form_with model: @sub_user, url: sub_users_path do |f| %>
+      <div class = "question-card" data-question-button-target="questionCard">
+        <div class="welcome-card">
           <h2>Welcome to Life Capture!</h2>
-          <h5>In order to generate questions about your life, we first need to know a little about you.</h5>
-          <h5>If you're happy to proceed click the button below</h5>
+          <h5>In order to ask some interesting questions about your loved ones life, we first need to know a little about them and their past.</h5>
+          <h5>If you're happy to proceed click the button below.</h5>
         </div>
         <div class ="question-page-button">
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Ok, let's proceed"  %>
+            <%= "Ok, let's proceed" %>
           </div>
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :Please_enter_the_name_of_your_loved_one, class:"question-card-text" %>
+        <%= f.label :Please_enter_their_name, class:"question-card-text" %>
         <%= f.text_field :name, class:"answer-card-input", autofocus: true %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
@@ -31,118 +33,89 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :"What is their date of birth?", class:"question-card-text" %>
-          <%= f.date_select :dob, :as => :date,
-                :start_year => 1910, :end_year => 2010,
-                :order => [:day, :month, :year], class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 22.2%;"></div>
-      </div>
-      </div>
-      <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :'What they do after education?', class:"question-card-text" %>
-          <%= f.text_field :post_education, class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 33.3%;"></div>
-      </div>
-      </div>
-
-        <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :'Where did they primarily grow up?', class:"question-card-text" %>
-          <%= f.text_field :childhood_location, class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 55.5%;"></div>
-      </div>
-      </div>
-      <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :'What was their career in?', class:"question-card-text"  %>
-          <%= f.text_field :career, class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 66.6%;"></div>
-      </div>
-      </div>
-        <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :'Where did they spend their adult life?', class:"question-card-text"  %>
-          <%= f.text_field :adult_life_location, class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 77.7%;"></div>
-      </div>
-      </div>
-        <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :Which_hobbies_have_played_a_major_part_of_their_life?, class:"question-card-text"  %>
-          <%= f.text_field :hobbies, class:"answer-card-input" %>
-          <div class ="question-page-button">
-            <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-            <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-              <%= "Next Question" %>
-            </div>
-          </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 88.8%;"></div>
-      </div>
-      </div>
-        <div class = "question-card" data-question-button-target="questionCard">
-          <%= f.label :'What did they do after retirement', class:"question-card-text"  %>
-          <%= f.text_field :life_after_retirement, class:"answer-card-input" %>
-          <div class ="question-page-button">
+        <%= f.label :"What is their date of birth?", class:"question-card-text" %>
+        <%= f.date_select :dob, :as => :date,
+              :start_year => 1915, :end_year => 2000,
+              :order => [:day, :month, :year], class:"answer-card-input" %>
+        <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-              <%= "Previous Question" %>
-            </div>
-        <div class="submit-button" data-question-button-target="submitButton">
-          <%= f.submit "Submit", class:"btn-sub-user-form" %>
-        </div>
+            <%= "Previous Question" %>
           </div>
-            <div id="myProgress">
-        <div id="myBar" style="width: 100%;"></div>
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Next Question" %>
+          </div>
+        </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 22.2%;"></div>
+        </div>
       </div>
+      <div class = "question-card" data-question-button-target="questionCard">
+        <%= f.label :'Where did they primarily grow up?', class:"question-card-text" %>
+        <%= f.text_field :childhood_location, class:"answer-card-input" %>
+        <div class ="question-page-button">
+          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+            <%= "Previous Question" %>
+          </div>
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Next Question" %>
+          </div>
+        </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 40%;"></div>
+        </div>
       </div>
-    <% end %>
+      <div class = "question-card" data-question-button-target="questionCard">
+        <%= f.label :'What was their career?', class:"question-card-text"  %>
+        <%= f.text_field :career, class:"answer-card-input" %>
+        <div class ="question-page-button">
+          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+            <%= "Previous Question" %>
+          </div>
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Next Question" %>
+          </div>
+        </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 60.6%;"></div>
+        </div>
+      </div>
+      <div class = "question-card" data-question-button-target="questionCard">
+        <%= f.label :'Where did they spend their adult life?', class:"question-card-text"  %>
+        <%= f.text_field :adult_life_location, class:"answer-card-input" %>
+        <div class ="question-page-button">
+          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+            <%= "Previous Question" %>
+          </div>
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Next Question" %>
+          </div>
+        </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 77.7%;"></div>
+        </div>
+      </div>
+      <div class = "question-card" data-question-button-target="questionCard">
+        <%= f.label :Which_hobbies_have_played_a_major_part_of_their_life?, class:"question-card-text"  %>
+        <%= f.text_field :hobbies, class:"answer-card-input" %>
+        <div class ="question-page-button">
+          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+            <%= "Previous Question" %>
+          </div>
+          <div class="submit-button" data-question-button-target="submitButton" data-action="click->question-button#submit">
+            <%= f.submit "Submit", class:"btn-sub-user-form" %>
+          </div>
+        </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 88.8%;"></div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    </div>
+    <div class="loading-card d-none" data-question-button-target="loadingMessage">
+      <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
+      <div class="d-flex loading-text">
+        <h3 id="element"></h3>
+      </div>
+    </div>
   </div>
-  </div>
-  <div class="loading-card d-none" data-question-button-target="loadingMessage">
-    <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
-    <h3>Creating your custom questions...</h3>
-  </div>
-</div>
