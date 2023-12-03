@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'others_new', to: 'sub_users#other_new'
 
-  get 'playlists', to: 'sub_users#playlists'
+  get '/sub_users/:id/playlists', to: 'sub_users#playlists'
 
   get 'stories', to: 'sub_users#stories'
 
