@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'loading', to: 'pages#loading', as: 'loading'
 
+  resources :playlists, only: [:new, :create]
+    # ... other routes ...
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
 
   get 'others_new', to: 'sub_users#other_new'
 
-  get '/sub_users/:id/playlists', to: 'sub_users#playlists'
+  get '/sub_users/:id/playlist', to: 'sub_users#playlist'
 
   get 'stories', to: 'sub_users#stories'
 
