@@ -8,14 +8,20 @@
 // text-align: center;
 // justify-content: center;
 }
+.FAQsubmit {
+  justify-content: center;
+
+}
 
 .faq-background-image{
-  font-family: Arial, Helvetica, sans-serif;
-  background: ghostwhite;
+   font-family: Arial, Helvetica, sans-serif;
+   background: ghostwhite;
+  //  height: 100vh;
   // min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+
   }
   .dropdown_accordion {
     min-width: 15em;
@@ -23,11 +29,11 @@
     margin: 2em;
     z-index: 1;
     display:block;
-    // overflow: hidden;
-  // padding-bottom: 5px;
+   padding-bottom: 5px;
   }
   .dropdown_accordion * {
     box-sizing: border-box;
+    // padding-bottom: 5px;
    }
    .select {
     background: #2a2f3b;
@@ -43,22 +49,26 @@
 
 
 .faq_search_bar{
-text-align: center;
-justify-content: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1em;
+
+
 
 }
 
 .select-clicked {
-border: 2px #26489a solid;
-box-shadow: 0 0 0.8 #26489a;
+  border: 2px #26489a solid;
+  box-shadow: 0 0 0.8 #26489a;
 }
 select:hover {
-background: #323741;
+  background: #323741;
 }
 .caret {
-  // transform: translateY(-50%);
-  // // width: 0;
-  // // height: 0;
+
    border-left:5px solid transparent ;
    border-right: 5px solid transparent ;
    border-top: 6px solid #fff;
@@ -92,7 +102,8 @@ transition: 1.5s;
 .menu li{
   padding: 0.7em 0.5em;
   margin: 0.3 0;
-  border-radius: 0.5
+  border-radius: 0.5;
+  padding-bottom: 10px;
   // cursor: pointer;
 }
 .menu li:hover{
@@ -106,14 +117,10 @@ background: lightgrey;
 display: block;
 opacity: 1;
 }
-.faq_search_bar {
 
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 50px;
-  }
   .search-button {
 border-radius: 20px;
+justify-content: center;
   }
 
   // .placeholder {
@@ -135,14 +142,6 @@ border-radius: 20px;
   // padding: 1em;
   }
 
-  .faq_search_bar{
-  justify-content: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  padding: 1em;
-}
 
 
 .faq-card{
