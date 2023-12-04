@@ -3,7 +3,8 @@
   margin: 15px;
   padding: 15px;
   border-radius: 8px;
-  color: #2B326F;
+  text-decoration: none;
+  color: black;
 }
 
 .generated-questions-all-cards{
@@ -13,4 +14,8 @@ margin-left: -40px;
 .questions-index-title{
   margin-top: 15px;
   margin-bottom: 25px;
+}
+
+.generated-questions-card-text{
+  color: black;
 }

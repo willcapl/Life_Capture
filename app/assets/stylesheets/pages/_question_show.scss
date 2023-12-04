@@ -27,6 +27,7 @@
   position: absolute;
   bottom: 50px;
   left: calc(50% - 60px);
+  background-color: red;
 }
 
 .save-btn {
@@ -34,13 +35,15 @@
   width: 120px;
   aspect-ratio: 1;
   border-radius: 50%;
+  background-color: green;
 }
 
 .rerec-btn {
   border: none;
   width: 120px;
   aspect-ratio: 1;
-  border-radius: 50%
+  border-radius: 50%;
+  background-color: blue;
 }
 
 .video-btns {
@@ -73,10 +76,13 @@
   box-shadow: 2px 2px 4px rgba(0,0,0, 0.1);
   padding: 16px;
   position: relative;
-  color: white;
 }
 
 .rerecord-video{
   background-color: blue;
   color: black;
+}
+
+.video-container{
+  position: relative;
 }
