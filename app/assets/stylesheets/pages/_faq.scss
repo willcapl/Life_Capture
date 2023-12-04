@@ -3,38 +3,14 @@
 .faq-header {
  text-align: center;
 
+.fAQ_Title {
+// text-align: center;
+// justify-content: center;
 }
 
-.faq-background-image{
-font-family: Arial, Helvetica, sans-serif;
-background: ghostwhite;
-// min-height: 100vh;
+.faq_search_bar{
+text-align: center;
 justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-}
-.dropdown {
-  min-width: 15em;
-  position: relative;
-  margin: 2em;
-  z-index: 1;
-  display:block;
-  // overflow: hidden;
-// padding-bottom: 5px;
-}
-.dropdown * {
- box-sizing: border-box;
-}
-
-.select {
-  background: #2a2f3b;
-  color: #fff;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  border-radius: 0.5em;
-  padding: 1em;
-  cursor: pointer;
 
 }
 .select-clicked {
@@ -137,80 +113,3 @@ border-radius: 20px;
 .faq-card{
   background-color: antiquewhite;
 }
-
-.faq_search_bar {
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.search-button {
-  border-radius: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // .accordian {
-  //  max-width: 400px;
-  //  box-shadow: 0 0 10px rgba(0,0,0.2) ;
-  //  border-radius: 5px;
-  //  overflow: hidden;
-  //  font-family: 'quicksand', sans-serif;
-  //  background: #323741 ;
-  // }
-  // .accordian__label,
-  // .accordian__content {
-  //   padding: 14px, 20px;
-  //   font-weight: 500;
-  //   cursor: pointer;
-  //   position: relative;
-  //   transition: background 0.1s;
-  // }
-
-  // .accordian__label:hover {
-  //   background: rgba(0,0,0,1.0);
-  // }
-
-  // .accordian__label::after {
-  // .caret: "a" ;
-  // content:"a";
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
-  // right: 20px;
-  // width:12px;
-  // height:6px;
-  // // background-image: ;
-  // // background-size: contain;
-  // // transition:tranform 0.4s;
-
-  // }
-  // .accordian__content {
-  //   background: white;
-  //   line-height: 1.6;
-  //   font-size: 0.85em;
-  //   display: none;
-  // }
-
-  // .accordian_input {
-  //   display: none;
-  // }
-  // .accordian_input:checked ~ .accordion__content {
-  //   display: block;
-  // }

@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
     resources :questions, only: [:index, :show, :update]
+    resources :playlists, only: [:new, :create, :index]
   end
   resources :questions, only: [:destroy]
   get '/sub_users/:id', to: 'sub_users#show', as: 'sub_user_show'
   get 'dashboard', to: 'pages#dashboard'
   get 'loading', to: 'pages#loading', as: 'loading'
+
+    # ... other routes ...
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -23,4 +26,12 @@ Rails.application.routes.draw do
   get 'sub_user_selection', to: 'pages#sub_user_selection'
 
   get 'others_new', to: 'sub_users#other_new'
+
+  # get '/sub_users/:id/playlists', to: 'sub_users#playlists', as: 'sub_user_playlists'
+
+  get '/sub_users/:id/stories', to: 'sub_users#stories', as: 'sub_user_stories'
+
+  get 'film', to: 'sub_users#film'
+
+  get 'book', to: 'sub_useers#book'
 end

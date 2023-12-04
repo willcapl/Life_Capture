@@ -5,6 +5,22 @@
   padding: 24px;
 }
 
+.header-name h1{
+  font-family: EB Garamond;
+  color: #5D6986, 80%;
+}
+
+.btn.btn-secondary{
+  background-color: #2B326F;
+  border-radius: 20px;
+  height: 35px;
+}
+
+.top-section-show {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-charcol {
   background-color: #2B326F;
   border-radius: 20px;
@@ -15,6 +31,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-family: dm serif design;
 }
 
 .plus-icon-bg {
@@ -87,4 +104,34 @@
   border-radius: 14px;
   align-items: center;
   justify-content: center;
+}
+
+.show-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burger-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  aspect-ratio: 1;
+  border: none;
+  color: white;
+  background: #2b3e6f;
+}
+
+.dropdown-menu-border {
+  padding: 16px;
+  border: none;
+}
+.dropdown-menu-border li {
+  padding: 8px 0;
+  border-bottom: 1px solid #DCDDE4;
+}
+
+.dropdown-i {
+  color: #2B326F;
 }

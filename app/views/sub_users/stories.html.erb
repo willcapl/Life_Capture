@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="show-header-container">
     <div class="header-name">
@@ -17,11 +16,11 @@
     </div>
   </div>
   <div class="navbar-show">
-    <li class="nav-item nav-active">
+    <li class="nav-item">
       <%= link_to 'Upcoming Stories', sub_user_show_path(@sub_user), class: 'nav-link' %>
     </li>
       </li>
-      <li class="nav-item">
+      <li class="nav-item nav-active">
         <%= link_to 'Story Bank', sub_user_stories_path(@sub_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
@@ -36,25 +35,35 @@
   </div>
   <div class="show-container">
     <div class="videos-container">
-      <div class="questions-index-title">
-        <h2>Your generated questions....</h2>
-        <h5>View all your questions here, click on one to record or return to your profile and answer them later</h5>
-      </div>
-      <div class="generated-questions-all-cards">
-        <ul>
-          <% video_not_attached = @questions.reject { |question| question.video.attached?} %>
-            <% if video_not_attached.empty? %>
-              <h3>You have answered all of the available questions.</h3>
-            <% else %>
-              <% video_not_attached.each_with_index do |question, index| %>
-              <div class="generated-questions-card">
-                <% title = "#{index + 1}. #{question.title}" %>
-                <%= link_to( title, sub_user_question_path(@sub_user, question)) %>
+      <% if @questions.find { |question| question.video.attached? } %>
+        <div class="video-card-container">
+          <% questions_attached = @questions.select { |question| question.video.attached?} %>
+          <% questions_attached.each do |attached_question| %>
+            <div class="video-card">
+              <div class="video-card-title">
+                <h4> <%= attached_question.title %></h4>
               </div>
-            <% end %>
+              <div class="video-card-box">
+                <% if Rails.env.development? %>
+                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                <% elsif Rails.env.production? %>
+                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                <% end %>
+              </div>
+              <div>
+              <%= link_to 'rerecord video', sub_user_question_path(@sub_user, attached_question) %>
+              <%= link_to 'delete memory', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %>
+              </div>
+            </div>
           <% end %>
-        </ul>
       </div>
+
+      <% else %>
+
+        <h4 style="font-family:DM Serif Display;">You have no stories recorded yet...</h4>
+      <% end %>
+
     </div>
+
   </div>
 </div>

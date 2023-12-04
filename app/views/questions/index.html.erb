@@ -8,7 +8,7 @@
     <ul>
       <% video_not_attached = @questions.reject { |question| question.video.attached?} %>
       <% if video_not_attached.empty? %>
-        <h3>You have answered all the questions.</h3>
+        <h3>You have answered all of the available questions.</h3>
       <% else %>
         <% video_not_attached.each_with_index do |question, index| %>
         <div class="generated-questions-card">
@@ -16,9 +16,7 @@
           <%= link_to( title, sub_user_question_path(@sub_user, question)) %>
         </div>
       <% end %>
-
       <% end %>
     </ul>
     </div>
-
 </div>
