@@ -12,6 +12,9 @@
       end
     end
 
+    def index
+    end
+
     private
 
     def playlist_params

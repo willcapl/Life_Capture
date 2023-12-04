@@ -52,7 +52,7 @@
 }
 
 .videos-container {
-  background-color: #DCDDE4;
+  background-color: #2B326F;
   border-radius: 20px;
   width: 100%;
   margin-top: 16px;
@@ -121,4 +121,17 @@
   border: none;
   color: white;
   background: #2b3e6f;
+}
+
+.dropdown-menu-border {
+  padding: 16px;
+  border: none;
+}
+.dropdown-menu-border li {
+  padding: 8px 0;
+  border-bottom: 1px solid #DCDDE4;
+}
+
+.dropdown-i {
+  color: #2B326F;
 }

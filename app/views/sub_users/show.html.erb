@@ -9,24 +9,24 @@
       <button type="button" class="burger-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-bars" style="margin: auto;"></i>
       </button>
-      <ul class="dropdown-menu">
-      <li> <%= link_to 'Dashboard', dashboard_path %> </li>
-        <li> <%= link_to 'Edit', edit_sub_user_path(@sub_user) %> </li>
-        <li><%= link_to 'Delete', sub_user_path(@sub_user), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'} %> </li>
+      <ul class="dropdown-menu dropdown-menu-border">
+      <li> <%= link_to 'Dashboard', dashboard_path, class: "dropdown-i" %> </li>
+        <li> <%= link_to 'Edit profile', edit_sub_user_path(@sub_user), class: "dropdown-i" %> </li>
+        <li><%= link_to 'Delete profile', sub_user_path(@sub_user), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'}, class: "dropdown-i" %> </li>
           <!-- Dropdown menu links -->
       </ul>
     </div>
   </div>
   <div class="navbar-show">
     <li class="nav-item nav-active">
-      <%= link_to 'Upcoming Stories', dashboard_path, class: 'nav-link' %>
+      <%= link_to 'Upcoming Stories', sub_user_show_path(@sub_user), class: 'nav-link' %>
     </li>
       </li>
       <li class="nav-item">
-        <%= link_to 'Story Bank', dashboard_path, class: 'nav-link' %>
+        <%= link_to 'Story Bank', sub_user_stories_path(@sub_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Stories', dashboard_path, class: 'nav-link' %>
+        <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Film', dashboard_path, class: 'nav-link' %>
@@ -36,80 +36,35 @@
       </li>
   </div>
   <div class="show-container">
-<div class="top-section-show">
-
-  <!---- NavBar ------->
-
-<!-- Default dropstart button -->
-
-
-    <!-- Button -->
-      <div class="btn-charcol" data-controller="copy" data-target="copy.source" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <h3 style="font-family:DM Serif Display;">Create a new memory</h3>
-        <i class="fas fa-plus plus-icon"></i>
-      </div>
-</div>
     <div class="videos-container">
-      <% if @questions.find { |question| question.video.attached? } %>
-        <div class="video-card-container">
-          <% questions_attached = @questions.select { |question| question.video.attached?} %>
-          <% questions_attached.each do |attached_question| %>
-            <div class="video-card">
-              <div class="video-card-title">
-                <h4> <%= attached_question.title %></h4>
-              </div>
-              <div class="video-card-box">
-                <% if Rails.env.development? %>
-                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
-                <% elsif Rails.env.production? %>
-                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
-                <% end %>
-              </div>
-              <div>
-              <%= link_to 'rerecord video', sub_user_question_path(@sub_user, attached_question) %>
-              <%= link_to 'delete memory', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %>
-              </div>
-            </div>
-          <% end %>
+      <div class="questions-index-title">
+        <h2>Your generated questions....</h2>
+        <h5>View all your questions here, click on one to record or return to your profile and answer them later</h5>
       </div>
-
-      <% else %>
-
-        <h4 style="font-family:DM Serif Display;">You have no stories recorded yet...</h4>
-      <% end %>
-
-    </div>
-
-</div>
-
-
-  <!--Centered Modal < Shakzz :) -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="copy">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Select an Option</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="input-group" data-controller="copy" data-copy-feedback-text-value="Copied!">
-                    <input class="form-control" data-copy-target="input" type="text" value= https://www.life-capture.com readonly>
-                    <div class="input-group-append">
-                      <button id="copy-button" class="btn btn-outline-primary" data-action="click->copy#copy">Copy to Clipboard</button>
-                    </div>
+      <div class="generated-questions-all-cards">
+        <ul>
+          <% video_not_attached = @questions.reject { |question| question.video.attached?} %>
+            <% if video_not_attached.empty? %>
+              <h3>You have answered all of the available questions.</h3>
+            <% else %>
+              <% @dates.each do |date| %>
+                <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
+                  <h3>This weeks recordings</h3>
+                <% else %>
+                  <h3><%= date.strftime("%A, %d %b %Y") %></h3>
+                <% end %>
+                <% video_not_attached.each_with_index do |question, index| %>
+                <% if question.answer_date == date %>
+                  <div class="generated-questions-card">
+                    <%= link_to( question.title, sub_user_question_path(@sub_user, question)) %>
                   </div>
-                  <%= link_to sub_user_questions_path(@sub_user) do %>
-                    <button class="custom-button" data-action="click->copy#copy">
-                      <i class="fas fa-plus"></i>
-                      <span class="button-text">Create a memory on this device</span>
-                    </button>
-                  <% end %>
-                </div>
-                <div class="modal-footer">
-                </div>
-              </div>
-            </div>
-        </div>
-
-
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
+</div>
+  
