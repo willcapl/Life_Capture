@@ -58,19 +58,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_100608) do
   end
 
   create_table "response_bookmarks", force: :cascade do |t|
-    t.bigint "response_id", null: false
+    t.bigint "question_id", null: false
     t.bigint "playlist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["playlist_id"], name: "index_response_bookmarks_on_playlist_id"
-    t.index ["response_id"], name: "index_response_bookmarks_on_response_id"
-  end
-
-  create_table "responses", force: :cascade do |t|
-    t.bigint "question_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_responses_on_question_id"
+    t.index ["question_id"], name: "index_response_bookmarks_on_question_id"
   end
 
   create_table "sub_users", force: :cascade do |t|
@@ -105,7 +98,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_100608) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "questions", "sub_users"
   add_foreign_key "response_bookmarks", "playlists"
-  add_foreign_key "response_bookmarks", "responses"
-  add_foreign_key "responses", "questions"
+  add_foreign_key "response_bookmarks", "questions"
   add_foreign_key "sub_users", "users"
 end
