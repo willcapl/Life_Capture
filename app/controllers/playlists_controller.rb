@@ -4,15 +4,18 @@
     end
 
     def create
+      @sub_user = SubUser.find(params[:sub_user_id])
       @playlist = Playlist.new(playlist_params)
+      @playlist.sub_user = @sub_user
       if @playlist.save
-        redirect_to @playlist
-      else
-        render :new
+        redirect_to sub_user_playlists_path(@sub_user)
       end
     end
 
     def index
+      @sub_user = SubUser.find(params[:sub_user_id])
+      @playlists = @sub_user.playlists
+      @playlist = Playlist.new
     end
 
     private
