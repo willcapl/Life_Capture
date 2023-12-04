@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
     resources :questions, only: [:index, :show, :update]
-    resources :playlists, only: [:index, :new, :create]
+    resources :playlists, only: [:index, :new, :create] do
+        resources :response_bookmarks, only: [:create]
+    end
       member do
         patch 'update_avatar'
       end
