@@ -16,6 +16,9 @@
       @sub_user = SubUser.find(params[:sub_user_id])
       @playlists = @sub_user.playlists
       @playlist = Playlist.new
+      @response_bookmark = ResponseBookmark.new
+      @questions = Question.where(sub_user: @sub_user)
+
     end
 
     private

@@ -1,4 +1,4 @@
 class ResponseBookmark < ApplicationRecord
-  belongs_to :response
+  belongs_to :question
   belongs_to :playlist
 end
