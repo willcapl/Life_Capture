@@ -32,15 +32,19 @@
       </div>
       <div class="top-section-card">
         <div class="number-icon">2</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Answer some questions about your relative's life</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Answer some questions about your or your relative's life</p>
       </div>
       <div class="top-section-card">
         <div class="number-icon">3</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Record your video answers on Life Capture</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">We then generate questions based upon the information you have given us</p>
       </div>
       <div class="top-section-card">
         <div class="number-icon">4</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Store your memories and share with loved ones</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Record answers to these questions via video</p>
+      </div>
+      <div class="top-section-card">
+        <div class="number-icon">5</div>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Store your memories, turn them into film/book and share with loved ones</p>
       </div>
     </div>
   </div>
@@ -62,9 +66,15 @@
     <h4 class= "text-center mb-5" style="font-family: EB Garamond; color: black; font-size: 1.5vw"> <i> and life was so valuable - I wish I could do it for all my relatives!"</i></h4>
     <h4 class= "text-center mb-3" style="font-family: EB Garamond; color: black; font-size: 1.5vw">- Sergio Ramos, Spain</h4>
     <div class="Button bottom d-flex justify-content-center">
-       <%= link_to new_user_registration_path, class: "d-inline-block mb-5 mt-3" do %>
-            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white" >Get Started</p>
-          <% end %>
+      <% if user_signed_in? %>
+              <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
+                  <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Go to your Dashboard</p>
+                <% end %>
+      <% else %>
+              <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
+                  <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Get started</p>
+                <% end %>
+      <% end %>
       </div>
   </div>
 </div>

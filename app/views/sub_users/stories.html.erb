@@ -33,6 +33,7 @@
         <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
       </li>
   </div>
+
   <div class="show-container">
     <div class="videos-container">
       <% if @questions.find { |question| question.video.attached? } %>

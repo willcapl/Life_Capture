@@ -21,9 +21,6 @@
         <%= f.label :Please_enter_their_name, class:"question-card-text" %>
         <%= f.text_field :name, class:"answer-card-input", autofocus: true %>
         <div class ="question-page-button">
-          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
-          </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
             <%= "Next Question"  %>
           </div>
@@ -65,6 +62,21 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
+        <%= f.label :'Where were you educated', class:"question-card-text"  %>
+        <%= f.text_field :education, class:"answer-card-input" %>
+        <div class ="question-page-button">
+          <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+            <%= "Previous Question" %>
+          </div>
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Next Question" %>
+          </div>
+        </div>
+        <div id="myProgress">
+          <div id="myBar" style="width: 77.7%;"></div>
+        </div>
+      </div>
+      <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'What was their career?', class:"question-card-text"  %>
         <%= f.text_field :career, class:"answer-card-input" %>
         <div class ="question-page-button">
@@ -101,16 +113,31 @@
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
           </div>
-          <div class="submit-button" data-question-button-target="submitButton" data-action="click->question-button#submit">
-            <%= f.submit "Submit", class:"btn-sub-user-form" %>
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+            <%= "Next Question" %>
           </div>
         </div>
         <div id="myProgress">
           <div id="myBar" style="width: 88.8%;"></div>
         </div>
       </div>
-      <% end %>
-    </div>
+
+       <div class = "question-card" data-question-button-target="questionCard">
+          <%= f.file_field :photo, accept: "image/*" %>
+          <div class ="question-page-button">
+              <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
+                <%= "Previous Question" %>
+              </div>
+              <div class="submit-button" data-question-button-target="submitButton" data-action="click->question-button#submit">
+                <%= f.submit "Submit", class:"btn-sub-user-form" %>
+                </div>
+          </div>
+          <div id="myProgress">
+          <div id="myBar" style="width: 100%;"></div>
+          </div>
+        </div>
+    <% end %>
+          </div>
     </div>
     <div class="loading-card d-none" data-question-button-target="loadingMessage">
       <%= image_tag 'small_logo_blue.png', class: "lds-hourglass" %>
@@ -118,4 +145,5 @@
         <h3 id="element"></h3>
       </div>
     </div>
-  </div>
+    </div>
+  <%# </div> %>

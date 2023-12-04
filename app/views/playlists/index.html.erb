@@ -1,9 +1,7 @@
-
 <div class="container">
   <div class="show-header-container">
     <div class="header-name">
       <h1><%= @sub_user.name.capitalize%>'s profile</h1>
-      <%= cl_image_tag @sub_user.photo.key %>
     </div>
     <div class="btn-group dropstart">
       <button type="button" class="burger-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,14 +16,14 @@
     </div>
   </div>
   <div class="navbar-show">
-    <li class="nav-item nav-active">
+    <li class="nav-item">
       <%= link_to 'Upcoming Stories', sub_user_show_path(@sub_user), class: 'nav-link' %>
     </li>
       </li>
       <li class="nav-item">
         <%= link_to 'Story Bank', sub_user_stories_path(@sub_user), class: 'nav-link' %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item nav-active">
         <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
@@ -35,36 +33,41 @@
         <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
       </li>
   </div>
-  <div class="show-container">
+
+<div class="show-container">
     <div class="videos-container">
-      <div class="questions-index-title">
-        <h2>Your generated questions....</h2>
-        <h5>View all your questions here, click on one to record or return to your profile and answer them later</h5>
-      </div>
-      <div class="generated-questions-all-cards">
-        <ul>
-          <% video_not_attached = @questions.reject { |question| question.video.attached?} %>
-            <% if video_not_attached.empty? %>
-              <h3>You have answered all of the available questions.</h3>
-            <% else %>
-              <% @dates.each do |date| %>
-                <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
-                  <h3>This weeks recordings</h3>
-                <% else %>
-                  <h3><%= date.strftime("%A, %d %b %Y") %></h3>
-                <% end %>
-                <% video_not_attached.each_with_index do |question, index| %>
-                <% if question.answer_date == date %>
-                  <div class="generated-questions-card">
-                    <%= link_to( question.title, sub_user_question_path(@sub_user, question)) %>
-                  </div>
-                <% end %>
-              <% end %>
+    <% @playlists.each do |playlist| %>
+      <%= playlist.name %>
+      <%= playlist.description %>
+    <% end %>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Create New Playlist
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for [@sub_user, @playlist] do |f| %>
+              <%= f.input :name %>
+              <%= f.input :description %>
+              <%= f.submit "Confirm"%>
             <% end %>
-          <% end %>
-        </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-  
