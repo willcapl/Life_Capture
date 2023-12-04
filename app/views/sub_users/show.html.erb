@@ -4,7 +4,7 @@
     <div class="header-name">
       <h1><%= @sub_user.name.capitalize%>'s profile</h1>
       <% if @sub_user.photo.attached? %>
-      <%= cl_image_tag @sub_user.photo.key %>
+      <%= cl_image_tag @sub_user.photo.key, class: "image-avatar"%>
       <% end %>
     </div>
     <div class="btn-group dropstart">

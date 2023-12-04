@@ -1,9 +1,14 @@
 <div class= "textstyling" style= "font-family: EB Garamond; color: black; font-size: 1.5vw">
 <div class ="sub-users-card">
-  <% current_user.sub_users.each do |sub_user| %>
+  <% @sub_users.each do |sub_user| %>
   <%= link_to sub_user do %>
     <div class = "sub-users">
-      <%= image_tag "user_icon.png", class: "sub-user-icon" %>
+      <% if sub_user.photo.attached? %>
+        <%= cl_image_tag sub_user.photo.key, class: "sub-user-icon" %>
+      <% else %>
+        <%= cl_image_tag "image/*", class: "sub-user-icon" %>
+      <% end %>
+
     </div>
     <div class="sub-user-name">
     <%= sub_user.name %>
