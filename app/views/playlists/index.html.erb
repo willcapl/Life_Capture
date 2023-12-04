@@ -48,8 +48,10 @@
           <li><a class="dropdown-item" href="#"><% playlist.get_response_bookmarks.each do |question|%></a></li>
           <li><a class="dropdown-item" href="#"><%= question.question.title%></a></li>
     <%end%>
+
+    <%# <%  @questions.select{ |question| question.video.attached? && ResponseBookmark.where(playlist_id: playlist.id).reject { question_id == question.id}}%>
           <%= simple_form_for [@sub_user, playlist, @response_bookmark] do |f|%>
-          <%= f.input :question_id, collection: @questions %>
+          <%= f.input :question_id, collection:  @questions.select{ |question| question.video.attached? } %>
           <%= f.button :submit%>
         </ul>
     <%end%>
