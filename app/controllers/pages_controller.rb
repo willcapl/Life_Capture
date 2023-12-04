@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    current_user.sub_users
+    @sub_users = current_user.sub_users
   end
 end
