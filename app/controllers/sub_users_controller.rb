@@ -19,7 +19,7 @@ class SubUsersController < ApplicationController
     @sub_user.user = current_user
     if @sub_user.save
       @sub_user.content
-      redirect_to sub_user_questions_path(@sub_user)
+      redirect_to sub_user_path(@sub_user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -65,9 +65,18 @@ class SubUsersController < ApplicationController
   end
 
   def film
+    @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def book
+    @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
+  end
+
+  def within_a_week?(date)
+    @today = Time.zone.today
+    (today - 7.days)..(today + 7.days).cover?(date)
   end
 
   private

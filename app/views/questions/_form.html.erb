@@ -6,7 +6,7 @@
   <% end  %>
 </div>
 <div class="container">
-  <%= link_to 'back to questions', sub_user_questions_path(@sub_user) %>
+  <%= link_to 'back to questions', sub_user_show_path(@sub_user) %>
   <div class="question-title-card">
     <h2><%= @question.title %></h2>
   </div>
@@ -18,7 +18,7 @@
     <button id="start" class="video-btn" style="z-index: 5;">Start</button>
     <button id="stop" class="video-btn" style="z-index: 4;">Stop and save</button>
     <div class="video-btns d-none">
-      <%= link_to  sub_user_show_path(@sub_user, @question) do %>
+      <%= link_to  sub_user_stories_path(@sub_user, @question) do %>
         <button class="save-btn" style="z-index: 3;"> Save Video</button>
       <% end %>
       <%= link_to sub_user_question_path(@sub_user, @question) do %>

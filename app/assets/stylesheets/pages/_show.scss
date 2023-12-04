@@ -1,7 +1,7 @@
 .show-container {
   border-radius: 20px;
   background-color: #f7f7f7;
-  margin: 24px 0;
+  margin: 20px 0;
   padding: 24px;
   min-height: 100vh;
 }
@@ -58,6 +58,7 @@
   width: 100%;
   margin-top: 16px;
   padding: 24px;
+  height:100%
 }
 
 
@@ -91,6 +92,7 @@
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
+  color: black ;
 }
 
 .btn-show-page{
@@ -135,4 +137,35 @@
 
 .dropdown-i {
   color: #2B326F;
+}
+
+.burger-dropdown-showpage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  aspect-ratio: 1;
+  border: none;
+  color: black;
+  margin-left: 0px;
+  border-radius: 5px;
+}
+
+.showpage-record-button{
+height: 30px;
+}
+
+.showpage-container{
+  width: 100%;
+  height: 100%;
+  border: #2B326F 2px solid;
+  background-color: #2B326F;
+  margin-bottom: 50px;
+  box-shadow: 2px 2px 4px rgba(0,0,0, 0.1);
+  position: relative;
+  background-color: #2B326F;
+  border-radius: 20px;
+  margin-top: 16px;
+  padding: 24px;
+  color: white;
 }

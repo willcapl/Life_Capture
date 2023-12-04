@@ -27,10 +27,10 @@
         <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Film', dashboard_path, class: 'nav-link' %>
+        <%= link_to 'Film', film_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
+        <%= link_to 'Book', book_path, class: 'nav-link' %>
       </li>
   </div>
 
@@ -43,7 +43,17 @@
             <div class="video-card">
               <div class="video-card-title">
                 <h4> <%= attached_question.title %></h4>
+                <div class="btn-group dropstart">
+                <button type="button" class="burger-dropdown-showpage" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical" style="margin: auto;"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-border">
+                <li> <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, attached_question) %> </li>
+                  <li>  <%= link_to 'Delete story', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>                    <!-- Dropdown menu links -->
+                </ul>
               </div>
+              </div>
+              <canvas id="canvas" style="display: none;"></canvas>
               <div class="video-card-box">
                 <% if Rails.env.development? %>
                   <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
@@ -52,15 +62,13 @@
                 <% end %>
               </div>
               <div>
-              <%= link_to 'rerecord video', sub_user_question_path(@sub_user, attached_question) %>
-              <%= link_to 'delete memory', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %>
-              </div>
+
             </div>
-          <% end %>
-      </div>
+          </div>
+        <% end %>
+    </div>
 
       <% else %>
-
         <h4 style="font-family:DM Serif Display;">You have no stories recorded yet...</h4>
       <% end %>
 

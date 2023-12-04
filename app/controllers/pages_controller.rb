@@ -4,7 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def faq
+  end
+
   def dashboard
-    current_user.sub_users
+    @sub_users = current_user.sub_users
   end
 end
