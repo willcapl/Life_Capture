@@ -8,18 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+
     <link rel="icon" type="image/png" href="<%= image_path('small_logo_blue.png') %>">
 
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-<div class="min-height">
-    <%= yield %>
-</div>
-<% unless controller_name == 'pages' && action_name == 'dashboard' %>
+  <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <div class="min-height">
+        <%= yield %>
+    </div>
+    <% unless controller_name == 'pages' && action_name == 'dashboard' %>
      <%= render 'pages/footer'%>
-  <% end %>
+    <% end %>
   </body>
 </html>
