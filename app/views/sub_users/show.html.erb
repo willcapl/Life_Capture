@@ -5,19 +5,20 @@
   </div>
   <div class="navbar-show">
     <li class="nav-item nav-active">
-        <a class="nav-link" href="#">Upcoming Stories</a>
+      <%= link_to 'Upcoming Stories', dashboard_path, class: 'nav-link' %>
+    </li>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Playlists</a>
+        <%= link_to 'Story Bank', dashboard_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Finished stories</a>
+        <%= link_to 'Stories', dashboard_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><%= @sub_user.name.capitalize%>'s Film </a>
+        <%= link_to 'Film', dashboard_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Book</a>
+        <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
       </li>
   </div>
   <div class="show-container">
@@ -26,14 +27,14 @@
 
   <!---- NavBar ------->
 
-  <!-- Default dropstart button -->
+<!-- Default dropstart button -->
 
 
     <!-- Button -->
-      <div class="btn-charcol" data-controller="copy" data-target="copy.source" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%# <div class="btn-charcol" data-controller="copy" data-target="copy.source" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <h3 style="font-family:DM Serif Display;">Create a new memory</h3>
         <i class="fas fa-plus plus-icon"></i>
-      </div>
+      </div> %>
       <div class="btn-group dropstart">
   <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false">
     <i class="fa-solid fa-ellipsis"></i>
