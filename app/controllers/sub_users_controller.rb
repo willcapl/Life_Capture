@@ -43,9 +43,13 @@ class SubUsersController < ApplicationController
   end
 
   def playlists
+    @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def stories
+    @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def film
