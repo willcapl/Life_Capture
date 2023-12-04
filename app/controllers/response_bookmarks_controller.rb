@@ -6,6 +6,10 @@ class ResponseBookmarksController < ApplicationController
     @response_bookmark = ResponseBookmark.new
     @response_bookmark.question = @question
     @response_bookmark.playlist = @playlist
-    @response_bookmark.save!
+    if @response_bookmark.save!
+
+    else
+      render :new, status: 422, alert: "You already have this in your playlist!"
+    end
   end
 end
