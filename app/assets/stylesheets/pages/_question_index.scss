@@ -1,19 +1,16 @@
-.question-title-card {
-  background: #f7f7f7;
-  padding: 51px 42px;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: 2px 2px 4px rgba(0,0,0, 0.1);
-  margin: 24px 0;
-  border: #2B326F 2px solid;
+.generated-questions-card{
+  background-color: whitesmoke;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  color: #2B326F;
 }
 
-.video-container {
-  width: 100%;
-  height: 600px;
-  border: #2B326F 2px solid;
-  background-color: #f7f7f7;
-  margin-bottom: 24px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 4px rgba(0,0,0, 0.1);
+.generated-questions-all-cards{
+margin-left: -40px;
+}
+
+.questions-index-title{
+  margin-top: 15px;
+  margin-bottom: 25px;
 }

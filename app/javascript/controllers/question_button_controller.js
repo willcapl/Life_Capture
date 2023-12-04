@@ -1,11 +1,13 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
+import Typed from 'typed.js';
 
 export default class extends Controller {
-  static targets = ["questionCard"]
+  static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body", "loadingMessageOther", "bodyOther"];
 
   connect() {
-    console.log("Question button controller connected");
     this.initializeQuestionVisibility();
+    console.log("Question button controller connected");
+    console.log(this.bodyTarget);
   }
 
   initializeQuestionVisibility() {
@@ -15,8 +17,7 @@ export default class extends Controller {
       } else {
         card.classList.add("hide-question");
       }
-    });
-    this.updateProgressBar(0); // Initialize progress bar
+    }); // Initialize progress bar
   }
 
   reveal(event) {
@@ -31,7 +32,6 @@ export default class extends Controller {
       this.checkLastQuestion(nextQuestion);
     }
   }
-
 
   back(event) {
     let currentQuestion = event.target.closest(".question-card");
@@ -51,18 +51,44 @@ export default class extends Controller {
 
   checkLastQuestion(question) {
     let isLastQuestion = !question.nextElementSibling;
-    if (this.hasSubmitButtonTarget) { // Check if submitButton target exists
+    if (this.hasSubmitButtonTarget) {
       this.submitButtonTarget.style.display = isLastQuestion ? "block" : "none";
     }
   }
 
-  // updateProgressBar(currentIndex) {
-  //   let totalQuestions = this.questionCardTargets.length;
-  //   let progress = (currentIndex + 1) / totalQuestions * 100;
-  //   const elem = document.getElementById("myBar");
-  //   console.log(elem)
-  //   document.getElementById("myBar").style.width = `${progress}%`;
-  //   // elem.innerHTML = Math.round(progress) + "%";
-  //   console.log("Progress:", progress); // Debugging
-  // }
+  submit(event) {
+
+    // Show loading message
+    // this.loadingMessageTarget.class.display = "block";
+    this.loadingMessageTarget.classList.remove('d-none');
+    this.bodyTarget.classList.add('d-none');
+    // Simulate an asynchronous action (replace with your actual submission logic)
+    setTimeout(() => {
+      // Assuming submission is successful, you can redirect or perform other actions
+      console.log("Form submitted successfully!");
+    }, 2000);
+
+    const typed = new Typed('#element', {
+      strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
+      typeSpeed: 50,
+    });
+  }
+
+  submitOther(event) {
+
+    // Show loading message
+    // this.loadingMessageTarget.class.display = "block";
+    this.loadingMessageOtherTarget.classList.remove('d-none');
+    new Typed('#element', {
+      strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
+      typeSpeed: 50,
+    });
+    this.bodyTarget.classList.add('d-none');
+    // Simulate an asynchronous action (replace with your actual submission logic)
+    setTimeout(() => {
+      // Assuming submission is successful, you can redirect or perform other actions
+      console.log("Form submitted successfully!");
+    }, 2000);
+
+  }
 }

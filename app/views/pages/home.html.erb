@@ -5,9 +5,15 @@
     <h3 style="font-family: EB Garamond; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Remember people in their words and in their voice</h3>
 <!-- fix link to
 --> <div class="Top button d-flex">
-        <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
-            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Get Started</p>
+<% if user_signed_in? %>
+        <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
+            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Go to your Dashboard</p>
           <% end %>
+<% else %>
+        <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
+            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Get started</p>
+          <% end %>
+<% end %>
      </div>
     <i class="arrow down"></i>
   </div>
