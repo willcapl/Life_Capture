@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
     resources :questions, only: [:index, :show, :update]
-    resources :playlists, only: [:new, :create, :index]
+    resources :playlists, only: [:index, :new, :create]
       member do
         patch 'update_avatar'
       end
@@ -36,5 +36,5 @@ Rails.application.routes.draw do
 
   get 'film', to: 'sub_users#film'
 
-  get 'book', to: 'sub_useers#book'
+  get 'book', to: 'sub_users#book'
 end
