@@ -57,6 +57,7 @@
   width: 100%;
   margin-top: 16px;
   padding: 24px;
+  height:100%
 }
 
 
@@ -90,6 +91,7 @@
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
+  color: black ;
 }
 
 .btn-show-page{
@@ -134,4 +136,16 @@
 
 .dropdown-i {
   color: #2B326F;
+}
+
+.burger-dropdown-showpage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  aspect-ratio: 1;
+  border: none;
+  color: black;
+  margin-left: 0px;
+  border-radius: 5px;
 }
