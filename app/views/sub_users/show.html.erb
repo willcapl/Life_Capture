@@ -3,6 +3,9 @@
   <div class="show-header-container">
     <div class="header-name">
       <h1><%= @sub_user.name.capitalize%>'s profile</h1>
+      <% if @sub_user.photo.attached? %>
+      <%= cl_image_tag @sub_user.photo.key %>
+      <% end %>
     </div>
     <div class="btn-group dropstart">
       <button type="button" class="burger-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,9 +37,7 @@
         <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
       </li>
   </div>
-  <%# <div class="show-container"> %>
-
-  <!---- NavBar ------->
+  <div class="show-container">
     <div class="videos-container">
       <div class="questions-index-title">
         <h2>Your generated questions....</h2>
@@ -48,18 +49,26 @@
             <% if video_not_attached.empty? %>
               <h3>You have answered all of the available questions.</h3>
             <% else %>
-              <% video_not_attached.each_with_index do |question, index| %>
-              <div class="generated-questions-card">
-                <% title = "#{index + 1}. #{question.title}" %>
-                <%= link_to( title, sub_user_question_path(@sub_user, question)) %>
-              </div>
+              <% @dates.each do |date| %>
+                <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
+                  <h3>This weeks questions</h3>
+                <% else %>
+                  <h3><%= date.strftime("%A, %d %b %Y") %></h3>
+                <% end %>
+                <% video_not_attached.each_with_index do |question, index| %>
+                <% if question.answer_date == date %>
+                  <div class="generated-questions-card">
+                    <%= link_to( question.title, sub_user_question_path(@sub_user, question)) %>
+                  </div>
+                <% end %>
+              <% end %>
             <% end %>
           <% end %>
         </ul>
       </div>
     </div>
   </div>
-<!-- Default dropstart button -->
+
 
 
     <!-- Button -->

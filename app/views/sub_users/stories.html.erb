@@ -33,6 +33,7 @@
         <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
       </li>
   </div>
+
   <div class="show-container">
     <div class="videos-container">
       <% if @questions.find { |question| question.video.attached? } %>
@@ -52,6 +53,7 @@
                 </ul>
               </div>
               </div>
+              <canvas id="canvas" style="display: none;"></canvas>
               <div class="video-card-box">
                 <% if Rails.env.development? %>
                   <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>

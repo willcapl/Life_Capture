@@ -7,7 +7,7 @@ export default class extends Controller {
   connect() {
     this.initializeQuestionVisibility();
     console.log("Question button controller connected");
-    console.log(this.bodyTarget);
+    console.log(this.questionCardTargets);
   }
 
   initializeQuestionVisibility() {
@@ -27,6 +27,7 @@ export default class extends Controller {
     }
 
     let nextQuestion = currentQuestion.nextElementSibling;
+    console.log(nextQuestion)
     if (nextQuestion && nextQuestion.classList.contains("question-card")) {
       nextQuestion.classList.remove("hide-question");
       this.checkLastQuestion(nextQuestion);
