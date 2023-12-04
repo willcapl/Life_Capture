@@ -31,10 +31,10 @@
         <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Film', dashboard_path, class: 'nav-link' %>
+        <%= link_to 'Film', film_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Book', dashboard_path, class: 'nav-link' %>
+        <%= link_to 'Book', book_path, class: 'nav-link' %>
       </li>
   </div>
   <div class="show-container">
@@ -54,9 +54,11 @@
                 <% if question.answer_date == date %>
                   <div class="generated-questions-card">
                     <%=  question.title%>
-                      <%= link_to sub_user_question_path(@sub_user, question) do %>
-                      <%= image_tag("rec-button.png", class:'showpage-record-button') %>
-                    <% end %>
+                  <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
+                    <%= link_to sub_user_question_path(@sub_user, question) do %>
+                      <%= image_tag("rec-button.png", class: 'showpage-record-button') %>
+                  <% end %>
+                  <% end %>
                   </div>
                 <% end %>
               <% end %>
