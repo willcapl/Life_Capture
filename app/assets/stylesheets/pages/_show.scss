@@ -111,8 +111,7 @@
 
 .show-header-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+
 }
 
 .burger-dropdown {
@@ -123,7 +122,9 @@
   aspect-ratio: 1;
   border: none;
   color: white;
-  background: #2b3e6f;
+  padding-top: 10px;
+  background-color: #7A2249;
+  padding-left: 33px;
 }
 
 .dropdown-menu-border {

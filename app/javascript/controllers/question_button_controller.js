@@ -2,12 +2,21 @@ import { Controller } from "@hotwired/stimulus";
 import Typed from 'typed.js';
 
 export default class extends Controller {
-  static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body", "loadingMessageOther", "bodyOther"];
+  static targets = ["questionCard", "submitButton", "loadingMessage", "last", "body", "loadingMessageOther", "bodyOther", 'form'];
 
   connect() {
     this.initializeQuestionVisibility();
     console.log("Question button controller connected");
     console.log(this.questionCardTargets);
+    console.log(this.formTarget);
+    console.log(this.loadingMessageTarget);
+    this.formTarget.addEventListener("keyup", (event) => {
+    console.log(event);
+    console.log('keyup');
+    if (event.key === "Enter") {
+        return false
+      }
+    });
   }
 
   initializeQuestionVisibility() {
@@ -20,8 +29,10 @@ export default class extends Controller {
     }); // Initialize progress bar
   }
 
+
   reveal(event) {
     let currentQuestion = event.target.closest(".question-card");
+    console.log(currentQuestion);
     if (currentQuestion) {
       currentQuestion.classList.add("hide-question");
     }
@@ -80,6 +91,7 @@ export default class extends Controller {
     // Show loading message
     // this.loadingMessageTarget.class.display = "block";
     this.loadingMessageOtherTarget.classList.remove('d-none');
+
     new Typed('#element', {
       strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
       typeSpeed: 50,

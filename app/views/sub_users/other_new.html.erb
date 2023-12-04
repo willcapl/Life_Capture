@@ -4,7 +4,7 @@
       <h1>Add a new Profile</h1>
     </div>
     <div class="questions-page-card">
-      <%= form_with model: @sub_user, url: sub_users_path do |f| %>
+      <%= form_with model: @sub_user, url: sub_users_path, html: { data: { question_button_target: "form"} } do |f| %>
       <div class = "question-card" data-question-button-target="questionCard">
         <div class="welcome-card">
           <h2>Welcome to Life Capture!</h2>
@@ -21,7 +21,7 @@
         <%= f.label :Please_enter_their_name, class:"question-card-text" %>
         <%= f.text_field :name, class:"answer-card-input", autofocus: true %>
         <div class ="question-page-button">
-          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
+          <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal" style="margin-left: auto">
             <%= "Next Question"  %>
           </div>
         </div>
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 22.2%;"></div>
+          <div id="myBar" style="width: calc(100% / 7);"></div>
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
@@ -58,7 +58,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 40%;"></div>
+          <div id="myBar" style="width: calc(2 * (100% / 7));"></div>
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 77.7%;"></div>
+          <div id="myBar" style="width: calc(3 * (100% / 7));"></div>
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
@@ -88,7 +88,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 60.6%;"></div>
+          <div id="myBar" style="width: calc(4 * (100% / 7));"></div>
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
@@ -103,7 +103,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 77.7%;"></div>
+          <div id="myBar" style="width: calc(5 * (100% / 7));"></div>
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
@@ -118,7 +118,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 88.8%;"></div>
+          <div id="myBar" style="width: calc(6 * (100% / 7));"></div>
         </div>
       </div>
 
