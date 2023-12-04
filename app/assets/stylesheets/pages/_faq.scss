@@ -17,7 +17,7 @@
   align-items: center;
   flex-wrap: wrap;
   }
-  .dropdown {
+  .dropdown_accordion {
     min-width: 15em;
     position: relative;
     margin: 2em;
@@ -26,7 +26,7 @@
     // overflow: hidden;
   // padding-bottom: 5px;
   }
-  .dropdown * {
+  .dropdown_accordion * {
     box-sizing: border-box;
    }
    .select {
