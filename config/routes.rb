@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   get '/sub_users/:id/stories', to: 'sub_users#stories', as: 'sub_user_stories'
 
-  get '/sub_users/:id/film', to: 'sub_users#film', as: 'film'
+  get '/sub_users/sub_user_id/film', to: 'sub_users#film', as: 'film'
 
-  get '/sub_users/:id/book', to: 'sub_users#book', as: 'book'
+  get '/sub_users/sub_user_id/book', to: 'sub_users#book', as: 'book'
 end
