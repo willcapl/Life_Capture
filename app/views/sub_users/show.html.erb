@@ -3,7 +3,9 @@
   <div class="show-header-container">
     <div class="header-name">
       <h1><%= @sub_user.name.capitalize%>'s profile</h1>
+      <% if @sub_user.photo.attached? %>
       <%= cl_image_tag @sub_user.photo.key %>
+      <% end %>
     </div>
     <div class="btn-group dropstart">
       <button type="button" class="burger-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +51,7 @@
             <% else %>
               <% @dates.each do |date| %>
                 <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
-                  <h3>This weeks recordings</h3>
+                  <h3>This weeks questions</h3>
                 <% else %>
                   <h3><%= date.strftime("%A, %d %b %Y") %></h3>
                 <% end %>
