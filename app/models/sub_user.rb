@@ -10,7 +10,7 @@ class SubUser < ApplicationRecord
   def content
     client = OpenAI::Client.new
     chaptgpt_response = client.chat(parameters: {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: "Don't list the questions by number, just type | between each one. Your role
         is to engage elderly individuals in meaningful conversations by asking them a series of 14 questions. These questions
          will range from their childhood memories to their vocational challenges and family life. Only give the questions as output.

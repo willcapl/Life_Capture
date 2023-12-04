@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
     resources :questions, only: [:index, :show, :update]
     resources :playlists, only: [:new, :create]
+      member do
+        patch 'update_avatar'
+      end
   end
   resources :questions, only: [:destroy]
   get '/sub_users/:id', to: 'sub_users#show', as: 'sub_user_show'
