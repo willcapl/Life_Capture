@@ -36,48 +36,64 @@
       </li>
   </div>
 
+
 <div class="show-container">
   <div class="videos-container">
-    <% @playlists.each do |playlist| %>
-    <div class="btn-group">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuClickable" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-        <%= playlist.name %>
-      </button>
-       <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickable">
-          <li><a class="dropdown-item" href="#"><%= playlist.description %></a></li>
-          <li><a class="dropdown-item" href="#"><% playlist.get_response_bookmarks.each do |question|%></a></li>
-          <li><a class="dropdown-item" href="#"><%= question.question.title%></a></li>
-    <%end%>
+    <div>
+      <% @playlists.each do |playlist| %>
+        <div class="btn-group">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#playlist<%= playlist.id%>" aria-expanded="false" aria-controls="playlist<%= playlist.id%>">
+            <%= playlist.name %>
+          </button>
+          <div class="collapse" id="playlist<%= playlist.id%>">
+            <div class="row">
+              <% playlist.questions.each do |question| %>
+                <div class="col-6">
+                  <div class="video-card">
+                    <div class="video-card-title">
+                      <h4> <%= question.title %></h4>
+                      <div class="btn-group dropstart">
+                        <button type="button" class="burger-dropdown-showpage" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-ellipsis-vertical" style="margin: auto;"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-border">
+                          <li> <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, question) %> </li>
+                          <li>  <%= link_to 'Delete story', question_path(question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>                    <!-- Dropdown menu links -->
+                        </ul>
+                      </div>
+                    </div>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div class="video-card-box">
+                      <% if Rails.env.development? %>
+                        <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                      <% elsif Rails.env.production? %>
+                        <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                      <% end %>
+                    </div>
+                    <div>
+                  </div>
+                </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="card card-body">
+              <%= simple_form_for [@sub_user, playlist, @response_bookmark] do |f|%>
+                <%= f.input :question_id, collection:  @questions.select{ |question| question.video.attached? && !playlist.questions.include?(question) } %>
+                <%= f.button :submit %>
+              <% end %>
+            </div>
 
-    <%# <%  @questions.select{ |question| question.video.attached? && ResponseBookmark.where(playlist_id: playlist.id).reject { question_id == question.id}}%>
-          <%= simple_form_for [@sub_user, playlist, @response_bookmark] do |f|%>
-          <%= f.input :question_id, collection:  @questions.select{ |question| question.video.attached? } %>
-          <%= f.button :submit%>
-        </ul>
-    <%end%>
-    <% end %>
-
-
-<%# sub_user_playlist_response_bookmarks
-/sub_users/:sub_user_id/playlists/:playlist_id/response_bookmarks(.:format)
-<% simple_form_for [@sub_user, @playlist, @response_bookmarks] %>
-
-<%# <div class="btn-group">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuClickable" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-    Manual close
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickable">
-    <li><a class="dropdown-item" href="#">Menu item</a></li>
-    <li><a class="dropdown-item" href="#">Menu item</a></li>
-    <li><a class="dropdown-item" href="#">Menu item</a></li>
-  </ul>
-</div> %>
-
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          </div>
+        </div>
+      <% end %>
+    </div>
+       <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="flex-shrink: 0; margin-left: 36px;">
       Create New Playlist
     </button>
+
+
+
 
 
     <!-- Modal -->
