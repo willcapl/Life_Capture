@@ -105,3 +105,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.show-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burger-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  aspect-ratio: 1;
+  border: none;
+  color: white;
+  background: #2b3e6f;
+}
