@@ -52,19 +52,18 @@
                 <% else %>
                   <h3><%= date.strftime("%A, %d %b %Y") %></h3>
                 <% end %>
-
-                <h3><%=   %></h3>
                 <% video_not_attached.each_with_index do |question, index| %>
                 <% if question.answer_date == date %>
                   <div class="generated-questions-card">
                     <%= link_to( question.title, sub_user_question_path(@sub_user, question)) %>
                   </div>
                 <% end %>
-                <% end %>
               <% end %>
             <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
-    </div>
-    </div>
+  </div>
+</div>
+  
