@@ -2,17 +2,52 @@
 
 .faq-header {
  text-align: center;
+}
 
 .fAQ_Title {
 // text-align: center;
 // justify-content: center;
 }
 
+.faq-background-image{
+  font-family: Arial, Helvetica, sans-serif;
+  background: ghostwhite;
+  // min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+  .dropdown {
+    min-width: 15em;
+    position: relative;
+    margin: 2em;
+    z-index: 1;
+    display:block;
+    // overflow: hidden;
+  // padding-bottom: 5px;
+  }
+  .dropdown * {
+    box-sizing: border-box;
+   }
+   .select {
+    background: #2a2f3b;
+    color: #fff;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+
+  }
+
+
 .faq_search_bar{
 text-align: center;
 justify-content: center;
 
 }
+
 .select-clicked {
 border: 2px #26489a solid;
 box-shadow: 0 0 0.8 #26489a;
