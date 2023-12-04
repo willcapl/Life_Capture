@@ -38,27 +38,25 @@
       </li>
   </div>
   <div class="show-container">
-    <div class="videos-container">
-      <div class="questions-index-title">
-        <h2>Your generated questions....</h2>
-        <h5>View all your questions here, click on one to record or return to your profile and answer them later</h5>
-      </div>
-      <div class="generated-questions-all-cards">
+    <div class="showpage-container">
         <ul>
           <% video_not_attached = @questions.reject { |question| question.video.attached?} %>
             <% if video_not_attached.empty? %>
-              <h3>You have answered all of the available questions.</h3>
+              <h2>You have answered all of the available questions.</h2>
             <% else %>
               <% @dates.each do |date| %>
                 <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
                   <h3>This weeks questions</h3>
                 <% else %>
-                  <h3><%= date.strftime("%A, %d %b %Y") %></h3>
+                  <h5><%= date.strftime("%A, %d %b %Y") %></h5>
                 <% end %>
                 <% video_not_attached.each_with_index do |question, index| %>
                 <% if question.answer_date == date %>
                   <div class="generated-questions-card">
-                    <%= link_to( question.title, sub_user_question_path(@sub_user, question)) %>
+                    <%=  question.title%>
+                      <%= link_to sub_user_question_path(@sub_user, question) do %>
+                      <%= image_tag("rec-button.png", class:'showpage-record-button') %>
+                    <% end %>
                   </div>
                 <% end %>
               <% end %>
