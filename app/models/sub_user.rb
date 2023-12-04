@@ -10,18 +10,24 @@ class SubUser < ApplicationRecord
   def content
     client = OpenAI::Client.new
     chaptgpt_response = client.chat(parameters: {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: "Don't list the questions by number, just type | between each one. Your role
         is to engage elderly individuals in meaningful conversations by asking them a series of 14 questions. These questions
-         will range from their childhood memories to their vocational challenges and family life. Only give the questions as output.
-         These are the user responses, the user's name is #{self.name}, they were born on #{self.dob}, they spent their childhood
-          in #{self.childhood_location}, they were primarilary educated at #{self.education}, their career was
-          #{self.career}, they spent their adult life in #{self.adult_life_location}, their favourite hobbies or passions are #{self.hobbies}. You should use any information provided to tailor these questions, such as significant historical events relevant to their lifetime or personal milestones. The final question should always be 'If you could talk to your 25 year old self what would you tell them?'. Don't list the questions by number, just type | between each one. Don't list the questions by number, just type | between each one.}. Also insert questions about their first job and their parents."}]
+        will range from their childhood memories to their vocational challenges and family life. Only give the questions as output.
+        These are the user responses, the user's name is #{self.name}, they were born on #{self.dob}, they spent their childhood
+        in #{self.childhood_location}, they were primarilary educated at #{self.education}, their career was
+        #{self.career}, they spent their adult life in #{self.adult_life_location}, their favourite hobbies or passions are #{self.hobbies}.
+        You should use any information provided to tailor these questions, such as significant historical events relevant to their lifetime or personal milestones.
+        The final question should always be 'If you could talk to your 25 year old self what would you tell them?'. Don't list the questions by number, just type |
+        between each one. Don't list the questions by number, just type | between each one.}. Also insert questions about their first job and their parents."}]
     })
     questions = chaptgpt_response["choices"][0]["message"]["content"]
     questions_array = questions.split("|")
-    questions_array.each do |title|
-      question = Question.new(title: title)
+    questions_array.each_with_index do |title, index|
+      date = Date.today
+      time = (index / 2).floor
+      date += time.weeks
+      question = Question.new(title: title, answer_date: date)
       question.sub_user = self
       question.save!
     end
