@@ -44,6 +44,16 @@ class SubUsersController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def update_avatar
+    @sub_user = current_user.sub_users.find(params[:id])
+    if @sub_user.update(sub_user_params)
+      flash[:success] = "Avatar Updated Successfully"
+    else
+      flash[:error] = "Error updating avatar"
+    end
+    redirect_to sub_user
+  end
+
   def playlists
     @sub_user = SubUser.find(params[:id])
     @questions = Question.where(sub_user_id: @sub_user.id)
@@ -63,7 +73,7 @@ class SubUsersController < ApplicationController
   private
 
   def sub_user_params
-    params.require(:sub_user).permit(:name, :relationship_to_user, :dob, :childhood_location, :post_education, :birthplace, :career, :adult_life_location, :hobbies, :life_after_retirement)
+    params.require(:sub_user).permit(:name, :relationship_to_user, :dob, :childhood_location, :post_education, :birthplace, :career, :adult_life_location, :hobbies, :life_after_retirement, :photo)
   end
 
 end
