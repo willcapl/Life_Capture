@@ -65,9 +65,18 @@ class SubUsersController < ApplicationController
   end
 
   def film
+    @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
   def book
+    @sub_user = SubUser.find(params[:id])
+    @questions = Question.where(sub_user_id: @sub_user.id)
+  end
+
+  def within_a_week?(date)
+    @today = Time.zone.today
+    (today - 7.days)..(today + 7.days).cover?(date)
   end
 
   private
