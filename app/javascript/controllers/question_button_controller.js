@@ -70,8 +70,8 @@ export default class extends Controller {
     }, 2000);
 
     const typed = new Typed('#element', {
-      strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
-      typeSpeed: 50,
+      strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'Love Live Demos....', 'Is Demo day still happening?', 'This is not funny anymore.', 'Happy New Year'],
+      typeSpeed: 60,
     });
   }
 

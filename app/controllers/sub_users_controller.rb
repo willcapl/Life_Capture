@@ -19,7 +19,7 @@ class SubUsersController < ApplicationController
     @sub_user.user = current_user
     if @sub_user.save
       @sub_user.content
-      redirect_to sub_user_questions_path(@sub_user)
+      redirect_to sub_user_path(@sub_user)
     else
       render :new, status: :unprocessable_entity
     end
