@@ -24,7 +24,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get 'FAQ', to: 'pages#faq'
+  get 'faq', to: 'pages#faq'
+  get 'about', to: 'pages#about'
 
   get 'sub_user_selection', to: 'pages#sub_user_selection'
 
