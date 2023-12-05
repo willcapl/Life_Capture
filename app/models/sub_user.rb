@@ -2,7 +2,7 @@ class SubUser < ApplicationRecord
   # has_many :responses, through: :questions, dependent: :destroy
   belongs_to :user
   has_many :questions, dependent: :destroy
-  has_many :playlists
+  has_many :playlists, dependent: :destroy
   has_one_attached :photo
   # validates :name, :relationship_to_user, :dob, :childhood_location,
   #   :post_education, :birthplace, :career, :adult_life_location,
@@ -11,7 +11,7 @@ class SubUser < ApplicationRecord
   def content
     client = OpenAI::Client.new
     chaptgpt_response = client.chat(parameters: {
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages: [{ role: "user", content: "Don't list the questions by number, just type | between each one. Your role
         is to engage elderly individuals in meaningful conversations by asking them a series of 14 questions. These questions
         will range from their childhood memories to their vocational challenges and family life. Only give the questions as output.
