@@ -49,7 +49,8 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-border">
                 <li> <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, attached_question) %> </li>
-                  <li>  <%= link_to 'Delete story', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>                    <!-- Dropdown menu links -->
+                  <li>  <%= link_to 'Delete story', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>
+                  <li><%= link_to 'Share this video', "", data: { bs_toggle:"modal", bs_target:"#staticBackdrop"}, class: "dropdown-i" %> </li>                   <!-- Dropdown menu links -->
                 </ul>
               </div>
               </div>
@@ -74,5 +75,30 @@
 
     </div>
 
+  </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Share video</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <a href="mailto:?subject=I wanted you to see this site&body=Check out this site YOUR_PAGE_URL." target="_blank" class="share-button email">Share via Email</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
   </div>
 </div>
