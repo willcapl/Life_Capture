@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
-    resources :questions, only: [:index, :show, :update]
+    resources :questions, only: [:index, :show, :update, :destroy]
     resources :playlists, only: [:index, :new, :create] do
         resources :response_bookmarks, only: [:create]
 
