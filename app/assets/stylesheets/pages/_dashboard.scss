@@ -3,20 +3,16 @@
   justify-content: space-between;
   justify-content: center;
   margin-top: 90px;
+
+  a{
+    margin-right: 25px;
+  }
 }
 
-// .sub-users{
-//   margin: 20px;
-//   color: black;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 1px;
-//   width: 220px;
-//   height: 220px;
-//   flex-shrink: 0;
-//   border-radius: 15px;
-//   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-// }
+.sub-users{
+  display: flex;
+  justify-content: center;
+}
 
 .sub-users-icon:hover {
   border: red;
@@ -27,10 +23,7 @@
   height: 160px;
   width: 180px;
   display: flex;
-  margin: auto;
-  margin-top: 20px;
   border-radius: 10px;
-  margin: 15px;
 }
 
 a:link {
