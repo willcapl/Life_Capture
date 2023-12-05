@@ -7,8 +7,16 @@
   background-color: #203276;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
+.top-section-playlist h2{
+  font-family: dm serif display;
+  margin-left: 24px;
+  color: white;
+}
 
-
+.top-section-playlist{
+  display: flex;
+  justify-content: space-between;
+}
 
 .playlist-section-background{
  background: rgba(105, 138, 162, 0.40);
@@ -41,9 +49,9 @@
   border: 0;
   margin: 10px;
   font-family: dm serif display;
-  font-size: 20px;
+  font-size: 30px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
