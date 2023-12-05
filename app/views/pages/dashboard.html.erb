@@ -6,7 +6,7 @@
       <% if sub_user.photo.attached? %>
         <%= cl_image_tag sub_user.photo.key, class: "sub-user-icon" %>
       <% else %>
-        <%= cl_image_tag "image/*", class: "sub-user-icon" %>
+        <%= image_tag "user.png", class: "sub-user-icon" %>
       <% end %>
 
     </div>
