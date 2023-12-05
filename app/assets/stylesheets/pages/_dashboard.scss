@@ -21,9 +21,8 @@
 
 .sub-user-icon{
   height: 160px;
-  width: 180px;
-  display: flex;
-  border-radius: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
 
 a:link {
@@ -35,13 +34,12 @@ a:link {
   justify-content: center;
   font-family: gill sans;
   font-weight: 700;
-  color: white;
-  background-color: #2B326F;
+  color: #2B326F;
   padding: 10px 20px;
   border-radius: 40px;
   border: 0px;
   margin: 10px 20px;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .new-user-name{

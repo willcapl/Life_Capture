@@ -16,7 +16,12 @@
   border-radius: 20px;
   height: 35px;
 }
-
+.header-name {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  justify-content: space-between;
+}
 .top-section-show {
   display: flex;
   justify-content: space-between;
