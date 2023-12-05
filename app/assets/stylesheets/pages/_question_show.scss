@@ -35,7 +35,7 @@
   width: 120px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: green;
+  background-color: #33cc33;
 }
 
 .rerec-btn {
@@ -43,7 +43,7 @@
   width: 120px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: blue;
+  background-color: #ff6666;
 }
 
 .video-btns {
@@ -58,12 +58,14 @@
 
 .question-title-card {
   background: #f7f7f7;
-  padding: 22px 30px;
+  padding: 10px 10px;
   text-align: center;
   border-radius: 20px;
   box-shadow: 2px 2px 4px rgba(0,0,0, 0.1);
-  margin: 18px 0;
+  margin: 10px 0;
   border: #2B326F 2px solid;
+  width: 80%;
+  align-items: center;
 }
 
 .videos-container {
@@ -86,4 +88,14 @@
 
 .video-container{
   position: relative;
+  width: 1100px;
+  height: 550px;
+}
+
+.record-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
