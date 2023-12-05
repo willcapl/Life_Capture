@@ -134,7 +134,7 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-border">
                           <li> <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, question) %> </li>
-                          <li>  <%= link_to 'Delete story', question_path(question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>                    <!-- Dropdown menu links -->
+                          <li>  <%= link_to 'Delete story', delete_response_bookmark_path(playlist, question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>                    <!-- Dropdown menu links -->
                         </ul>
                               </div>
                               </div>
