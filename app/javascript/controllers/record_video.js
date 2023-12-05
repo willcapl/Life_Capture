@@ -20,13 +20,22 @@ const initRecordVideo = () => {
       type: 'PATCH',
       data: formData
     })
-    // form.submit();
   }
 
   const stopVideo = () => {
     live.srcObject.getTracks().forEach(track => track.stop());
   }
-  // stop.addEventListener("click", stopVideo);
+
+  const takeScreenshot = (videoElement) => {
+    const canvas = document.createElement('canvas');
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    const context = canvas.getContext('2d');
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    return new Promise((resolve) => {
+      canvas.toBlob(resolve, 'image/jpeg');
+    });
+  };
 
   const stopRecording = () => {
     return new Promise(resolve => stop.addEventListener("click", resolve));
@@ -65,6 +74,21 @@ const initRecordVideo = () => {
     .then(stream => {
       live.srcObject = stream;
       live.captureStream = live.captureStream || live.mozCaptureStream;
+      console.log('start');
+      setTimeout(() => {
+        takeScreenshot(live).then((screenshotBlob) => {
+          const formData = new FormData(form);
+          console.log('thumbnail', screenshotBlob);
+          formData.append("question[video_thumbnail]", screenshotBlob, "my_video_thumbnail.jpg");
+          // Upload the screenshot
+          Rails.ajax({
+            url: url,
+            type: 'PATCH',
+            data: formData
+          });
+        });
+        console.log('stop');
+      }, 2000);
       return new Promise(resolve => live.onplaying = resolve);
     })
     .then(() => startRecording(live.captureStream()))
@@ -72,8 +96,8 @@ const initRecordVideo = () => {
       const recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
       console.log(recordedBlob);
       uploadToCloudinary(recordedBlob);
+    });
     })
-  });
 
 }
 export { initRecordVideo };
