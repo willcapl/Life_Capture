@@ -137,9 +137,9 @@
                                 <canvas id="canvas" style="display: none;"></canvas>
                                 <div class="video-card-box">
                                 <% if Rails.env.development? %>
-                                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/<%= question.video_thumbnail.key %>.jpg"></video>
                                 <% elsif Rails.env.production? %>
-                                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video"></video>
+                                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/<%= question.video_thumbnail.key %>.jpg"></video>
                                 <% end %>
                             </div>
                       <div>
