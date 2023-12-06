@@ -103,4 +103,31 @@
   -ms-filter: fliph; /*IE*/
   filter: fliph; /*IE*/
   color: white;
+  border: none;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 15px);
+}
+
+.red{
+  background: red;
+}
+
+.circle {
+  animation: pulse-animation 2s infinite;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #f119197e;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgb(205, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(234, 7, 7, 0);
+  }
 }

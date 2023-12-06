@@ -74,11 +74,6 @@ class SubUsersController < ApplicationController
     @questions = Question.where(sub_user_id: @sub_user.id)
   end
 
-  def within_a_week?(date)
-    @today = Time.zone.today
-    (today - 7.days)..(today + 7.days).cover?(date)
-  end
-
   private
 
   def sub_user_params
