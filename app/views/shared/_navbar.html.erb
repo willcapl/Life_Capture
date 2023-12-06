@@ -14,7 +14,7 @@
 
               <% if sub_user && sub_user.photo.attached?  %>
                 <%= image_tag sub_user.photo, class: 'image-avatar'  %>
-              <% elsif sub_user %>
+              <% elsif sub_user || sub_user_playlist %>
                 <%= image_tag "user.png", class: 'image-avatar'  %>
               <% else %>
                 <i class="fa-solid fa-user avatar-icon"></i>
