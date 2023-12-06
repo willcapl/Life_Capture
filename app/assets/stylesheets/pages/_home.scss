@@ -62,3 +62,16 @@
   color: black;
   font-size: 1.5vw;
 }
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  margin: auto;
+  padding: 8px;
+  position: absolute;
+  right: 50%;
+  bottom: 35px;
+  transform: rotate(45deg);
+  size: 30px;
+}

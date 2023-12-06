@@ -16,7 +16,7 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :Please_enter_their_name, class:"question-card-text" %>
-        <%= f.text_field :name, class:"answer-card-input", autofocus: true %>
+        <%= f.text_field :name, class:"answer-card-input", placeholder: "e.g. Bruce" %>
         <div class ="question-page-button">
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal" style="margin-left: auto">
             <%= "Next Question"  %>
@@ -27,10 +27,10 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :"What is their date of birth?", class:"question-card-text" %>
+        <%= f.label :"What year were they born?", class:"question-card-text" %>
         <%= f.date_select :dob, :as => :date,
               :start_year => 1915, :end_year => 2000,
-              :order => [:day, :month, :year], class:"answer-card-input" %>
+              :order => [:year], class:"answer-card-input" %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
@@ -45,7 +45,7 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'Where did they primarily grow up?', class:"question-card-text" %>
-        <%= f.text_field :childhood_location, class:"answer-card-input" %>
+        <%= f.text_field :childhood_location, class:"answer-card-input", placeholder: "e.g. Yorkshire" %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
@@ -60,7 +60,7 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'Where were they educated', class:"question-card-text"  %>
-        <%= f.text_field :education, class:"answer-card-input" %>
+        <%= f.text_field :education, class:"answer-card-input", placeholder: "e.g. London"  %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :'What was their career?', class:"question-card-text"  %>
+        <%= f.label :'What was their career?', class:"question-card-text",placeholder: "e.g. Dentist"  %>
         <%= f.text_field :career, class:"answer-card-input" %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
@@ -90,7 +90,7 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'Where did they spend their adult life?', class:"question-card-text"  %>
-        <%= f.text_field :adult_life_location, class:"answer-card-input" %>
+        <%= f.text_field :adult_life_location, class:"answer-card-input", placeholder: "e.g. Devon"%>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
@@ -105,7 +105,7 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :Which_hobbies_have_played_a_major_part_of_their_life?, class:"question-card-text"  %>
-        <%= f.text_field :hobbies, class:"answer-card-input" %>
+        <%= f.text_field :hobbies, class:"answer-card-input", placeholder: "e.g.sailing and reading" %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
