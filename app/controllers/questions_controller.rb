@@ -19,8 +19,10 @@ class QuestionsController < ApplicationController
       if @question.update(question_params)
         p @question.video
         p @question.video.attached?
+        p @question.video_thumbnail
+        p @question.video_thumbnail.attached?
         redirect_to sub_user_show_path(@sub_user)
-        format.html { redirect_to sub_user_show_path(@sub_user), notice: 'Video was successfully updated.' }
+        format.html { render :show, notice: 'Video was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }
@@ -38,6 +40,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :video)
+    params.require(:question).permit(:title, :video, :video_thumbnail)
   end
 end

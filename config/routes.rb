@@ -3,15 +3,18 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   resources :sub_users, only: [:new, :edit, :update, :create, :destroy], except: [:show] do
-    resources :questions, only: [:index, :show, :update]
+    resources :questions, only: [:index, :show, :update, :destroy]
     resources :playlists, only: [:index, :new, :create] do
         resources :response_bookmarks, only: [:create]
+
     end
       member do
         patch 'update_avatar'
       end
   end
   resources :questions, only: [:destroy]
+
+  delete '/playlists/:playlist_id/questions/:question_id/response_bookmarks', to: 'response_bookmarks#destroy', as: :delete_response_bookmark
   get '/sub_users/:id', to: 'sub_users#show', as: 'sub_user_show'
   get 'dashboard', to: 'pages#dashboard'
   get 'loading', to: 'pages#loading', as: 'loading'

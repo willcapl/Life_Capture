@@ -12,43 +12,28 @@ const initRecordVideo = () => {
 
   const uploadToCloudinary = (video) => {
     const formData = new FormData(form);
-    formData.append('question[video]', video, "my_video.mp4" )
+    formData.append("question[video]", video, "my_video.mp4" )
+    formData.append("resource_type", "video" )
     console.log(formData)
     Rails.ajax({
       url: url,
       type: 'PATCH',
       data: formData
     })
-    // form.submit();
   }
 
   const stopVideo = () => {
     live.srcObject.getTracks().forEach(track => track.stop());
   }
-  // stop.addEventListener("click", stopVideo);
 
-  const captureThumbnail = (videoBlob) => {
-    const videoElement = document.createElement('video');
-    videoElement.src = URL.createObjectURL(videoBlob);
-
-    videoElement.load();
-    videoElement.addEventListener('loadeddata', () => {
-      const canvas = document.getElementById('canvas');
-      canvas.width = videoElement.videoWidth;
-      canvas.height = videoElement.videoHeight;
-      const context = canvas.getContext('2d');
-      context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-      // Now the canvas contains the image, you can convert it to a data URL or a blob
-      const thumbnailDataURL = canvas.toDataURL('image/png');
-
-      // You can use this data URL as the src for an img element or upload it
-      console.log(thumbnailDataURL);
-
-      // Optionally, if you need a Blob instead of a data URL:
-      canvas.toBlob(blob => {
-        console.log(blob); // You can upload this blob or use it as needed
-      }, 'image/png');
+  const takeScreenshot = (videoElement) => {
+    const canvas = document.createElement('canvas');
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    const context = canvas.getContext('2d');
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    return new Promise((resolve) => {
+      canvas.toBlob(resolve, 'image/jpeg');
     });
   };
 
@@ -89,28 +74,30 @@ const initRecordVideo = () => {
     .then(stream => {
       live.srcObject = stream;
       live.captureStream = live.captureStream || live.mozCaptureStream;
+      console.log('start');
+      setTimeout(() => {
+        takeScreenshot(live).then((screenshotBlob) => {
+          const formData = new FormData(form);
+          console.log('thumbnail', screenshotBlob);
+          formData.append("question[video_thumbnail]", screenshotBlob, "my_video_thumbnail.jpg");
+          // Upload the screenshot
+          Rails.ajax({
+            url: url,
+            type: 'PATCH',
+            data: formData
+          });
+        });
+        console.log('stop');
+      }, 2000);
       return new Promise(resolve => live.onplaying = resolve);
     })
     .then(() => startRecording(live.captureStream()))
     .then (recordedChunks => {
       const recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
       console.log(recordedBlob);
-      captureThumbnail(recordedBlob);
       uploadToCloudinary(recordedBlob);
+    });
     })
-  });
 
 }
 export { initRecordVideo };
-
-
-
-    //  const url = `/sub_users/${subUserID}/questions/${recordVideoID}`
-    //   const content = {
-    //     method: "PATCH",
-    //     headers: { "Content-Type": "application/json", "X-CSRF-Token": Rails.csrfToken() },
-    //     body: new FormData(form).append(recordedBlob, 'video/webm')
-    //   }
-    //   fetch(url, content)
-    //   .then(response => response)
-    //   .then(data => console.log(data))

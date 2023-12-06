@@ -2,10 +2,13 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  background: #7A2249;
-  padding: 16px;
+  background: #2f3e46;
+  padding: 6px;
   list-style-type: none;
   color: white;
+  font-family: dm sherif design;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
 .nav-active {
@@ -20,5 +23,5 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  padding: 13px;
+  padding: 8px;
 }

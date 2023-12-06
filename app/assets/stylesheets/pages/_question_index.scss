@@ -1,8 +1,13 @@
 .generated-questions-card{
-  background-color: whitesmoke;
+  background-color: #cad2c5;
   margin: 15px;
   padding: 15px;
   border-radius: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.generated-questions-card a {
   text-decoration: none;
   color: black;
 }

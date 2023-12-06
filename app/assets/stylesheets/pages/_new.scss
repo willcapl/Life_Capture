@@ -46,7 +46,7 @@
 
 .next-button{
   border-radius: 40px;
-  background: var(--charcoal, #2B326F);
+  background: var(--charcoal, #2f3e46);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   padding: 10px 38px;
@@ -60,19 +60,19 @@
 }
 
 .next-button:hover{
-  background: #50596f;
+  background: #485963;
   // box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.35);
   // border: 2px solid #686f7a;
 }
 .previous-button:hover{
-  background: #50596f;
+  background: #485963;
   // box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.35);
   // border: 2px solid #686f7a;
 }
 
 .previous-button{
   border-radius: 40px;
-  background: var(--charcoal, #2B326F);
+  background: var(--charcoal, #2f3e46);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   padding: 10px 38px;
@@ -97,7 +97,7 @@
 
 
 .btn-sub-user-form{
-  background-color: #424B61;
+  background-color: #2f3e46;
   color:white;
   padding: 10px 20px;
   border-radius: 20px;
@@ -121,7 +121,7 @@
 #myBar {
   width: 10%;
   height: 30px;
-  background-color:#424B61 ;
+  background-color:#2f3e46 ;
   text-align: center; /* To center it horizontally (if you want) */
   line-height: 30px; /* To center it vertically */
   color: white;
@@ -131,7 +131,7 @@
 .submit-button{
 
   border-radius: 40px;
-  background: var(--charcoal, #424B61);
+  background: var(--charcoal, #2f3e46);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   padding: 0px 38px;

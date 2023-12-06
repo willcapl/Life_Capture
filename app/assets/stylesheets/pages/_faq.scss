@@ -39,9 +39,11 @@ justify-content: center;
     padding-bottom: 5px;
     text-align: center;
   }
+
   .dropdown_accordion * {
     box-sizing: border-box;
    }
+
    .select {
     background: #2a2f3b;
     color: #fff;
@@ -55,22 +57,16 @@ justify-content: center;
   }
 
 
-// .faq_search_bar{
-//   text-align: center;
-//   justify-content: center;
-//
-//   align-items: center;
-//   border-radius: 10px;
-//   padding: 1em;
 
-  // button {
-  //   color: red;
-  //   border-radius: 2opx;
-  // }
+.faq_search_bar{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1em;
+}
 
-
-
-// }
 
 .select-clicked {
   border: 2px #26489a solid;

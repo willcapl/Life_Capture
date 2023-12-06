@@ -6,18 +6,18 @@
       <% if sub_user.photo.attached? %>
         <%= cl_image_tag sub_user.photo.key, class: "sub-user-icon" %>
       <% else %>
-        <%= cl_image_tag "image/*", class: "sub-user-icon" %>
+        <%= image_tag "user.png", class: "sub-user-icon" %>
       <% end %>
 
     </div>
     <div class="sub-user-name">
-    <%= sub_user.name %>
+    <%= sub_user.name.capitalize %>
     </div>
      <%end%>
   <% end %>
       <%= link_to sub_user_selection_path do %>
         <div class= "sub-users">
-          <%= image_tag "add_icon.png", class: "sub-user-icon" %>
+          <%= image_tag "green_add_icon.png", class: "sub-user-icon" %>
         </div>
         <div class = "new-user-name">
           <%= "Add new profile" %>

@@ -2,34 +2,27 @@
   display: flex;
   justify-content: space-between;
   justify-content: center;
-  margin-top: 90px;
+  margin-top: 190px;
+
+  a{
+    margin-right: 25px;
+  }
 }
 
 .sub-users{
-  margin: 20px;
-  color: black;
   display: flex;
-  flex-direction: column;
-  background-color:  #7A80BA;
-  padding: 10px;
-  width: 220px;
-  height: 220px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  justify-content: center;
 }
 
-.sub-users:hover {
-  background-color: #2B326F;
-  transition: background-color 0.5s ease;
+.sub-users-icon:hover {
+  border-color: red; /* Change border color on hover */ /* Change background color on hover (replace with your color) */
 }
 
 .sub-user-icon{
-  height: 140px;
-  width: 150px;
-  display: flex;
-  margin: auto;
-  margin-top: 20px;
+  height: 160px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: white;
 }
 
 a:link {
@@ -41,13 +34,12 @@ a:link {
   justify-content: center;
   font-family: gill sans;
   font-weight: 700;
-  color: white;
-  background-color: #2B326F;
+  color: #2f3e46;
   padding: 10px 20px;
   border-radius: 40px;
   border: 0px;
   margin: 10px 20px;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 2px rgbfa(0, 0, 0, 0.25);
 }
 
 .new-user-name{
@@ -55,11 +47,10 @@ a:link {
   justify-content: center;
   font-family: gill sans;
   font-weight: 700;
-  color: white;
-  background-color: #2B326F;
+  color: #2f3e46;
   padding: 10px 20px;
   border-radius: 40px;
   border: 0px;
   margin: 10px 20px;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }

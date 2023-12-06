@@ -2,11 +2,13 @@
   <%= simple_form_for [@sub_user, @question], data: { record_video_id: @question.id, sub_user_id: @sub_user.id } do |f| %>
     <%= f.input :title %>
     <%= f.input :video, as: :file %>
+    <%= f.input :video_thumbnail, as: :file %>
     <%= f.submit %>
   <% end  %>
 </div>
 <div class="container">
   <%= link_to 'back to questions', sub_user_show_path(@sub_user) %>
+  <div class = "record-container">
   <div class="question-title-card">
     <h2><%= @question.title %></h2>
   </div>
@@ -26,6 +28,7 @@
       <% end %>
     </div>
 
+  </div>
     </div>
   </div>
 </div>

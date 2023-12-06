@@ -82,7 +82,7 @@ class SubUsersController < ApplicationController
   private
 
   def sub_user_params
-    params.require(:sub_user).permit(:name, :relationship_to_user, :dob, :childhood_location, :post_education, :birthplace, :career, :adult_life_location, :hobbies, :life_after_retirement, :photo)
+    params.require(:sub_user).permit(:name, :dob, :childhood_location, :education, :career, :adult_life_location, :hobbies, :photo)
   end
 
 end

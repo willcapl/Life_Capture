@@ -1,14 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(<%= image_path "banner_image.jpg" %>);">
   <div class="container mb-5">
     <% if user_signed_in? %>
-    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)"> Welcome back <%=current_user.username%> </h1>
+    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)"> Welcome Back, <%=current_user.username.capitalize%> </h1>
     <% else  %>
     <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Store Your Memories,</h1>
-    <% end %>
     <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Preserve Your Legacy.</h1>
     <h3 style="font-family: EB Garamond; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Remember people in their words and in their voice</h3>
+    <% end %>
 <!-- fix link to
---> <div class="Top button d-flex">
+--> <div class="Top button d-flex" style="padding-bottom: 5px;">
 <% if user_signed_in? %>
         <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
             <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Go to your Dashboard</p>
