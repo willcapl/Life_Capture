@@ -77,8 +77,9 @@
 
 .video-card {
   width: 100%;
+  position: relative;
   height: 100%;
-  background-color: white;
+  background-color: #CAD2C5;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.2);
   padding: 16px;
@@ -100,15 +101,17 @@
 }
 
 .video-card-box {
-  margin: 16px 0;
+  position: relative;
+
 }
 
 .video-card-title {
-  height: 85px;
+  height: 98px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
-  color: black ;
+  color: black;
+  margin-top: 16px;
 
 }
 .video-card-title h4 {

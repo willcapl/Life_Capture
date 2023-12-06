@@ -27,7 +27,10 @@
             <div class="video-card">
               <canvas id="canvas" style="display: none;"></canvas>
               <div class="video-card-box">
-              <%= cl_image_tag attached_question.video_thumbnail.key, class: "video-card-thumbnail" %>
+                <%= cl_image_tag attached_question.video_thumbnail.key, class: "video-card-thumbnail" %>
+                <button type="button" class="btn-play" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= attached_question.id %>">
+                  <i class="fa-solid fa-play" style="color: #2F3E46"></i>
+                </button>
               </div>
               <div class="video-card-title">
                 <h4> <%= attached_question.title %></h4>
@@ -36,9 +39,6 @@
                 <%= attached_question.updated_at.strftime("%d %B %Y") %>
               </div>
               <div>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= attached_question.id %>">
-                play vid
-              </button>
 
             <!-- Modal -->
 
