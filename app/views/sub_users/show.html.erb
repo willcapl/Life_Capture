@@ -41,11 +41,14 @@
                         <i class="fa-solid fa-trash" aria-hidden="true"></i> <span class="visually-hidden"></span>
                           <% end %>
                         <% end %>
-                      <%= link_to "Delete", sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-                  <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
-                      <%= image_tag("rec-button.png", class: 'showpage-record-button') %>
-                      <%= link_to sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-                        <i class="fa-solid fa-trash" aria-hidden="true"></i> <span class="visually-hidden"></span>
+                        <div class ="trashcan-rec-btn">
+                          <div class="trash-can-show">
+                            <%= link_to "", sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                          </div>
+                          <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
+                              <%= image_tag("rec-button.png", class: 'showpage-record-button') %>
+                              <%= link_to sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                        </div>
                           <% end %>
                   <% end %>
                   </div>

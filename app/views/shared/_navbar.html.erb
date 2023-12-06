@@ -7,6 +7,7 @@
         <% end %>
       </div>
       <% sub_user = current_user.sub_users.find{ |sub_user| sub_user.id == params[:id].to_i }%>
+      <% sub_user_playlist = current_user.sub_users.find{ |sub_user| sub_user.id = params[:sub_user_id].to_i} if params[:sub_user_id] %>
         <div>
           <div class="btn-group dropstart">
             <button type="button" class="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style="border: 0; background: transparent;">
@@ -25,9 +26,12 @@
                   <li><%= link_to sub_user.name, sub_user_show_path(sub_user), class: 'dropdown-item' %></li>
                 <% end %>
               <% end %>
-              <% if sub_user %>
+              <% if sub_user%>
                   <li> <%= link_to 'Edit profile', edit_sub_user_path(sub_user), class: "dropdown-item" %> </li>
                   <li><%= link_to 'Delete profile', sub_user_path(sub_user), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'}, class: "dropdown-item" %> </li>
+              <% elsif sub_user_playlist %>
+                  <li> <%= link_to 'Edit profile', edit_sub_user_path(sub_user_playlist), class: "dropdown-item" %> </li>
+                  <li><%= link_to 'Delete profile', sub_user_path(sub_user_playlist), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'}, class: "dropdown-item" %> </li>
               <% end %>
 
               <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
