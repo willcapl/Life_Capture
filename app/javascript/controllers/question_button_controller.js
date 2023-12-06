@@ -69,21 +69,20 @@ export default class extends Controller {
   }
 
   submit(event) {
-
-    // Show loading message
-    // this.loadingMessageTarget.class.display = "block";
-    this.loadingMessageTarget.classList.remove('d-none');
     this.bodyTarget.classList.add('d-none');
-    // Simulate an asynchronous action (replace with your actual submission logic)
-    setTimeout(() => {
-      // Assuming submission is successful, you can redirect or perform other actions
-      console.log("Form submitted successfully!");
-    }, 2000);
-
-    const typed = new Typed('#element', {
+    this.loadingMessageTarget.classList.remove('d-none');
+    new Typed('#element', {
       strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'Love Live Demos....', 'Is Demo day still happening?', 'This is not funny anymore.', 'Happy New Year'],
       typeSpeed: 60,
     });
+    setTimeout(() => {
+    // Show loading message
+    // this.loadingMessageTarget.class.display = "block";
+    // Simulate an asynchronous action (replace with your actual submission logic)
+      // Assuming submission is successful, you can redirect or perform other actions
+      console.log("Form submitted successfully!");
+    }, 7000);
+
   }
 
   submitOther(event) {
@@ -91,17 +90,17 @@ export default class extends Controller {
     // Show loading message
     // this.loadingMessageTarget.class.display = "block";
     this.loadingMessageOtherTarget.classList.remove('d-none');
-
+    this.bodyTarget.classList.add('d-none');
     new Typed('#element', {
       strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
       typeSpeed: 50,
     });
-    this.bodyTarget.classList.add('d-none');
-    // Simulate an asynchronous action (replace with your actual submission logic)
+
     setTimeout(() => {
+    // Simulate an asynchronous action (replace with your actual submission logic)
       // Assuming submission is successful, you can redirect or perform other actions
       console.log("Form submitted successfully!");
-    }, 2000);
+    }, 7000);
 
   }
 }
