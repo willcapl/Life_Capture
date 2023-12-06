@@ -20,10 +20,10 @@
   </div>
   <div class="show-container">
     <div class="showpage-container">
-        <ul>
+        <ul id="question-ul" style="list-style: none;">
           <% video_not_attached = @questions.reject { |question| question.video.attached?} %>
             <% if video_not_attached.empty? %>
-              <h2>You have answered all of the available questions.</h2>
+              <li><h2>You have answered all of the available questions.</h2></li>
             <% else %>
               <% @dates.each do |date| %>
                 <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
@@ -33,22 +33,20 @@
                 <% end %>
                 <% video_not_attached.each_with_index do |question, index| %>
                 <% if question.answer_date == date %>
-                    <%= link_to sub_user_question_path(@sub_user, question) do %>
-                  <div class="generated-questions-card">
-                    <%=  question.title%>
-                      <%= link_to sub_user_question_path(@sub_user, question) do %>
-                      <%= link_to sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-                        <i class="fa-solid fa-trash" aria-hidden="true"></i> <span class="visually-hidden"></span>
+                  <%= link_to sub_user_question_path(@sub_user, question) do %>
+                      <div class="generated-questions-card">
+                        <%= question.title%>
+                        <div>
+                          <%= link_to sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                            <i class="fa-solid fa-trash" aria-hidden="true"></i>
                           <% end %>
-                        <% end %>
-                      <%= link_to "Delete", sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-                  <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
-                      <%= image_tag("rec-button.png", class: 'showpage-record-button') %>
-                      <%= link_to sub_user_question_path(@sub_user, question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-                        <i class="fa-solid fa-trash" aria-hidden="true"></i> <span class="visually-hidden"></span>
+                          <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
+                            <%= link_to sub_user_question_path(@sub_user, question) do %>
+                              <%= image_tag("rec-button.png", class: 'showpage-record-button') %>
+                            <% end %>
                           <% end %>
-                  <% end %>
-                  </div>
+                        </div>
+                      </div>
                   <% end %>
                 <% end %>
               <% end %>
