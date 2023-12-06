@@ -1,21 +1,23 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(<%= image_path "banner_image.jpg" %>);">
   <div class="container mb-5">
+    <div class="home-headers">
     <% if user_signed_in? %>
-    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)"> Welcome Back, <%=current_user.username.capitalize%> </h1>
+    <h1> Welcome Back, <%=current_user.username.capitalize%> </h1>
     <% else  %>
-    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Store Your Memories,</h1>
-    <h1 style="font-family: gill sans; font-weight: 700; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Preserve Your Legacy.</h1>
-    <h3 style="font-family: EB Garamond; color: white; text-shadow: 1px 1px rgba(0,0,0,0.2)">Remember people in their words and in their voice</h3>
+    <h1>Store Your Memories,</h1>
+    <h1>Preserve Your Legacy.</h1>
+    <h3>Remember people in their words and in their voice</h3>
     <% end %>
+    </div>
 <!-- fix link to
---> <div class="Top button d-flex" style="padding-bottom: 5px;">
+--> <div class="Top button d-flex">
 <% if user_signed_in? %>
         <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
-            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Go to your Dashboard</p>
+            <p class='btn-brown mb-25' style="font-family: gayathri; color:white">Go to your Dashboard</p>
           <% end %>
 <% else %>
         <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
-            <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Sign Up Now</p>
+            <p class='btn-brown' style="font-family: gayathri; color:white">Sign Up Now</p>
           <% end %>
 
 <% end %>
@@ -28,20 +30,20 @@
   </div>
 </div>
 <div class="section top-section">
-  <div class="container pt-5">
-    <h2 style="font-family: gill sans; font-weight: 700; color: white" class=text-center>HOW IT WORKS</h2>
+  <div class="container pt-2">
+    <h2 style="font-family: DM Serif Display; color: white" class=text-center>HOW IT WORKS</h2>
     <div class="top-section-card-container">
       <div class="top-section-card">
         <div class="number-icon">1</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Sign up and answer some questions about your or your relative's life</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.6vw">Sign up and answer some questions about your or your relative's life</p>
       </div>
       <div class="top-section-card">
         <div class="number-icon">2</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Each week we will send you questions tailored to you to record via video</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.6vw">Each week we will send you questions tailored to you to record via video</p>
       </div>
       <div class="top-section-card">
         <div class="number-icon">3</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Store your memories, turn them into film/book and share with loved ones</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.6vw">Store your memories, turn them into film/book and share with loved ones</p>
         <div id="scroll-target"></div>
       </div>
     </div>
@@ -49,7 +51,7 @@
 </div>
 <div class="section middle-section">
   <div class="container pt-5">
-    <h2 class= "text-center mb-5"style = "font-family: gill sans; font-weight: 700; color: black">WHY CHOOSE LIFE CAPTURE</h2>
+    <h2 class= "text-center mb-5"style = "font-family: DM Serif Display; color: black">WHY CHOOSE LIFE CAPTURE</h2>
     <div class="custom-list">
     <li class= "text-center mb-5" > Have a safe place to store your memories forever</li>
     <li class= "text-center mb-5" > Pass down your stories, in your own words, for generations to come</li>
@@ -67,11 +69,11 @@
     <div class="Button bottom d-flex justify-content-center">
       <% if user_signed_in? %>
               <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
-                  <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Go to your Dashboard</p>
+                  <p class='btn-brown' style="font-family: gayathri; color:white">Go to your Dashboard</p>
                 <% end %>
       <% else %>
               <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
-                  <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Get started</p>
+                  <p class='btn-brown' style="font-family: gayathri; color:white">Get started</p>
                 <% end %>
       <% end %>
       </div>

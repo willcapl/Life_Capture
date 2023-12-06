@@ -1,7 +1,4 @@
 // Specific CSS for your home-page
-.banner-title {
-
-}
 
 .banner-title h1 {
   font-size: 100px !important;
@@ -17,7 +14,7 @@
 
 .top-section-card-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .top-section-card {
@@ -53,8 +50,6 @@
 .custom-list {
   list-style-image: "icon_small_logo_green.png" ;
   list-style-type:  none;
-
-
 }
 
 .custom-list li{
@@ -74,4 +69,16 @@
   bottom: 35px;
   transform: rotate(45deg);
   size: 30px;
+}
+
+.home-headers h1{
+  font-family: DM Serif Display;
+  color: white;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
+}
+
+.home-headers h3{
+  font-family: EB Garamond;
+  color: white;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
