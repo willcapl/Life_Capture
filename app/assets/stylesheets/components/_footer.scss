@@ -1,5 +1,5 @@
 .footer {
-  background-color: #2B326F;
+  background-color: #2f3e46;
   margin-top: auto;
   color: white;
   padding: 20px 0;
@@ -22,7 +22,7 @@
 }
 
 .footer-list i:hover {
-  color: #424b61;
+  color: #485963;
 }
 
 .footer-us li, .FAQs-div li {
@@ -32,7 +32,7 @@
 }
 
 .footer-us li:hover, .FAQs-div p:hover {
-  color: #424b61;
+  color: #485963;
 }
 
 .footer-logo-tagline {
@@ -45,4 +45,14 @@
 .footer-image {
   height: 100px;
   margin-left: 24px;
+}
+
+.FAQs-div a{
+  font-family: EB Garamond;
+  color: whitesmoke;
+}
+
+.about-us a{
+  font-family: EB Garamond;
+  color: whitesmoke;
 }
