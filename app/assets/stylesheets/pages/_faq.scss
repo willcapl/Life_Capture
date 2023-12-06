@@ -5,13 +5,13 @@
 }
 
 .fAQ_Title {
-// text-align: center;
-// justify-content: center;
+text-align: center;
+justify-content: center;
 }
-.FAQsubmit {
-  justify-content: center;
+// .FAQsubmit {
+//   justify-content: center;
 
-}
+// }
 // .faq-search-buttons-button {
 
 //   .FAQsubmit{border-radius: 20px;
@@ -21,24 +21,26 @@
 .faq-background-image{
    font-family: Arial, Helvetica, sans-serif;
    background: ghostwhite;
-  //  height: 100vh;
-  // min-height: 100vh;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
 
   }
+  // .faq-video-title {
+  //   justify-content:;
+  // }
+
   .dropdown_accordion {
     min-width: 15em;
     position: relative;
     margin: 2em;
     z-index: 1;
     display:block;
-   padding-bottom: 5px;
+    padding-bottom: 5px;
+    text-align: center;
   }
   .dropdown_accordion * {
     box-sizing: border-box;
-    // padding-bottom: 5px;
    }
    .select {
     background: #2a2f3b;
@@ -53,22 +55,22 @@
   }
 
 
-.faq_search_bar{
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  padding: 1em;
+// .faq_search_bar{
+//   text-align: center;
+//   justify-content: center;
+//
+//   align-items: center;
+//   border-radius: 10px;
+//   padding: 1em;
 
-  button {
+  // button {
+  //   color: red;
+  //   border-radius: 2opx;
+  // }
 
-    border-radius: 20px;
-  }
 
 
-
-}
+// }
 
 .select-clicked {
   border: 2px #26489a solid;
@@ -83,9 +85,7 @@ select:hover {
    border-right: 5px solid transparent ;
    border-top: 6px solid #fff;
    transition: 0.3s;
-  // display: flex;
-  //  justify-content:flex-end;
-  // align-items:normal;
+
 }
 .caret-rotate {
 transform: rotate(180deg);
@@ -99,14 +99,8 @@ box-shadow: 0 0.5em 1em rgba (0,0,0,0.2);
 border-radius: 0.5em;
 color: black;
 margin-bottom: 15px;
-// position: absolute;
-// top: 3em;
-
-// left: 50%;
 width: 100%;
-// transform: translatey(10%);
 transition: 1.5s;
-// z-index: 1;
 }
 
 .menu li{
@@ -114,24 +108,22 @@ transition: 1.5s;
   margin: 0.3 0;
   border-radius: 0.5;
   padding-bottom: 10px;
-  // cursor: pointer;
+
 }
 .menu li:hover{
 background: lightgrey;
 }
 
-.active {
-  // background: #23242a;
-}
+
 .menu-open {
 display: block;
 opacity: 1;
 }
 
-  .search-button {
-border-radius: 20px;
-justify-content: center;
-  }
+//   .search-button {
+// border-radius: 20px;
+// justify-content: center;
+//   }
 
   // .placeholder {
   //   text-align: center;
@@ -139,18 +131,15 @@ justify-content: center;
 
   // }
 
- .fAQ_Title {
-  text-align: center;
-  justify-content: center;
-}
-  .FAQsubmit {
-  // justify-content: center;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // // border-radius: 50px;
-  // padding: 1em;
-  }
+
+  // .FAQsubmit {
+  // // justify-content: center;
+  // // display: flex;
+  // // justify-content: space-between;
+  // // align-items: center;
+  // // // border-radius: 50px;
+  // // padding: 1em;
+  // }
 
 
 

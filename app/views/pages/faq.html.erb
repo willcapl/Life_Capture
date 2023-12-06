@@ -1,17 +1,11 @@
+
+
 <div class="faq-header">
    <h1>FAQ</h1>
 </div>
 
   <div class="faq-background-image ">
-    <div class="faq_search_bar">
-      <form action="/search" method="get">
-        <input type="text" name="search-button" placeholder="      Search">
-        <%# <div class="faq-search-buttons-button"> %>
-          <button type="FAQsubmit">Search</button>
-        <%# </div> %>
-      </form>
-    </div>
-    </div>
+
 
   <div class ="faq-background-image "data-controller="faq">
     <div class="FAQ_dropdow" >
@@ -25,9 +19,11 @@
         </div>
         <ul data-faq-target="oneDropdown" class="menu d-none">
            <li>
-          promo demo of life capture
-          <video width="800" height="450" controls>
-            <source src="CLOUDINARY_URL=cloudinary://241343287669392:jRrtTxbnHIU3YbOwPtTqAPu3zEk@dpqge0m1h" type="video/mp4">
+           <div class= "faq-video-title" >
+          Why use Life Capture?
+           </div>
+          <video width="600" height="300"  controls>
+            <source src="https://res.cloudinary.com/dpqge0m1h/video/upload/v1701774670/life_capture_promo_vid_i9x5gd.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
          </li>
@@ -48,8 +44,10 @@
        <ul data-faq-target="twoDropdown" class="menu d-none">
 
         <li>
+        <div class= "faq-video-title" >
           take a guided demo tour of Life Capture?
-          <video width="800" height="450" controls>
+          </div>
+          <video width="600" height="300" controls>
             <source src="CLOUDINARY_URL=cloudinary://241343287669392:jRrtTxbnHIU3YbOwPtTqAPu3zEk@dpqge0m1h" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -80,10 +78,11 @@
 
       <ul data-faq-target="threeDropdown" class="menu d-none">
         <li>
+        <div class= "faq-video-title" >
           need some help with setting up for a video?
-          <video width="800" height="450" controls>
-            <source src="CLOUDINARY_URL=cloudinary://241343287669392:jRrtTxbnHIU3YbOwPtTqAPu3zEk@dpqge0m1h
-" type="video/mp4">
+          </div>
+          <video width="600" height="300" controls>
+            <source src="https://res.cloudinary.com/dpqge0m1h/video/upload/v1701857737/how_to_record_video._lifecapture_compressed_update_a1cvcy.mp4" type="video/mp4">
             Your browser does not support the video tag.
          </video>
 
@@ -118,15 +117,15 @@
       </div>
         <ul data-faq-target="fourDropdown" class="menu d-none">
 
-          <li>
-          helpful trouble shooting video
-          <video width="800" height="450" controls>
+          <%# <li> %>
+          <%# helpful trouble shooting video
+          <video width="600" height="300" controls>
             <source src="CLOUDINARY_URL=cloudinary://241343287669392:jRrtTxbnHIU3YbOwPtTqAPu3zEk@dpqge0m1h
 " type="video/mp4">
             Your browser does not support the video tag.
-         </video>
+         </video> %>
 
-        </li>
+        <%# </li> %>
 
 
 
@@ -148,5 +147,5 @@
       </ul>
     </div>
  </div>
-<%#
-</body> %>
+
+</div>
