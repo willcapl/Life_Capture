@@ -12,7 +12,7 @@
 }
 
 .navbar-container i {
-  color: #2B326F;
+  color: #2F3E46;
   font-size: 24px;
 }
 
@@ -33,12 +33,12 @@
   font-weight: 700;
 }
 .btn-brown {
-  background-color: #2B326F;
+  background-color: #2F3E46;
   color:white;
   padding: 10px 20px;
   border-radius: 20px;
   border: 0px;
-  margin-left: 16px;
+  margin-left: 7px;
 
   p {
     font-weight: 700;
@@ -48,7 +48,7 @@
   display: inline;
 
   &:hover {
-  background-color: #363c72d7;
+  background-color: #425058;
     color: rgba(220, 221, 237, 0.816) ; /* Change the text color on hover */
 
 }
@@ -68,7 +68,7 @@
   position: absolute;
   right: 50%;
   top: 9px;
-  background-color: #2B326F ;
+  background-color: #2F3E46 ;
   border-radius: 40px;
   font-weight: 600;
   font-size: 24px;

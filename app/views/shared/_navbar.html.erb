@@ -3,7 +3,7 @@
     <div class="navbar-container container">
       <div>
         <%= link_to root_path do %>
-          <%= image_tag 'big_logo_blue.png', width:"200vh", style:"margin-right:100px;" %>
+          <%= image_tag 'big_logo_green.png', width:"200vh", style:"margin-right:100px;" %>
         <% end %>
       </div>
       <% sub_user = current_user.sub_users.find{ |sub_user| sub_user.id == params[:id].to_i }%>
@@ -47,7 +47,7 @@
       <div class="container d-flex jutify-content-between">
         <div>
           <%= link_to root_path do %>
-          <%= image_tag 'big_logo_blue.png', width:"200vh", style:"margin-right:100px;" %>
+          <%= image_tag 'big_logo_green.png', width:"200vh", style:"margin-right:100px;" %>
             <%# <h1 style="color: black; font-size: 20px ">Life Capture</h1> %>
           <% end %>
         </div>
