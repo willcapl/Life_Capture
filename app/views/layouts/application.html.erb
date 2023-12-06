@@ -19,7 +19,7 @@
     <div class="min-height">
         <%= yield %>
     </div>
-    <% unless controller_name == 'pages' && action_name == 'dashboard' %>
+    <% unless controller_name == 'pages' && action_name == 'dashboard' || controller_name == 'sub_user' && action_name == 'new' || controller_name == 'sub_user' && action_name == 'other' %>
      <%= render 'pages/footer'%>
     <% end %>
   </body>

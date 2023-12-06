@@ -17,9 +17,14 @@
         <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
             <p class='btn-brown' style="font-family: gill sans; font-weight: 700; color:white">Sign Up Now</p>
           <% end %>
+
 <% end %>
+      <a href="#scroll-target">
+    </div>
+    <div class = "container mb-3 d-flex align-items-center justify-content-center">
+        <%= image_tag("dropdownarrow.png", class:'d-inline-flex align-items-center', style:"height:30px;") %>
+      </a>
      </div>
-    <i class="arrow down"></i>
   </div>
 </div>
 <div class="section top-section">
@@ -28,23 +33,16 @@
     <div class="top-section-card-container">
       <div class="top-section-card">
         <div class="number-icon">1</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Sign up for yourself or someone else</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Sign up and answer some questions about your or your relative's life</p>
       </div>
       <div class="top-section-card">
         <div class="number-icon">2</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Answer some questions about your or your relative's life</p>
+        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Each week we will send you questions tailored to you to record via video</p>
       </div>
       <div class="top-section-card">
         <div class="number-icon">3</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">We then generate questions based upon the information you've given</p>
-      </div>
-      <div class="top-section-card">
-        <div class="number-icon">4</div>
-        <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Each week we will send you questions to record via video</p>
-      </div>
-      <div class="top-section-card">
-        <div class="number-icon">5</div>
         <p style="font-family: EB Garamond; color: white; font-size: 1.5vw">Store your memories, turn them into film/book and share with loved ones</p>
+        <div id="scroll-target"></div>
       </div>
     </div>
   </div>
@@ -79,3 +77,16 @@
       </div>
   </div>
 </div>
+
+
+<script>
+  document.querySelectorAll(a[href^="#"]).forEach(anchor => {
+      anchor.addEventListener('click', function (e {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behaviour: 'smooth'
+          });
+      }));
+  });
+</script>
