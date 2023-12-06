@@ -94,3 +94,13 @@
   align-items: center;
   margin-bottom: 30px;
 }
+
+.recording-now-alert{
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph; /*IE*/
+  filter: fliph; /*IE*/
+  color: white;
+}
