@@ -1,13 +1,4 @@
-.sub-users-card{
-  display: flex;
-  justify-content: space-between;
-  justify-content: center;
-  margin-top: 190px;
 
-  a{
-    margin-right: 25px;
-  }
-}
 
 .sub-users{
   display: flex;
@@ -18,28 +9,8 @@
   border-color: red; /* Change border color on hover */ /* Change background color on hover (replace with your color) */
 }
 
-.sub-user-icon{
-  height: 160px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: white;
-}
-
 a:link {
   text-decoration: none;
-}
-
-.sub-user-name {
-  display: flex;
-  justify-content: center;
-  font-family: gill sans;
-  font-weight: 700;
-  color: #2f3e46;
-  padding: 10px 20px;
-  border-radius: 40px;
-  border: 0px;
-  margin: 10px 20px;
-  text-shadow: 2px 2px 2px rgbfa(0, 0, 0, 0.25);
 }
 
 .new-user-name{
