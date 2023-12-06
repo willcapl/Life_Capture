@@ -123,7 +123,7 @@
       </div>
 
        <div class = "question-card" data-question-button-target="questionCard">
-         <%= f.label :photo, "Select a profile image", class:"photo-button"  %>
+         <%= f.label :photo, "Choose a file", class:"photo-button"  %>
           <%= f.file_field :photo, accept: "image/*", class: "d-none"%>
           <div class ="question-page-button">
               <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
