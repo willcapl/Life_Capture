@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 190px;
 
   a{
     margin-right: 25px;
@@ -34,12 +34,12 @@ a:link {
   justify-content: center;
   font-family: gill sans;
   font-weight: 700;
-  color: #2B326F;
+  color: #2f3e46;
   padding: 10px 20px;
   border-radius: 40px;
   border: 0px;
   margin: 10px 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 2px rgbfa(0, 0, 0, 0.25);
 }
 
 .new-user-name{
@@ -47,10 +47,10 @@ a:link {
   justify-content: center;
   font-family: gill sans;
   font-weight: 700;
-  color: #2B326F;
+  color: #2f3e46;
   padding: 10px 20px;
   border-radius: 40px;
   border: 0px;
   margin: 10px 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
