@@ -1,8 +1,5 @@
 <div class="container" data-controller="question-button">
   <div data-question-button-target="body">
-    <div class="header-new-subuser">
-      <h1>Add a new Profile</h1>
-    </div>
     <div class="questions-page-card">
       <%= form_with model: @sub_user, url: sub_users_path, html: { data: { question_button_target: "form"} } do |f| %>
       <div class = "question-card" data-question-button-target="questionCard">
@@ -62,7 +59,7 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :'Where were you educated', class:"question-card-text"  %>
+        <%= f.label :'Where were they educated', class:"question-card-text"  %>
         <%= f.text_field :education, class:"answer-card-input" %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
@@ -123,6 +120,7 @@
       </div>
 
        <div class = "question-card" data-question-button-target="questionCard">
+          <%= f.label :Choose_a_profile_picture, class:"question-card-text"%>
           <%= f.file_field :photo, accept: "image/*" %>
           <div class ="question-page-button">
               <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">

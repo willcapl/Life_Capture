@@ -1,8 +1,5 @@
 <div class="container" data-controller="question-button">
   <div data-question-button-target="body" class="data-body-c">
-    <div class="header-new-subuser">
-      <h1>Add a new Profile</h1>
-    </div>
     <div class="questions-page-card">
       <%= form_with model: @sub_user, url: sub_users_path, html: { data: { question_button_target: 'form' } } do |f| %>
       <div class = "question-card" data-question-button-target="questionCard">

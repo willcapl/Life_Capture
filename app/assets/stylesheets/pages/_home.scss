@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .top-section{
   background-color: #52796F;
-   padding: 32px 0;
+   padding: 40px 0;
 }
 
 .top-section-card-container{
@@ -37,4 +37,17 @@
 
 .p-middle-section-card {
   font-size: 50px;
+}
+
+.custom-list {
+  list-style-image: "icon_small_logo_green.png" ;
+  list-style-type:  none;
+
+
+}
+
+.custom-list li{
+  font-family: EB Garamond;
+  color: black;
+  font-size: 1.5vw;
 }
