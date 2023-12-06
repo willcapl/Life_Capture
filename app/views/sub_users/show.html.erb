@@ -1,15 +1,6 @@
 
 <div class="container">
-  <div class="show-header-container">
-    <div class="header-name">
-      <h1><%= @sub_user.name.capitalize%>'s profile</h1>
-      <% if @sub_user.photo.attached? %>
-      <%= cl_image_tag @sub_user.photo.key, class: "image-avatar"%>
 
-
-      <% end %>
-       </div>
-  </div>
   <div class="navbar-show">
     <li class="nav-item nav-active">
       <%= link_to 'Upcoming Stories', sub_user_show_path(@sub_user), class: 'nav-link' %>
