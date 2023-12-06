@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  background-color: white;
+  background-color: #2F3E46;
   border-radius: 20px;
   padding: 16px;
+  color: white;
 }
 
 .btn-close-video{
@@ -35,4 +36,13 @@
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.btn-play {
+  position: absolute;
+  top: calc(50% - 23px);
+  left: calc(50% - 23px);
+  background: transparent;
+  border: none;
+  font-size: 50px;
 }

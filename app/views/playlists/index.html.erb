@@ -106,35 +106,55 @@
             <%= playlist.name %>
           </button>
           <div class="collapse" id="playlist<%= playlist.id%>">
-            <div class="row">
+            <div class="videos-container" style="background: transparent !important; margin-top: 0px">
+                <div class="video-card-container" style="background: transparent !important;">
               <% playlist.questions.each do |question| %>
-                <div class="col-6">
-                  <div class="video-card-playlist">
+                  <div class="video-card">
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div class="video-card-box">
+                      <%= cl_image_tag question.video_thumbnail.key, class: "video-card-thumbnail" %>
+                      <button type="button" class="btn-play" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= question.id %>">
+                        <i class="fa-solid fa-play" style="color: #2F3E46"></i>
+                      </button>
+                    </div>
                     <div class="video-card-title">
                       <h4> <%= question.title %></h4>
-                      <div class="btn-group dropstart">
-                        <button type="button" class="burger-dropdown-showpage" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="fa-solid fa-ellipsis-vertical" style="margin: auto;"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-border">
-                          <li> <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, question) %> </li>
-                          <li>  <%= link_to 'Delete story', delete_response_bookmark_path(playlist, question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>                    <!-- Dropdown menu links -->
-                        </ul>
-                              </div>
-                              </div>
-                                <canvas id="canvas" style="display: none;"></canvas>
-                                <div class="video-card-box">
-                                <% if Rails.env.development? %>
-                                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/<%= question.video_thumbnail.key %>.jpg"></video>
-                                <% elsif Rails.env.production? %>
-                                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/<%= question.video_thumbnail.key %>.jpg"></video>
-                                <% end %>
-                            </div>
-                      <div>
                     </div>
-                 </div>
-                </div>
+                    <div class="video-card-date">
+                      <%= question.updated_at.strftime("%d %B %Y") %>
+                    </div>
+                    <div>
+
+                  <!-- Modal -->
+
+
+                  <div class="modal fade" id="staticBackdrop<%= question.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content modal-content-video">
+                          <button type="button" class="btn-close btn-close-video" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-header-video">
+                          <h1 class="modal-title-video" id="staticBackdropLabel"><%= question.title %></h1>
+                        </div>
+                        <div class="modal-body">
+                          <% if Rails.env.development? %>
+                            <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/<%= question.video_thumbnail.key %>.jpg"></video>
+                          <% elsif Rails.env.production? %>
+                            <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/<%= question.video_thumbnail.key %>.jpg"></video>
+                          <% end %>
+                        </div>
+                        <div class="modal-footer-video">
+                          <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, question), class: 'modal-video-btn' %>
+                          <%= link_to 'Delete story', question_path(question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wanxt to delete the memory?'}, class: 'modal-video-btn' %>
+                          <%= link_to 'Share this video', "", data: { bs_toggle:"modal", bs_target:"#staticBackdrop"}, class: 'modal-video-btn' %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+                  </div>
               <% end %>
+                </div>
             </div>
           </div>
         </div>
