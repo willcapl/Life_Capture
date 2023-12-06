@@ -9,6 +9,7 @@ const initRecordVideo = () => {
   const recordVideoID = form.dataset.recordVideoId
   const subUserID = form.dataset.subUserId
   const url = `/sub_users/${subUserID}/questions/${recordVideoID}`
+  const recordMessage = document.querySelector('.recording-now-alert')
 
   const uploadToCloudinary = (video) => {
     const formData = new FormData(form);
@@ -63,10 +64,12 @@ const initRecordVideo = () => {
   }
   stop.addEventListener("click", () => {
     stop.classList.add('d-none')
+    recordMessage.classList.add('d-none')
     videoButtons.classList.remove('d-none')
   } )
   start.addEventListener("click", () => {
     start.classList.add('d-none')
+    recordMessage.classList.remove('d-none')
     navigator.mediaDevices.getUserMedia({
       video: true,
       audio: true
