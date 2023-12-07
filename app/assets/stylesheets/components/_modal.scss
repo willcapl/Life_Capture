@@ -3,13 +3,34 @@
   margin-top: 50px;
   padding: 50px;
 }
+.modal-body {
+
+i:hover{
+  background-color: grey;
+  border-radius: 20px;
+}
+}
+
+.modal-footer {
+justify-content: center;
+
+.btn-primary{
+border-radius: 20px;
+  }
+}
 
 .modal-title {
   font-size: 18px;
   font-weight: bold;
   position: absolute;
-  left: 159px;
+  left: 200px;
   top: 25px;
+
+}
+.share-page-popup{
+  #staticBackdropLabel {
+    justify-content: center;
+  }
 }
 
 .pill-button {
