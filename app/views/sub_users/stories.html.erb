@@ -10,16 +10,10 @@
       <li class="nav-item">
         <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Film', film_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Book', book_path, class: 'nav-link' %>
-      </li>
   </div>
 
   <div class="show-container">
-    <div class="videos-container">
+    <div class="videos-container" style="margin-top: 0px;">
       <% if @questions.find { |question| question.video.attached? } %>
         <div class="video-card-container">
           <% questions_attached = @questions.select { |question| question.video.attached?} %>
@@ -36,7 +30,7 @@
                 <h4> <%= attached_question.title %></h4>
               </div>
               <div class="video-card-date">
-                <%= attached_question.updated_at.strftime("%d %B %Y") %>
+                <p>Recorded on: <%= attached_question.updated_at.strftime("%d %B %Y") %></p>
               </div>
               <div>
 
@@ -44,7 +38,7 @@
 
 
             <div class="modal fade" id="staticBackdrop<%= attached_question.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-xl">
+              <div class="modal-dialog modal-lg">
                 <div class="modal-content modal-content-video">
                     <button type="button" class="btn-close btn-close-video" data-bs-dismiss="modal" aria-label="Close"></button>
                   <div class="modal-header-video">
@@ -77,9 +71,6 @@
 
   </div>
 </div>
-<<<<<<< HEAD
-
-
 
 
 <!-- Modal -->
@@ -106,5 +97,3 @@
     </div>
   </div>
 </div>
-=======
->>>>>>> f82c1f12087e58455efa96bd68a501f4e855dcdb

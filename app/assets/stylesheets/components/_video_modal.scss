@@ -1,12 +1,15 @@
 .modal-header-video {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 24px;
   background-color: #2F3E46;
   border-radius: 20px;
-  padding: 16px;
+  padding: 20px;
   color: white;
+}
+
+.modal-header-video h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px;
 }
 
 .btn-close-video{
