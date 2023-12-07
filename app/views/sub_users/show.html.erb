@@ -11,12 +11,6 @@
       <li class="nav-item">
         <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Film', film_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Book', book_path, class: 'nav-link' %>
-      </li>
   </div>
   <div class="show-container">
     <div class="showpage-container">
@@ -26,8 +20,10 @@
               <li><h2>You have answered all of the available questions.</h2></li>
             <% else %>
               <% @dates.each do |date| %>
-                <% if ( date - Date.today ) < 7 && ( date - Date.today ) >= 0 %>
-                  <h3>This weeks questions</h3>
+                <% if ( date - Date.today ) <= 0 && ( date - Date.today ) >= -7 %>
+                  <h3>This weeks question's</h3>
+                <% elsif ( date - Date.today ) <= 7 && ( date - Date.today ) >= 0 %>
+                  <h3>Next weeks question's</h3>
                 <% else %>
                   <h5><%= date.strftime("%A, %d %b %Y") %></h5>
                 <% end %>
