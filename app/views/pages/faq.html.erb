@@ -8,14 +8,13 @@
 
 
   <div class ="faq-background-image "data-controller="faq">
-    <div class="FAQ_dropdow" >
-   <div class="caret"></div>
+    <div class="faq-dropdown" >
 
 
        <div class="dropdown_accordion">
-        <div class="select" >
+        <div class="select" data-action="click->faq#reveal" >
           <span class="selected">Why use Life Capture?</span>
-        <div data-faq-target="oneCaret" data-action="click->faq#reveal"class="caret"></div>
+        <div data-faq-target="oneCaret"ßclass="caret"></div>
         </div>
         <ul data-faq-target="oneDropdown" class="menu d-none">
            <li>
@@ -116,18 +115,6 @@
           <div data-faq-target="fourCaret" data-action="click->faq#reveal"class="caret"></div>
       </div>
         <ul data-faq-target="fourDropdown" class="menu d-none">
-
-          <%# <li> %>
-          <%# helpful trouble shooting video
-          <video width="600" height="300" controls>
-            <source src="CLOUDINARY_URL=cloudinary://241343287669392:jRrtTxbnHIU3YbOwPtTqAPu3zEk@dpqge0m1h
-" type="video/mp4">
-            Your browser does not support the video tag.
-         </video> %>
-
-        <%# </li> %>
-
-
 
           <li>Have you tried turning it off and on again  ? </li>
           <li>Is the camera on? </li>

@@ -28,6 +28,7 @@
   padding: 48px 24px;
   border-radius: 5px;
   justify-content: flex-start;
+  font-size:23px;
 }
 
 .number-icon{
@@ -81,4 +82,67 @@
   font-family: EB Garamond;
   color: white;
   text-shadow: 1px 1px rgba(0,0,0,0.2);
+}
+
+/* Existing Styles (Unchanged) */
+/* ... (Your existing CSS here) ... */
+
+/* Tablet and smaller devices (up to 768px) */
+@media (max-width: 768px) {
+  .banner-title h1 {
+    font-size: 60px; /* Smaller font size for tablet */
+  }
+
+  .top-section-card-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align the cards */
+  }
+
+  .top-section-card {
+    width: 80%; /* Adjust width to take more space */
+    margin-bottom: 20px; /* Add space between cards */
+  }
+
+  .p-middle-section-card {
+    font-size: 30px; /* Smaller font size for tablet */
+  }
+
+  .custom-list li {
+    font-size: 4vw; /* Adjust font size for readability */
+  }
+
+  .home-headers h1, .home-headers h3 {
+    font-size: 24px; /* Adjust heading font sizes */
+  }
+  .top-section-card p {
+    font-size: 20px; /* Increased font size for tablet */
+  }
+  .testiontial{
+    font-size: 20px;
+  }
+}
+
+/* Mobile phones (up to 480px) */
+@media (max-width: 480px) {
+  .banner-title h1 {
+    font-size: 40px; /* Even smaller font size for mobile */
+  }
+
+  .p-middle-section-card {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
+  .custom-list li {
+    font-size: 5vw; /* Slightly larger vw for smaller screens for readability */
+  }
+
+  .home-headers h1, .home-headers h3 {
+    font-size: 18px; /* Adjust heading font sizes for mobile */
+  }
+  .top-section-card p {
+    font-size: 18px; /* Slightly smaller than tablet, but larger than original */
+  }
+  .testiontial{
+    font-size: 18px;
+  }
 }
