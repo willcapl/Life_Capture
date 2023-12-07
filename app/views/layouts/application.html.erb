@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <link rel="icon" type="image/png" href="<%= image_path('small_logo_blue.png') %>">
+    <link rel="icon" type="image/png" href="<%= image_path('small_logo_brightgreen.png') %>">
 
   </head>
 
@@ -19,8 +19,8 @@
     <div class="min-height">
         <%= yield %>
     </div>
-    <% unless controller_name == 'pages' && action_name == 'dashboard' %>
-     <%= render 'pages/footer'%>
-    <% end %>
+ <% unless (controller_name == 'pages' && action_name == 'dashboard') || (controller_name == 'sub_user' && (action_name == 'new' || action_name == 'other')) %>
+  <%= render 'pages/footer' %>
+<% end %>
   </body>
 </html>

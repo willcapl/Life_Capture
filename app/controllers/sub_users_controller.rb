@@ -15,6 +15,7 @@ class SubUsersController < ApplicationController
   end
 
   def create
+    sleep(7)
     @sub_user = SubUser.new(sub_user_params)
     @sub_user.user = current_user
     if @sub_user.save
@@ -72,11 +73,6 @@ class SubUsersController < ApplicationController
   def book
     @sub_user = SubUser.find(params[:id])
     @questions = Question.where(sub_user_id: @sub_user.id)
-  end
-
-  def within_a_week?(date)
-    @today = Time.zone.today
-    (today - 7.days)..(today + 7.days).cover?(date)
   end
 
   private

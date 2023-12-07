@@ -70,19 +70,25 @@
 
 .video-card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
   background-color: #52796F;
 }
 
 .video-card {
   width: 100%;
-  height: 500px;
-  background-color: white;
+  position: relative;
+  height: 100%;
+  background-color: #CAD2C5;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.2);
   padding: 16px;
   font-family: dm serif display;
+}
+
+.video-card-date {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .video-card-video {
@@ -90,17 +96,22 @@
   aspect-ratio: 16/9;
 }
 
+.video-card-thumbnail {
+  width: 100%;
+}
+
 .video-card-box {
-  margin: 16px 0;
+  position: relative;
+
 }
 
 .video-card-title {
-  height: 85px;
+  height: 98px;
   display: flex;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   justify-content: space-evenly;
-  color: black ;
+  color: black;
+  margin-top: 16px;
 
 }
 .video-card-title h4 {
@@ -182,4 +193,3 @@ height: 45px;
 color: red;
 background-color: red;
 }
-
