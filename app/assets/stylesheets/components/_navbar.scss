@@ -4,11 +4,28 @@
   position: relative;
 }
 
+.dropdown-names {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #CAD2CF;
+}
+
+.sub-user-dropdown-actions {
+  padding: 10px 0;
+  border-bottom: 1px solid  #CAD2CF;
+}
 .navbar-container {
   justify-content: space-between;
   display: flex;
   margin: 0 auto;
   align-items: center;
+}
+.avatar-dropdown-menu {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+}
+.user-dropdown-actions {
+  padding-top: 10px 0;
 }
 
 .navbar-container i {
@@ -104,4 +121,7 @@
 
 .dropdown-item{
   font-family: Public Sans;
+  --bs-dropdown-link-active-color: #000;
+  --bs-dropdown-link-active-bg: #cad2cf;
+  --bs-dropdown-link-active-border-radius: 10px;
 }

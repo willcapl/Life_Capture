@@ -21,23 +21,30 @@
               <% end %>
 
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu avatar-dropdown-menu">
 
               <% if current_user.sub_users %>
-                <% current_user.sub_users.each do |sub_user| %>
-                  <li><%= link_to sub_user.name, sub_user_show_path(sub_user), class: 'dropdown-item' %></li>
-                <% end %>
+                <div class="dropdown-names">
+                  <% current_user.sub_users.each do |sub_user| %>
+                    <li class="dropdown-name"><%= link_to sub_user.name, sub_user_show_path(sub_user), class: 'dropdown-item' %></li>
+                  <% end %>
+                </div>
               <% end %>
               <% if sub_user%>
+                <div class="sub-user-dropdown-actions">
                   <li> <%= link_to 'Edit profile', edit_sub_user_path(sub_user), class: "dropdown-item" %> </li>
                   <li><%= link_to 'Delete profile', sub_user_path(sub_user), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'}, class: "dropdown-item" %> </li>
+                </div>
               <% elsif sub_user_playlist %>
+                <div class="sub-user-dropdown-actions">
                   <li> <%= link_to 'Edit profile', edit_sub_user_path(sub_user_playlist), class: "dropdown-item" %> </li>
                   <li><%= link_to 'Delete profile', sub_user_path(sub_user_playlist), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this subuser?'}, class: "dropdown-item" %> </li>
+                </div>
               <% end %>
-
-              <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-              <li><%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to log out?'}, class: 'dropdown-item' %></li>
+              <div class="user-dropdown-actions">
+                <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                <li><%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to log out?'}, class: 'dropdown-item' %></li>
+              </div>
 
             </ul>
           </div>
