@@ -8,10 +8,15 @@
 </div>
 
 <div class="container">
-  <%= link_to 'Back to questions', sub_user_show_path(@sub_user) %>
+  <%= link_to sub_user_show_path(@sub_user), style: 'color: #52796F; text-decoration: none;' do %>
+      <div class="video-back-btn">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+  <% end %>
+
   <div class = "record-container">
   <div class="question-title-card">
-    <h2><%= @question.title %></h2>
+    <h2 style="font-family: DM Serif Display;"><%= @question.title %></h2>
   </div>
   <div class="video-container">
     <div style="width: 100%; height: 100%; overflow:hidden">
