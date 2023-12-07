@@ -20,7 +20,7 @@
         <%= f.text_field :name, class:"answer-card-input", autofocus: true, placeholder: "e.g. Jane"  %>
         <div class ="question-page-button">
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal", style="margin-left: auto;">
-            <%= "Next Question"  %>
+            <%= "Next"  %>
           </div>
         </div>
         <div id="myProgress">
@@ -32,12 +32,12 @@
         <%= f.date_select :dob, :as => :date,
               :start_year => 1920, :end_year => 2000,
               :order => [:year], class:"answer-card-input" %>
-        <div class ="question-page-button">
+        <div class ="question-page-button-year">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
+            <%= "Next" %>
           </div>
         </div>
         <div id="myProgress">
@@ -49,10 +49,10 @@
         <%= f.text_field :childhood_location, class:"answer-card-input", placeholder: "e.g. Suffolk" %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
+            <%= "Next" %>
           </div>
         </div>
         <div id="myProgress">
@@ -64,10 +64,10 @@
         <%= f.text_field :education, class:"answer-card-input", placeholder: "e.g. Devon"  %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
+            <%= "Next" %>
           </div>
         </div>
         <div id="myProgress">
@@ -79,10 +79,10 @@
         <%= f.text_field :career, class:"answer-card-input", placeholder: "e.g. Dentist"  %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
+            <%= "Next" %>
           </div>
         </div>
         <div id="myProgress">
@@ -94,10 +94,10 @@
         <%= f.text_field :adult_life_location, class:"answer-card-input", placeholder: "e.g. London"  %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
+            <%= "Next" %>
           </div>
         </div>
         <div id="myProgress">
@@ -109,10 +109,10 @@
         <%= f.text_field :hobbies, class:"answer-card-input", placeholder: "e.g. Sailing and reading"  %>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class = "next-button" data-question-button-target="next-question" data-action="click->question-button#reveal">
-            <%= "Next Question" %>
+            <%= "Next" %>
           </div>
         </div>
         <div id="myProgress">
@@ -121,10 +121,10 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'Please add a profile picture', class:"question-card-text"  %>
-        <%= f.file_field :photo, style: "padding: 20px 0px;"%>
+        <%= f.file_field :photo, style: "style: padding: 36px 0px; padding-left: 13px; padding-top: 6px;"%>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
-            <%= "Previous Question" %>
+            <%= "Previous" %>
           </div>
           <div class="submit-button" data-question-button-target="submitButton" data-action="click->question-button#submit">
             <%= f.submit "Submit", class:"btn-sub-user-form" %>

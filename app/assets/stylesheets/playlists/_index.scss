@@ -86,3 +86,28 @@
   height:50px;
   width: 50px;
 }
+
+.modal-content {
+  text-align: center;
+  margin-top: 50px;
+  padding: 50px;
+  font-family: 'EB Garamond';
+  font-size: 20px;
+}
+
+.btn-modal-playlist {
+  border: 0px;
+  font-family: 'Public Sans';
+  font-size: 17px;
+  background-color: #354f52;
+  width: 150px;
+  color: white;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  position: center;
+  top: 25px;
+  font-family: 'DM Serif Display';
+}
