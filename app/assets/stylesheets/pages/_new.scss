@@ -32,7 +32,12 @@
   border: 1px solid;
   border-radius: 36px;
   height: 52px;
-  padding: 6px;
+  padding: 25px;
+}
+
+#sub_user_dob_1i{
+  padding: 14px;
+  border-radius: 36px;
 }
 
 .question-page-button{
@@ -44,7 +49,7 @@
 .question-page-button-year{
   display: flex;
   justify-content: space-between;
-  margin-top: 18px;
+  margin-top: 9px;
 }
 
 .welcome-card {
@@ -63,7 +68,7 @@
 
 .next-button{
   border-radius: 40px;
-  background: var(--charcoal, #2f3e46);
+  background: var(--charcoal, #354f52);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   padding: 10px 38px;
@@ -89,7 +94,7 @@
 
 .previous-button{
   border-radius: 40px;
-  background: var(--charcoal, #2f3e46);
+  background: var(--charcoal, #354f52);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   padding: 10px 38px;
@@ -114,7 +119,7 @@
 
 
 .btn-sub-user-form{
-  background-color: #2f3e46;
+  background-color: #354f52;
   color:white;
   padding: 10px 20px;
   border-radius: 20px;
@@ -139,7 +144,7 @@
 #myBar {
   width: 10%;
   height: 30px;
-  background-color:#2f3e46 ;
+  background-color:#354f52 ;
   text-align: center; /* To center it horizontally (if you want) */
   line-height: 30px; /* To center it vertically */
   color: white;
@@ -149,7 +154,7 @@
 .submit-button{
 
   border-radius: 40px;
-  background: var(--charcoal, #2f3e46);
+  background: var(--charcoal, #354f52);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   padding: 0px 38px;
@@ -164,4 +169,5 @@
 
 #element{
   font-family: "DM Serif Display";
+  color: #354f52;
 }
