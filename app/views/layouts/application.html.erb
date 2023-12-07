@@ -17,9 +17,9 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <div class="min-height">
-        <%= yield %>
+       <%= yield %>
     </div>
- <% unless (controller_name == 'pages' && action_name == 'dashboard') || (controller_name == 'sub_user' && (action_name == 'new' || action_name == 'other')) %>
+<% unless (controller_name == 'sub_users' && action_name == 'new' ) || (controller_name == 'pages' && action_name == 'dashboard') ||  (controller_name == 'sub_users' && action_name == 'other_new') %>
   <%= render 'pages/footer' %>
 <% end %>
   </body>
