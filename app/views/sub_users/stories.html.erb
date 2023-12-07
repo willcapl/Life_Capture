@@ -52,7 +52,8 @@
                     <% end %>
                   </div>
                   <div class="modal-footer-video">
-                    <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, attached_question), class: 'modal-video-btn' %>
+                    <%= link_to 'Re-record Video', sub_user_question_path(@sub_user, attached_question), class: 'modal-video-btn' %>
+                    <%= link_to 'Delete Story', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wanxt to delete the memory?'}, class: 'modal-video-btn' %>
                     <%= link_to 'Share this video', "", data: { bs_toggle:"modal", bs_target:"#staticBackdrop"}, class: 'modal-video-btn' %>
                   </div>
                 </div>
