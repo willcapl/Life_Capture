@@ -13,11 +13,11 @@
 --> <div class="Top button d-flex">
 <% if user_signed_in? %>
         <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
-            <p class='btn-brown mb-25' style="font-family: gayathri; color:white">Go to your Dashboard</p>
+            <p class='btn-brown mb-25' style="font-family: Public Sans; color:white">Go to your Dashboard</p>
           <% end %>
 <% else %>
         <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
-            <p class='btn-brown' style="font-family: gayathri; color:white">Sign Up Now</p>
+            <p class='btn-brown' style="font-family: Public Sans; color:white">Sign Up Now</p>
           <% end %>
 
 <% end %>
@@ -69,11 +69,11 @@
     <div class="Button bottom d-flex justify-content-center">
       <% if user_signed_in? %>
               <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
-                  <p class='btn-brown' style="font-family: gayathri; color:white">Go to your Dashboard</p>
+                  <p class='btn-brown' style="font-family: Public Sans; color:white">Go to your Dashboard</p>
                 <% end %>
       <% else %>
               <%= link_to new_user_registration_path, class: "d-inline-block mb-4 mt-3" do %>
-                  <p class='btn-brown' style="font-family: gayathri; color:white">Get started</p>
+                  <p class='btn-brown' style="font-family: Public Sans; color:white">Get started</p>
                 <% end %>
       <% end %>
       </div>
