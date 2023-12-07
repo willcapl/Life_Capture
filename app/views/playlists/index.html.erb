@@ -16,12 +16,6 @@
       <li class="nav-item nav-active">
         <%= link_to 'Playlists', sub_user_playlists_path(@sub_user), class: 'nav-link' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Film', film_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Book', book_path, class: 'nav-link' %>
-      </li>
   </div>
 
 
@@ -129,7 +123,7 @@
 
 
                   <div class="modal fade" id="staticBackdrop<%= question.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
+                    <div class="modal-dialog modal-lg">
                       <div class="modal-content modal-content-video">
                           <button type="button" class="btn-close btn-close-video" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-header-video">
