@@ -29,6 +29,7 @@
      </div>
   </div>
 </div>
+        <div id="scroll-target"></div>
 <div class="section top-section">
   <div class="container pt-2">
     <h2 style="font-family: DM Serif Display; color: white" class=text-center>HOW IT WORKS</h2>
@@ -44,7 +45,6 @@
       <div class="top-section-card">
         <div class="number-icon">3</div>
         <p style="font-family: EB Garamond; color: white; font-size: 1.6vw">Store your memories, turn them into film/book and share with loved ones</p>
-        <div id="scroll-target"></div>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
     <h4 class= "text-center" style="font-family: EB Garamond; color: black; font-size: 1.5vw" > <i>"Getting my grandma to record her stories from her childhood </i></h4>
     <h4 class= "text-center mb-5" style="font-family: EB Garamond; color: black; font-size: 1.5vw"> <i> and life was so valuable - I wish I could do it for all my relatives!"</i></h4>
     <h4 class= "text-center mb-3" style="font-family: EB Garamond; color: black; font-size: 1.5vw">- Sergio Ramos, Spain</h4>
-    <div class="Button bottom d-flex justify-content-center">
+    <div class="Button bottom d-flex justify-content-center" style="margin-bottom: 24px">
       <% if user_signed_in? %>
               <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
                   <p class='btn-brown' style="font-family: gayathri; color:white">Go to your Dashboard</p>
