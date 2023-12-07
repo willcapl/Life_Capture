@@ -126,8 +126,8 @@
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous Question" %>
           </div>
-          <div class="submit-button" data-question-button-target="submitButton" data-action="click->question-button#submit">
-            <%= f.submit "Submit", class:"btn-sub-user-form" %>
+          <div>
+            <%= f.submit "Submit", class:"btn-sub-user-form submit-button", data: { question_button_target: "submitButton", action: "click->question-button#submit"}  %>
           </div>
         </div>
         <div id="myProgress">
