@@ -9,7 +9,7 @@
       <% sub_user = current_user.sub_users.find{ |sub_user| sub_user.id == params[:id].to_i }%>
       <% sub_user_playlist = current_user.sub_users.find{ |sub_user| sub_user.id = params[:sub_user_id].to_i} if params[:sub_user_id] %>
         <div>
-          <div class="btn-group dropstart">
+          <div class="btn-group dropstart dropdown-nav">
             <button type="button" class="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style="border: 0; background: transparent;">
 
               <% if sub_user && sub_user.photo.attached?  %>
