@@ -6,19 +6,24 @@
   text-align: center;
   text-decoration: none;
   display: inline-flex;
-  font-family: DM Serif Display;
-  font-size: 36px;
+  font-family: Gayathri;
+  font-size: 30px;
   height: 120px;
-  width: 200px;
-  margin: 15px; /* Adjust for spacing between buttons */
+  width: 235px;
+  margin: 15px;
   cursor: pointer;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
 }
 
 .buttons{
   display: flex;
   justify-content: center;
+}
+
+.sub-user-selection-wordbox{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
 }

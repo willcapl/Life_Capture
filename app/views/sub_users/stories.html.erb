@@ -25,42 +25,59 @@
           <% questions_attached = @questions.select { |question| question.video.attached?} %>
           <% questions_attached.each do |attached_question| %>
             <div class="video-card">
-              <div class="video-card-title">
-                <h4> <%= attached_question.title %></h4>
-                <div class="btn-group dropstart">
-                <button type="button" class="burger-dropdown-showpage" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-ellipsis-vertical" style="margin: auto;"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-border">
-                <li> <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, attached_question) %> </li>
-                  <li>  <%= link_to 'Delete story', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the memory?'} %> </li>
-                  <li><%= link_to 'Share this video', "", data: { bs_toggle:"modal", bs_target:"#staticBackdrop"}, class: "dropdown-i" %> </li>                   <!-- Dropdown menu links -->
-                </ul>
-              </div>
-              </div>
               <canvas id="canvas" style="display: none;"></canvas>
               <div class="video-card-box">
-                <% if Rails.env.development? %>
-                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/<%= attached_question.video_thumbnail.key %>.jpg"></video>
-                <% elsif Rails.env.production? %>
-                  <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/<%= attached_question.video_thumbnail.key %>.jpg"></video>
-                <% end %>
+                <%= cl_image_tag attached_question.video_thumbnail.key, class: "video-card-thumbnail" %>
+                <button type="button" class="btn-play" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= attached_question.id %>">
+                  <i class="fa-solid fa-play" style="color: #2F3E46"></i>
+                </button>
+              </div>
+              <div class="video-card-title">
+                <h4> <%= attached_question.title %></h4>
+              </div>
+              <div class="video-card-date">
+                <%= attached_question.updated_at.strftime("%d %B %Y") %>
               </div>
               <div>
+
+            <!-- Modal -->
+
+
+            <div class="modal fade" id="staticBackdrop<%= attached_question.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content modal-content-video">
+                    <button type="button" class="btn-close btn-close-video" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-header-video">
+                    <h1 class="modal-title-video" id="staticBackdropLabel"><%= attached_question.title %></h1>
+                  </div>
+                  <div class="modal-body">
+                    <% if Rails.env.development? %>
+                      <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/<%= attached_question.video_thumbnail.key %>.jpg"></video>
+                    <% elsif Rails.env.production? %>
+                      <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= attached_question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/<%= attached_question.video_thumbnail.key %>.jpg"></video>
+                    <% end %>
+                  </div>
+                  <div class="modal-footer-video">
+                    <%= link_to 'Re-Record video', sub_user_question_path(@sub_user, attached_question), class: 'modal-video-btn' %>
+                    <%= link_to 'Delete story', question_path(attached_question), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wanxt to delete the memory?'}, class: 'modal-video-btn' %>
+                    <%= link_to 'Share this video', "", data: { bs_toggle:"modal", bs_target:"#staticBackdrop"}, class: 'modal-video-btn' %>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             </div>
           </div>
         <% end %>
     </div>
-
       <% else %>
-        <h4 style="font-family:DM Serif Display;">You have no stories recorded yet...</h4>
+        <h2 style="font-family:DM Serif Display; color:white">You have no stories recorded yet...</h2>
       <% end %>
-
     </div>
 
   </div>
 </div>
+<<<<<<< HEAD
 
 
 
@@ -89,3 +106,5 @@
     </div>
   </div>
 </div>
+=======
+>>>>>>> f82c1f12087e58455efa96bd68a501f4e855dcdb

@@ -1,0 +1,48 @@
+.modal-header-video {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background-color: #2F3E46;
+  border-radius: 20px;
+  padding: 16px;
+  color: white;
+}
+
+.btn-close-video{
+  position: absolute;
+  top: 8px;
+  right: 11px;
+  font-size: 24px;
+}
+
+.modal-content-video {
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.modal-footer-video {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 16px;
+}
+
+.modal-video-btn {
+  border-radius: 16px;
+  background: #52796F;
+  height: 56px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.btn-play {
+  position: absolute;
+  top: calc(50% - 23px);
+  left: calc(50% - 23px);
+  background: transparent;
+  border: none;
+  font-size: 50px;
+}

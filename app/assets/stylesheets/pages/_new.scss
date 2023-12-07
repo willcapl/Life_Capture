@@ -15,11 +15,12 @@
   flex-direction: column;
   border-radius: 30px;
   align-items: center;
+  padding-top: 80px;
 }
 
 .question-card-text{
-  font-weight: bold;
-  font-size: 20px;
+  font-family: EB Garamond;
+  font-size: 24px;
   margin-left: 11px;
   margin-top: -45px;
 }
@@ -36,6 +37,12 @@
   justify-content: space-between;
 }
 
+.welcome-card {
+  flex-direction: column;
+  border-radius: 30px;
+  align-items: center;
+  padding-top: -20px !important;
+}
 .welcome-card h2{
   font-family: dm serif design
 }
@@ -56,7 +63,7 @@
   cursor: pointer;
   margin-bottom: 70px;
   margin-top: 22px;
-  font-family: dm serif display;
+  font-family: Gayathri;
 }
 
 .next-button:hover{
@@ -141,4 +148,5 @@
   cursor: pointer;
   margin-bottom: 70px;
   margin-top: 22px;
+  font-family: dm serif display;
 }

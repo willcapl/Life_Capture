@@ -1,27 +1,34 @@
 <div class= "textstyling" style= "font-family: EB Garamond; color: black; font-size: 1.5vw">
-<div class ="sub-users-card">
-  <% @sub_users.each do |sub_user| %>
-  <%= link_to sub_user do %>
-    <div class = "sub-users">
-      <% if sub_user.photo.attached? %>
-        <%= cl_image_tag sub_user.photo.key, class: "sub-user-icon" %>
-      <% else %>
-        <%= image_tag "user.png", class: "sub-user-icon" %>
-      <% end %>
-
-    </div>
-    <div class="sub-user-name">
-    <%= sub_user.name.capitalize %>
-    </div>
-     <%end%>
-  <% end %>
+  <div class ="sub-users-card">
+    <% @sub_users.each do |sub_user| %>
+      <div class="sub-user-card" id="card-for-sub">
+        <%= link_to sub_user do %>
+          <div class="sub-user-card-container">
+            <div class = "sub-users">
+              <% if sub_user.photo.attached? %>
+                <%= cl_image_tag sub_user.photo.key, class: "sub-user-icon" %>
+              <% else %>
+                <%= image_tag "user.png", class: "sub-user-icon" %>
+              <% end %>
+            </div>
+            <div class="sub-user-name">
+              <%= sub_user.name.capitalize %>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    <% end %>
+    <div class="sub-user-card" id="card-for-sub">
       <%= link_to sub_user_selection_path do %>
-        <div class= "sub-users">
-          <%= image_tag "green_add_icon.png", class: "sub-user-icon" %>
-        </div>
-        <div class = "new-user-name">
-          <%= "Add new profile" %>
+        <div class="sub-user-card-container">
+          <div class= "sub-users">
+            <%= image_tag "green_add_icon.png", class: "sub-user-icon" %>
+          </div>
+          <div class="sub-user-name">
+            <%= "Add profile" %>
+          </div>
         </div>
       <% end %>
-</div>
+    </div>
+  </div>
 </div>
