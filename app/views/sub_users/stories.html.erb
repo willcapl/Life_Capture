@@ -13,7 +13,7 @@
   </div>
 
   <div class="show-container">
-    <div class="videos-container">
+    <div class="videos-container" style="margin-top: 0px;">
       <% if @questions.find { |question| question.video.attached? } %>
         <div class="video-card-container">
           <% questions_attached = @questions.select { |question| question.video.attached?} %>
