@@ -15,16 +15,16 @@
   flex-direction: column;
   border-radius: 30px;
   align-items: center;
-  padding-top: 80px;
-  margin-top: 109px;
+  padding-top: 58px;
 }
 
 .question-card-text{
   font-family: EB Garamond;
-  font-size: 24px;
+  font-size: 30px;
   margin-left: 11px;
   margin-top: -45px;
   margin-bottom: 15px;
+
 
 }
 
@@ -39,6 +39,12 @@
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
+}
+
+.question-page-button-year{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
 }
 
 .welcome-card {
@@ -154,4 +160,8 @@
   margin-bottom: 70px;
   margin-top: 22px;
   font-family: Public Sans;
+}
+
+#element{
+  font-family: "DM Serif Display";
 }
