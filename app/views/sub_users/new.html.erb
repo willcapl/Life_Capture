@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :"Plase select your birth year", class:"question-card-text" %>
+        <%= f.label :"Please select your birth year", class:"question-card-text" %>
         <%= f.date_select :dob, :as => :date,
               :start_year => 1920, :end_year => 2005,
               :order => [:year], class:"answer-card-input-year" %>
@@ -131,7 +131,7 @@
           </div>
         </div>
         <div id="myProgress">
-          <div id="myBar" style="width: 100%;">7/7</div>
+          <div id="myBar" style="width: 100%;"></div>
         </div>
       </div>
     </div>
