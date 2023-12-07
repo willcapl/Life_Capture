@@ -21,9 +21,9 @@
             <% else %>
               <% @dates.each do |date| %>
                 <% if ( date - Date.today ) <= 0 && ( date - Date.today ) >= -7 %>
-                  <h3>This weeks question's</h3>
+                  <h2>This weeks question's</h2>
                 <% elsif ( date - Date.today ) <= 7 && ( date - Date.today ) >= 0 %>
-                  <h3>Next weeks question's</h3>
+                  <h2>Next weeks question's</h2>
                 <% else %>
                   <h5><%= date.strftime("%A, %d %b %Y") %></h5>
                 <% end %>
