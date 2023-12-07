@@ -28,10 +28,10 @@
         </div>
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
-        <%= f.label :"What year were you born?", class:"question-card-text" %>
+        <%= f.label :"Plase select your birth year", class:"question-card-text" %>
         <%= f.date_select :dob, :as => :date,
-              :start_year => 1920, :end_year => 2000,
-              :order => [:year], class:"answer-card-input" %>
+              :start_year => 1920, :end_year => 2005,
+              :order => [:year], class:"answer-card-input-year" %>
         <div class ="question-page-button-year">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous" %>
@@ -121,7 +121,7 @@
       </div>
       <div class = "question-card" data-question-button-target="questionCard">
         <%= f.label :'Please add a profile picture', class:"question-card-text"  %>
-        <%= f.file_field :photo, style: "style: padding: 36px 0px; padding-left: 13px; padding-top: 6px;"%>
+        <%= f.file_field :photo, style: "padding: 36px 0px; padding-left: 13px; padding-top: 10px;padding-bottom: 40px; background: white;"%>
         <div class ="question-page-button">
           <div class = "previous-button" data-question-button-target="previous-question" data-action="click->question-button#back">
             <%= "Previous" %>
