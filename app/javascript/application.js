@@ -15,7 +15,7 @@ document.addEventListener('turbo:load', () => {
 });
 
 document.addEventListener("turbo:load", (event) => {
-  let googleId = document.querySelector("meta[name='google-analytics-id]").content
+  let googleId = document.querySelector("meta[name='google-analytics-id']").content
   if (googleId) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
