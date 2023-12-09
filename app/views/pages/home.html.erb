@@ -50,7 +50,7 @@
   </div>
 </div>
 <div class="section middle-section">
-  <div class="container pt-5 testimonial">
+  <div class="container pt-5">
     <h2 class= "text-center mb-5"style = "font-family: DM Serif Display; color: black">WHY CHOOSE LIFE CAPTURE</h2>
     <div class="custom-list">
     <li class= "text-center mb-5" > Have a safe place to store your memories forever</li>
@@ -63,9 +63,11 @@
 </div>
 <div class="section bottom-section">
   <div class="container pt-5">
-    <h4 class= "text-center" style="font-family: EB Garamond; color: black; font-size: 1.5vw" > <i>"Getting my grandma to record her stories from her childhood </i></h4>
-    <h4 class= "text-center mb-5" style="font-family: EB Garamond; color: black; font-size: 1.5vw"> <i> and life was so valuable - I wish I could do it for all my relatives!"</i></h4>
-    <h4 class= "text-center mb-3" style="font-family: EB Garamond; color: black; font-size: 1.5vw">- Sergio Ramos, Spain</h4>
+    <div class ="testimonial">
+      <h4 class= "text-center" style="font-family: EB Garamond; color: black" > <i>"Getting my grandma to record her stories from her childhood </i></h4>
+      <h4 class= "text-center mb-5" style="font-family: EB Garamond; color: black"> <i> and life was so valuable - I wish I could do it for all my relatives!"</i></h4>
+      <h4 class= "text-center mb-3" style="font-family: EB Garamond; color: black">- Sergio Ramos, Spain</h4>
+    </div>
     <div class="Button bottom d-flex justify-content-center" style="margin-bottom: 24px">
       <% if user_signed_in? %>
               <%= link_to dashboard_path, class: "d-inline-block mb-4 mt-3" do %>
