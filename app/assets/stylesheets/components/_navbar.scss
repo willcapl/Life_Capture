@@ -103,7 +103,7 @@
 }
 
 .homepage-buttons{
-  margin-right: 100px;
+  // margin-right: 100px;
 }
 
 .sign-container{
@@ -124,4 +124,77 @@
   --bs-dropdown-link-active-color: #000;
   --bs-dropdown-link-active-bg: #cad2cf;
   --bs-dropdown-link-active-border-radius: 10px;
+}
+
+.navbar-logo{
+}
+
+/* Base styles (as you have provided) */
+
+/* ... your existing CSS ... */
+
+/* Responsive adjustments */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+  .navbar-container {
+    align-items: flex-start;
+  }
+
+  .btn-brown, .btn-grey {
+    padding: 7px 14px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .dropdown-nav {
+    margin-bottom: 10px; /* Add space between elements */
+  }
+
+  .sign-container, .homepage-buttons {
+    margin-right: 20px;
+  }
+
+  .homepage-buttons{
+    margin-right: 0px;
+  }
+
+  .navbar-logo{
+    margin-right:0px;
+  }
+
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navbar-container {
+    align-items: center;
+  }
+
+  .btn-brown, .btn-grey {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .navbar p, .dropdown-item {
+    font-size: 14px;
+  }
+
+  .avatar-icon, .navbar-container i {
+    font-size: 18px;
+  }
+
+  .sign-container, .homepage-buttons {
+    margin-right: 10px;
+  }
+
+  .dropdown-nav {
+    padding: 3px;
+  }
+  .homepage-buttons{
+    margin-right: 0px;
+  }
+
+  .navbar-logo{
+    margin-right:0px;
+  }
 }

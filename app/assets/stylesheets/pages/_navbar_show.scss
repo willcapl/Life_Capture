@@ -25,3 +25,50 @@
   font-weight: bold;
   padding: 8px;
 }
+
+/* Base styles - for larger screens */
+.navbar-show {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  background: #354f52;
+  padding: 6px;
+  list-style-type: none;
+  color: white;
+  font-family: Public Sans;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .nav-item {
+    font-size: 14px; /* slightly smaller font size */
+    padding: 6px; /* slightly less padding */
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .navbar-show {
+    flex-direction: column; /* stack items vertically */
+    align-items: center; /* center items */
+  }
+
+  .nav-item {
+    width: 100%; /* full width */
+    font-size: 12px; /* smaller font size */
+    padding: 4px; /* less padding */
+  }
+}

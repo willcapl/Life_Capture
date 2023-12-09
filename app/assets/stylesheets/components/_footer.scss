@@ -66,3 +66,55 @@
   font-family: Public Sans;
   font-size: 18px;
 }
+
+
+/* Base styles - keep these as they are */
+
+/* ... existing CSS ... */
+
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+  .container.d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-box, .footer-logo-tagline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-list, .footer-us ul, .FAQs-div ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-list i {
+    padding: 7px;
+    font-size: 24px; /* Larger icons for better tap targets on touch devices */
+  }
+
+  .footer-logo-tagline p {
+    margin-top: 20px;
+  }
+
+  .footer-image {
+    height: 50px; /* Resize image for smaller screens */
+  }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer-list i {
+    padding: 5px;
+    font-size: 20px;
+  }
+
+  .footer-logo-tagline p {
+    font-size: 16px;
+  }
+}

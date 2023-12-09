@@ -118,9 +118,13 @@
     font-size: 20px; /* Increased font size for tablet */
   }
   .testiontial{
-    font-size: 20px;
+    font-size: 28px;
+  }
+  .banner {
+    background-position: left; /* Shift the background to the left */
   }
 }
+
 
 /* Mobile phones (up to 480px) */
 @media (max-width: 480px) {
@@ -143,6 +147,6 @@
     font-size: 18px; /* Slightly smaller than tablet, but larger than original */
   }
   .testiontial{
-    font-size: 18px;
+    font-size: 14px;
   }
 }
