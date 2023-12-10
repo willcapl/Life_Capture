@@ -15,7 +15,6 @@ class SubUsersController < ApplicationController
   end
 
   def create
-    sleep(5)
     @sub_user = SubUser.new(sub_user_params)
     @sub_user.user = current_user
     if @sub_user.save
