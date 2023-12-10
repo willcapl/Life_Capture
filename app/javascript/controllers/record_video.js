@@ -42,7 +42,8 @@ const initRecordVideo = () => {
     return new Promise(resolve => stop.addEventListener("click", resolve));
   }
   const startRecording = (stream) => {
-    const recorder = new MediaRecorder(stream);
+    const options = { mimeType: "video/webm;codecs=vp9", audioBitsPerSecond: 128000, videoBitsPerSecond: 2500000 };
+    const recorder = new MediaRecorder(stream, options);
     let data = [];
   recorder.ondataavailable = event => data.push(event.data);
     recorder.start();
