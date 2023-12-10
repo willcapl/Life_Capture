@@ -13,7 +13,7 @@ const initRecordVideo = () => {
 
   const uploadToCloudinary = (video) => {
     const formData = new FormData(form);
-    formData.append("question[video]", video, "my_video.mp4" )
+    formData.append("question[video]", video, "my_video.webm" )
     formData.append("resource_type", "video" )
     console.log(formData)
     Rails.ajax({

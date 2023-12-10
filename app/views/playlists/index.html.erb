@@ -125,15 +125,25 @@
                   <div class="modal fade" id="staticBackdrop<%= question.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content modal-content-video">
-                          <button type="button" class="btn-modal-playlist" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-video" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="btn-group dropend dropdown-nav" style="position: absolute; top: 2px; left: 2px;">
+                          <button type="button" class="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style="border: 0; background: transparent;">
+                            <i class="fa-solid fa-gear" style="opacity: 50%"></i>
+                          </button>
+                          <ul class="dropdown-menu avatar-dropdown-menu">
+                            <li><%= link_to 'remove video', delete_response_bookmark_path(playlist, question), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to remove the video from this playlist?'}, class: "dropdown-item" %> </li>
+                          </ul>
+                        </div>
                         <div class="modal-header-video">
                           <h1 class="modal-title-video" id="staticBackdropLabel"><%= question.title %></h1>
                         </div>
                         <div class="modal-body">
                           <% if Rails.env.development? %>
-                            <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/development/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/<%= question.video_thumbnail.key %>.jpg"></video>
+                            <% poster_url = "https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/development/" + question.video_thumbnail.key + ".jpg"  %>
+                            <%= cl_video_tag question.video.key, controls: true, muted: true, poster: poster_url %>
                           <% elsif Rails.env.production? %>
-                            <video src="https://res.cloudinary.com/dpqge0m1h/raw/upload/v1701279627/production/<%= question.video.key %>.mp4" controls="controls" preload="none" class="video-card-video" poster="https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/<%= question.video_thumbnail.key %>.jpg"></video>
+                          <% poster_url = "https://res.cloudinary.com/dpqge0m1h/image/upload/v1701788922/production/" + question.video_thumbnail.key + ".jpg"  %>
+                            <%= cl_video_tag question.video.key, controls: true, muted: true, poster: poster_url %>
                           <% end %>
                         </div>
                         <div class="modal-footer-video">
