@@ -6,17 +6,13 @@ export default class extends Controller {
 
   connect() {
     this.initializeQuestionVisibility();
-    console.log("Question button controller connected");
-    console.log(this.questionCardTargets);
-    console.log(this.formTarget);
-    console.log(this.loadingMessageTarget);
-    this.formTarget.addEventListener("keyup", (event) => {
-    console.log(event);
-    console.log('keyup');
-    if (event.key === "Enter") {
-        return false
-      }
-    });
+    this.questionCardTargets.forEach((card) => {
+      card.addEventListener("keyup", event => {
+        if (event.key === "Enter") {
+          this.reveal(event);
+        }
+      })
+    })
   }
 
   initializeQuestionVisibility() {
@@ -56,37 +52,39 @@ export default class extends Controller {
       previousQuestion.classList.remove("hide-question");
       let index = this.questionCardTargets.indexOf(previousQuestion);
       console.log("Previous Question Index:", index); // Debugging
-      this.updateProgressBar(index);
     }
     this.checkLastQuestion(previousQuestion);
   }
 
   checkLastQuestion(question) {
     let isLastQuestion = !question.nextElementSibling;
-    if (this.hasSubmitButtonTarget) {
+    if (this.questionCardTargets.indexOf(question) === 8) {
+      console.log('submit btn');
+      this.submitButtonTarget.disabled = false;
       this.submitButtonTarget.style.display = isLastQuestion ? "block" : "none";
     }
   }
 
   submit(event) {
+    console.log('submit');
+    this.formTarget.submit();
     this.bodyTarget.classList.add('d-none');
     this.loadingMessageTarget.classList.remove('d-none');
     new Typed('#element', {
       strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'Love Live Demos....', 'Is Demo day still happening?', 'This is not funny anymore.', 'Happy New Year'],
       typeSpeed: 60,
     });
-    setTimeout(() => {
     // Show loading message
     // this.loadingMessageTarget.class.display = "block";
     // Simulate an asynchronous action (replace with your actual submission logic)
       // Assuming submission is successful, you can redirect or perform other actions
       console.log("Form submitted successfully!");
-    }, 7000);
 
   }
 
   submitOther(event) {
-
+    console.log('submit');
+    this.formTarget.submit();
     // Show loading message
     // this.loadingMessageTarget.class.display = "block";
     this.loadingMessageOtherTarget.classList.remove('d-none');
@@ -95,12 +93,6 @@ export default class extends Controller {
       strings: ['Generating your personalised questions...', 'Thinking about your past...', 'Formulating intriguing questions to ask you...', 'Nearly there...', 'Almost there...', 'Anytime now...', 'This is getting embarrasing...', 'Okay, what time is it?', 'This is not funny anymore.', 'Im late for work...'],
       typeSpeed: 50,
     });
-
-    setTimeout(() => {
-    // Simulate an asynchronous action (replace with your actual submission logic)
-      // Assuming submission is successful, you can redirect or perform other actions
       console.log("Form submitted successfully!");
-    }, 7000);
-
   }
 }
