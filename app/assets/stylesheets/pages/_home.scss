@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.video-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+}
 .banner-title h1 {
   font-size: 100px !important;
   font-weight: 800;
@@ -148,5 +153,66 @@
   }
   .testiontial{
     font-size: 14px;
+  }
+}
+
+@media (min-width: 576px) {
+  .video-card-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust grid for smaller screens */
+  }
+
+  .video-card {
+    padding: 8px; /* Adjust padding */
+  }
+
+  /* Adjust font sizes, margins, paddings, etc. as needed */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .video-card-container {
+    grid-template-columns: repeat(3, 1fr); /* Back to original grid */
+  }
+  .video-card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+
+  /* Further adjustments for medium-sized devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Adjustments for large screens */
+  .video-card-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Adjustments for extra large screens */
+}
+
+@media (max-width: 767px) {
+  .video-card-title h4 {
+    font-size: 16px; /* Smaller font size for smaller screens */
+  }
+
+  .video-card-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+
+  .modal-dialog.modal-lg {
+    width: 90%; /* Adjust modal width on smaller screens */
+    max-width: none;
+  }
+}
+
+/* Adjust modal content for small screens */
+@media (max-width: 576px) {
+  .modal-content-video {
+    margin-top: 0; /* Adjust as needed */
+  }
+  .video-card-title h4 {
+    font-size: 12px; /* Smaller font size for smaller screens */
   }
 }
